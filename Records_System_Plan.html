@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drakes Branch — Records Modernization Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --gold: #c9a84c;
+    --gold-light: #f0dfa0;
+    --cream: #faf8f3;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+    --green: #2d6a4f;
+    --green-light: #d8f3dc;
+    --red: #9b2335;
+    --red-light: #fde8ec;
+    --amber: #92400e;
+    --amber-light: #fef3c7;
+    --border: #e5e0d5;
+    --shadow: 0 4px 24px rgba(26,58,92,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: #1f2937;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    padding: 48px 32px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(201,168,76,0.04) 40px,
+      rgba(201,168,76,0.04) 80px
+    );
+  }
+  .header-seal {
+    width: 64px; height: 64px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+    position: relative;
+    box-shadow: 0 0 0 4px rgba(201,168,76,0.3);
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: clamp(22px, 4vw, 34px);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .header .subtitle {
+    color: var(--gold-light);
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .header .gold-line {
+    width: 60px; height: 2px;
+    background: var(--gold);
+    margin: 16px auto;
+    position: relative;
+  }
+
+  /* OVERALL PROGRESS */
+  .overall-progress {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 24px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .op-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .op-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    min-width: 120px;
+  }
+  .op-bar-wrap {
+    flex: 1;
+    background: var(--light-gray);
+    border-radius: 99px;
+    height: 12px;
+    overflow: hidden;
+  }
+  .op-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--navy), var(--gold));
+    border-radius: 99px;
+    transition: width 0.5s ease;
+    width: 0%;
+  }
+  .op-pct {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    min-width: 44px;
+    text-align: right;
+  }
+
+  /* MAIN */
+  .main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  /* INTRO */
+  .intro-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--gold);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-bottom: 36px;
+    box-shadow: var(--shadow);
+  }
+  .intro-card h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .intro-card p {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+  .intro-card p:last-child { margin-bottom: 0; }
+
+  /* KEY CONTACTS */
+  .contacts-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .contact-card {
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 20px 22px;
+    color: var(--white);
+  }
+  .contact-card .c-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+  }
+  .contact-card .c-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .contact-card .c-detail {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+  }
+  .contact-card a { color: var(--gold-light); text-decoration: none; }
+
+  /* PHASE HEADER */
+  .phase-section {
+    margin-bottom: 28px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 28px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+    background: var(--white);
+  }
+  .phase-header:hover { background: #f8f6f1; }
+
+  .phase-num {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+    color: var(--white);
+  }
+  .p1 .phase-num { background: var(--navy); }
+  .p2 .phase-num { background: var(--amber); }
+  .p3 .phase-num { background: var(--red); }
+  .p4 .phase-num { background: var(--green); }
+
+  .phase-title-block { flex: 1; }
+  .phase-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .phase-desc {
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  .phase-mini-bar-wrap {
+    width: 100px;
+    background: var(--light-gray);
+    border-radius: 99px;
+    height: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .phase-mini-bar { height: 100%; border-radius: 99px; transition: width 0.4s ease; width: 0%; }
+  .p1 .phase-mini-bar { background: var(--navy); }
+  .p2 .phase-mini-bar { background: var(--amber); }
+  .p3 .phase-mini-bar { background: var(--red); }
+  .p4 .phase-mini-bar { background: var(--green); }
+
+  .phase-pct {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    min-width: 36px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .phase-chevron {
+    font-size: 18px;
+    color: var(--gray);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .phase-section.open .phase-chevron { transform: rotate(180deg); }
+
+  /* PHASE BODY */
+  .phase-body {
+    display: none;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+  }
+  .phase-section.open .phase-body { display: block; }
+
+  /* INFO BOX */
+  .info-box {
+    margin: 24px 28px 0;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .info-box.navy { background: #eef2f7; border-left: 4px solid var(--navy); color: #1a3a5c; }
+  .info-box.amber { background: var(--amber-light); border-left: 4px solid #d97706; color: var(--amber); }
+  .info-box.red { background: var(--red-light); border-left: 4px solid var(--red); color: var(--red); }
+  .info-box.green { background: var(--green-light); border-left: 4px solid var(--green); color: var(--green); }
+  .info-box strong { font-weight: 600; }
+
+  /* TASK LIST */
+  .task-group {
+    padding: 20px 28px;
+  }
+  .task-group-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .task-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f0eb;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .task-item:last-child { border-bottom: none; }
+  .task-item:hover { background: #faf8f3; }
+  .task-item.done .task-text { text-decoration: line-through; color: #aaa; }
+  .task-item.done .task-check { background: var(--green); border-color: var(--green); }
+  .task-item.done .task-check::after { opacity: 1; }
+
+  .task-check {
+    width: 22px; height: 22px;
+    border: 2px solid #d1cec8;
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    position: relative;
+    transition: all 0.2s;
+    background: var(--white);
+  }
+  .task-check::after {
+    content: '✓';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .task-text-block { flex: 1; }
+  .task-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #1f2937;
+    font-weight: 400;
+  }
+  .task-note {
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 3px;
+    font-style: italic;
+  }
+
+  .task-tag {
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 99px;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+  .tag-keep { background: var(--green-light); color: var(--green); }
+  .tag-transfer { background: #dbeafe; color: #1e40af; }
+  .tag-destroy { background: var(--red-light); color: var(--red); }
+  .tag-digital { background: #ede9fe; color: #5b21b6; }
+  .tag-form { background: var(--amber-light); color: var(--amber); }
+  .tag-action { background: #f0fdf4; color: #166534; }
+
+  /* RETENTION TABLE */
+  .ret-table {
+    margin: 0 28px 24px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  .ret-table table { width: 100%; border-collapse: collapse; }
+  .ret-table th {
+    background: var(--navy);
+    color: var(--white);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  .ret-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .ret-table tr:last-child td { border-bottom: none; }
+  .ret-table tr:nth-child(even) td { background: #faf8f3; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .badge-perm { background: var(--green-light); color: var(--green); }
+  .badge-years { background: #dbeafe; color: #1e40af; }
+  .badge-dest { background: var(--red-light); color: var(--red); }
+
+  /* RESET */
+  .reset-btn {
+    display: block;
+    margin: 40px auto 0;
+    background: transparent;
+    border: 2px solid var(--navy);
+    color: var(--navy);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { background: var(--navy); color: var(--white); }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 32px 20px;
+    color: var(--gray);
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 600px) {
+    .phase-mini-bar-wrap { display: none; }
+    .phase-pct { display: none; }
+    .contacts-row { grid-template-columns: 1fr; }
+    .ret-table { margin: 0 0 24px; }
+    .task-group { padding: 16px; }
+    .info-box { margin: 16px 16px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-seal">🏛️</div>
+  <h1>Records Modernization Plan</h1>
+  <div class="gold-line"></div>
+  <div class="subtitle">Town of Drakes Branch, Virginia &nbsp;•&nbsp; Interactive SOP Guide</div>
+</div>
+
+<div class="overall-progress">
+  <div class="op-inner">
+    <div class="op-label">Overall Progress</div>
+    <div class="op-bar-wrap"><div class="op-bar-fill" id="overallBar"></div></div>
+    <div class="op-pct" id="overallPct">0%</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="intro-card">
+    <h2>About This Plan</h2>
+    <p>The Town of Drakes Branch holds decades of municipal records — many dating back to the 1960s and earlier — currently stored in over 100 boxes. This plan provides a step-by-step guide to properly assess, retain, transfer, dispose of, and digitize those records in full compliance with Virginia law and the Library of Virginia's Local Government Records Program.</p>
+    <p>Check off each task as it is completed. Progress is tracked automatically. This document may be used as both a working SOP and a presentation tool for town leadership.</p>
+  </div>
+
+  <div class="contacts-row">
+    <div class="contact-card">
+      <div class="c-label">Library of Virginia</div>
+      <div class="c-name">Records Management</div>
+      <div class="c-detail">Local Government Records Program<br><a href="tel:8042363705">(804) 236-3705</a><br><a href="https://www.lva.virginia.gov/records" target="_blank">lva.virginia.gov/records</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="c-label">Required Forms</div>
+      <div class="c-name">RM-25 &amp; RM-3</div>
+      <div class="c-detail">RM-25: Records Officer Designation<br>RM-3: Certificate of Destruction<br>Both available at lva.virginia.gov</div>
+    </div>
+    <div class="contact-card">
+      <div class="c-label">Virginia Code Reference</div>
+      <div class="c-name">§ 42.1-85</div>
+      <div class="c-detail">Library of Virginia authority over local public records retention &amp; disposition schedules</div>
+    </div>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="phase-section p1" id="phase1">
+    <div class="phase-header" onclick="togglePhase('phase1')">
+      <div class="phase-num">1</div>
+      <div class="phase-title-block">
+        <div class="phase-title">Triage &amp; Assessment</div>
+        <div class="phase-desc">Understand what you have before moving anything</div>
+      </div>
+      <div class="phase-mini-bar-wrap"><div class="phase-mini-bar" id="bar-phase1"></div></div>
+      <div class="phase-pct" id="pct-phase1">0%</div>
+      <div class="phase-chevron">▼</div>
+    </div>
+    <div class="phase-body">
+      <div class="info-box navy"><strong>Goal:</strong> Walk through all boxes and create a simple inventory before reorganizing anything. Do not discard or move records yet. Understanding what exists is the foundation of the entire project.</div>
+
+      <div class="task-group">
+        <div class="task-group-title">Initial Setup</div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Designate a Records Officer by filing RM-25 Form with the Library of Virginia</div>
+            <div class="task-note">The Records Officer is typically the Town Clerk. This must be done before any records can be legally destroyed.</div>
+          </div>
+          <span class="task-tag tag-form">RM-25 Form</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Contact your assigned LVA Records Management Analyst for a free consultation</div>
+            <div class="task-note">Call (804) 236-3705. Every Virginia locality has a free assigned analyst who can guide this entire process.</div>
+          </div>
+          <span class="task-tag tag-action">Call LVA</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Download the applicable Virginia Retention Schedules from lva.virginia.gov</div>
+            <div class="task-note">Key schedules: GS-19 (Administrative), GS-02 (Fiscal), GS-03 (Personnel), GS-07 (Public Utilities), GS-06 (Land Use)</div>
+          </div>
+          <span class="task-tag tag-action">Download</span>
+        </div>
+      </div>
+
+      <div class="task-group">
+        <div class="task-group-title">Box-by-Box Inventory</div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Number every box before opening — label 1 through however many boxes exist</div>
+            <div class="task-note">Use a permanent marker. This creates your reference system for the entire project.</div>
+          </div>
+          <span class="task-tag tag-action">Physical</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Create a simple Google Sheet inventory — Box #, Contents Description, Approximate Date Range, General Category</div>
+            <div class="task-note">Categories: Council Records | Utilities | Personnel | Financial | Correspondence | Permits | Other</div>
+          </div>
+          <span class="task-tag tag-digital">Google Sheets</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Walk through every box and complete one inventory row per box — do not reorganize yet</div>
+            <div class="task-note">Estimated time: 2–3 days depending on box count. Take photos of contents if helpful.</div>
+          </div>
+          <span class="task-tag tag-action">Inventory</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Identify and flag any boxes containing records from before 1960</div>
+            <div class="task-note">Very old records may have historical preservation value — LVA will want to know about these.</div>
+          </div>
+          <span class="task-tag tag-keep">Flag Historic</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Identify boxes containing dictation tapes and meeting recording media</div>
+            <div class="task-note">Tapes used to produce officially adopted minutes are legally destroyable once minutes are adopted.</div>
+          </div>
+          <span class="task-tag tag-action">Flag Tapes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase-section p2" id="phase2">
+    <div class="phase-header" onclick="togglePhase('phase2')">
+      <div class="phase-num">2</div>
+      <div class="phase-title-block">
+        <div class="phase-title">Retention Decisions</div>
+        <div class="phase-desc">Categorize every record: Keep, Transfer, or Destroy</div>
+      </div>
+      <div class="phase-mini-bar-wrap"><div class="phase-mini-bar" id="bar-phase2"></div></div>
+      <div class="phase-pct" id="pct-phase2">0%</div>
+      <div class="phase-chevron">▼</div>
+    </div>
+    <div class="phase-body">
+      <div class="info-box amber"><strong>Important:</strong> No records may be destroyed without completing the RM-3 Certificate of Destruction and obtaining the mayor's signature. Virginia law requires this documentation. Keep all RM-3 forms permanently on file.</div>
+
+      <div class="task-group">
+        <div class="task-group-title">Virginia Retention Schedule Reference</div>
+      </div>
+
+      <div class="ret-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Record Type</th>
+              <th>Retention</th>
+              <th>Disposition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Town Council Minutes (official)</strong></td>
+              <td><span class="badge badge-perm">Permanent</span></td>
+              <td>Keep in office or transfer to LVA Archives</td>
+            </tr>
+            <tr>
+              <td><strong>Ordinances &amp; Resolutions</strong></td>
+              <td><span class="badge badge-perm">Permanent</span></td>
+              <td>Keep in office — legally binding documents</td>
+            </tr>
+            <tr>
+              <td><strong>Deeds, Land Records</strong></td>
+              <td><span class="badge badge-perm">Permanent</span></td>
+              <td>Keep in office or transfer to LVA Archives</td>
+            </tr>
+            <tr>
+              <td><strong>Annual Budget &amp; Audit Reports</strong></td>
+              <td><span class="badge badge-perm">Permanent</span></td>
+              <td>Keep in office</td>
+            </tr>
+            <tr>
+              <td><strong>Contracts</strong></td>
+              <td><span class="badge badge-years">5 yrs after expiration</span></td>
+              <td>Destroy with RM-3 after retention period</td>
+            </tr>
+            <tr>
+              <td><strong>Accounts Payable / Receivable</strong></td>
+              <td><span class="badge badge-years">3 yrs after fiscal year</span></td>
+              <td>Destroy with RM-3 after retention period</td>
+            </tr>
+            <tr>
+              <td><strong>Water / Sewer Billing Records</strong></td>
+              <td><span class="badge badge-years">5 yrs</span></td>
+              <td>Destroy with RM-3 after retention period</td>
+            </tr>
+            <tr>
+              <td><strong>Payroll Records</strong></td>
+              <td><span class="badge badge-years">5 yrs</span></td>
+              <td>Destroy with RM-3 after retention period</td>
+            </tr>
+            <tr>
+              <td><strong>General Correspondence</strong></td>
+              <td><span class="badge badge-years">3 yrs</span></td>
+              <td>Destroy with RM-3 after retention period</td>
+            </tr>
+            <tr>
+              <td><strong>Audio Recordings of Meetings</strong></td>
+              <td><span class="badge badge-dest">Until minutes adopted</span></td>
+              <td>Destroy with RM-3 once official minutes are adopted by council vote</td>
+            </tr>
+            <tr>
+              <td><strong>Duplicate / Draft Copies</strong></td>
+              <td><span class="badge badge-dest">No retention required</span></td>
+              <td>Destroy when no longer needed — no RM-3 required for true duplicates</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="task-group">
+        <div class="task-group-title">Sorting Tasks</div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Using inventory sheet, mark each box as: KEEP PERMANENTLY / TRANSFER TO LVA / ELIGIBLE FOR DESTRUCTION</div>
+            <div class="task-note">Add a fourth column to your Google Sheet for this determination.</div>
+          </div>
+          <span class="task-tag tag-action">Sort</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Identify all meeting tape recordings — match each tape to its corresponding adopted council minutes</div>
+            <div class="task-note">If the minutes were officially adopted, that tape is legally destroyable. Document the match in your inventory sheet.</div>
+          </div>
+          <span class="task-tag tag-destroy">Tapes</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Contact LVA to schedule transfer of eligible permanent records to the State Records Center</div>
+            <div class="task-note">LVA's State Records Center stores inactive records in a secure, climate-controlled facility at no cost to the town.</div>
+          </div>
+          <span class="task-tag tag-transfer">Transfer</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Compile a complete list of all records eligible for destruction with box numbers, record types, and date ranges</div>
+            <div class="task-note">This list becomes the basis of your RM-3 Certificate of Destruction.</div>
+          </div>
+          <span class="task-tag tag-form">Pre-RM-3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase-section p3" id="phase3">
+    <div class="phase-header" onclick="togglePhase('phase3')">
+      <div class="phase-num">3</div>
+      <div class="phase-title-block">
+        <div class="phase-title">Lawful Disposal</div>
+        <div class="phase-desc">Destroy eligible records correctly and document everything</div>
+      </div>
+      <div class="phase-mini-bar-wrap"><div class="phase-mini-bar" id="bar-phase3"></div></div>
+      <div class="phase-pct" id="pct-phase3">0%</div>
+      <div class="phase-chevron">▼</div>
+    </div>
+    <div class="phase-body">
+      <div class="info-box red"><strong>Legal Requirement:</strong> No public record may be destroyed without a signed RM-3 Certificate of Records Destruction on file. Destroying records without this documentation violates Virginia Code § 42.1-85 and can expose the town to liability. The completed RM-3 must be kept permanently.</div>
+
+      <div class="task-group">
+        <div class="task-group-title">RM-3 Destruction Process</div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Download the RM-3 Certificate of Records Destruction form from lva.virginia.gov</div>
+          </div>
+          <span class="task-tag tag-form">RM-3 Form</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Complete RM-3 listing each record series, box numbers, date ranges, and retention schedule reference</div>
+            <div class="task-note">Example entry: "Audio Recording, Town Council Meeting, November 4 2024 — used to produce official minutes adopted December 2 2024 — GS-19"</div>
+          </div>
+          <span class="task-tag tag-form">Complete</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Obtain signatures of the Records Officer (Town Clerk) and approving official (Mayor) on RM-3</div>
+            <div class="task-note">Both signatures are required before any destruction can take place.</div>
+          </div>
+          <span class="task-tag tag-form">Sign</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Physically destroy eligible paper records — shredding is the standard method for confidential documents</div>
+            <div class="task-note">For large volumes, a shredding service can be brought in. Non-confidential records may be recycled.</div>
+          </div>
+          <span class="task-tag tag-destroy">Shred</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Destroy eligible tape recordings — cut tape or degauss (magnetically erase) the media</div>
+            <div class="task-note">Physical cutting is sufficient. Document method used on RM-3.</div>
+          </div>
+          <span class="task-tag tag-destroy">Tapes</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">File completed RM-3 form permanently in the town office records</div>
+            <div class="task-note">The RM-3 itself is a permanent record. It is your legal proof of lawful disposal.</div>
+          </div>
+          <span class="task-tag tag-keep">File RM-3</span>
+        </div>
+      </div>
+
+      <div class="task-group">
+        <div class="task-group-title">Tape-to-Digital Conversion (Before Destruction)</div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">For tapes without confirmed adopted minutes — digitize audio before destroying</div>
+            <div class="task-note">Play tape near a microphone captured by Zoom (record to cloud) or use a USB cassette converter (~$30). Save MP3 temporarily to Google Drive.</div>
+          </div>
+          <span class="task-tag tag-digital">Digitize</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Transcribe audio to Google Doc using Otter.ai, Maestra, or Google Docs Voice Typing (free)</div>
+            <div class="task-note">Clean up transcript, format as official minutes, present to council for adoption vote.</div>
+          </div>
+          <span class="task-tag tag-digital">Transcribe</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Once minutes are officially adopted by council vote — delete the MP3 and complete RM-3 for the original tape</div>
+            <div class="task-note">The adopted Google Doc minutes are the official permanent record. The audio file is a working draft only.</div>
+          </div>
+          <span class="task-tag tag-destroy">Cleanup</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="phase-section p4" id="phase4">
+    <div class="phase-header" onclick="togglePhase('phase4')">
+      <div class="phase-num">4</div>
+      <div class="phase-title-block">
+        <div class="phase-title">Digital Filing System</div>
+        <div class="phase-desc">Build the system that keeps Drakes Branch organized going forward</div>
+      </div>
+      <div class="phase-mini-bar-wrap"><div class="phase-mini-bar" id="bar-phase4"></div></div>
+      <div class="phase-pct" id="pct-phase4">0%</div>
+      <div class="phase-chevron">▼</div>
+    </div>
+    <div class="phase-body">
+      <div class="info-box green"><strong>Goal:</strong> Once the backlog is cleared, build a simple, maintainable digital system so no record ever ends up in a box again. This system is designed to run on Google Drive's free plan and requires no technical expertise to maintain.</div>
+
+      <div class="task-group">
+        <div class="task-group-title">Google Drive Folder Structure</div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Create master folder: "Town of Drakes Branch — Official Records"</div>
+            <div class="task-note">This is the root folder. All other folders live inside it.</div>
+          </div>
+          <span class="task-tag tag-digital">Drive</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Create six subfolders: 01-Council Records | 02-Financial | 03-Utilities | 04-Personnel | 05-Correspondence | 06-Permits &amp; Land</div>
+            <div class="task-note">Numbering keeps folders in logical order. Color-code each folder for fast visual identification.</div>
+          </div>
+          <span class="task-tag tag-digital">Folders</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Inside each subfolder, create year folders: 2024, 2025, 2026 etc.</div>
+            <div class="task-note">Example path: Council Records → 2025 → Minutes_2025-03-04_Adopted.pdf</div>
+          </div>
+          <span class="task-tag tag-digital">Year Folders</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Establish a file naming convention and post it as a written SOP in the office</div>
+            <div class="task-note">Format: [Category]_[YYYY-MM-DD]_[Description] — Example: Minutes_2025-04-01_Adopted.pdf</div>
+          </div>
+          <span class="task-tag tag-action">SOP</span>
+        </div>
+      </div>
+
+      <div class="task-group">
+        <div class="task-group-title">Scanning &amp; Migration</div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Prioritize scanning all permanent records first — Council Minutes, Ordinances, Resolutions, Deeds</div>
+            <div class="task-note">These are the most critical. Scan to PDF and upload to the correct folder immediately.</div>
+          </div>
+          <span class="task-tag tag-keep">Scan First</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Scan remaining retained records by category — Financial, Utilities, Personnel, Correspondence</div>
+            <div class="task-note">Work through boxes in batches. Scan, name, upload, file physical copy or destroy per schedule.</div>
+          </div>
+          <span class="task-tag tag-digital">Scan</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Set up a physical color-coded hanging folder system for any remaining paper records</div>
+            <div class="task-note">Match folder colors to Google Drive categories. Anyone in the office can find anything within 30 seconds.</div>
+          </div>
+          <span class="task-tag tag-action">Physical</span>
+        </div>
+      </div>
+
+      <div class="task-group">
+        <div class="task-group-title">Ongoing Intake Process</div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Establish a same-day filing rule — every new document gets logged, scanned, and filed the day it arrives</div>
+            <div class="task-note">This is the most important SOP. The backlog exists because intake was never systematized.</div>
+          </div>
+          <span class="task-tag tag-action">SOP</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Set up Zoom or Otter.ai to automatically transcribe all future council meetings going forward</div>
+            <div class="task-note">Record meeting via Zoom, export transcript, clean up, present for adoption. Eliminates tape recorder dependency permanently.</div>
+          </div>
+          <span class="task-tag tag-digital">Zoom AI</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Schedule an annual records review each January — purge what has met its retention period, complete RM-3</div>
+            <div class="task-note">A one-hour annual review prevents the next 60-year backlog from ever accumulating.</div>
+          </div>
+          <span class="task-tag tag-action">Annual</span>
+        </div>
+
+        <div class="task-item" onclick="toggleTask(this)">
+          <div class="task-check"></div>
+          <div class="task-text-block">
+            <div class="task-text">Monitor Google Drive storage — stay within free 15GB limit by keeping only active records in Drive; transfer completed year archives to LVA or physical storage as needed</div>
+          </div>
+          <span class="task-tag tag-digital">Storage</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="reset-btn" onclick="resetAll()">↺ Reset All Progress</button>
+
+</div>
+
+<div class="footer">
+  Town of Drakes Branch, Virginia &nbsp;•&nbsp; Records Modernization Plan &nbsp;•&nbsp; Prepared in accordance with Virginia Code § 42.1-85 and Library of Virginia Local Government Records Guidelines
+</div>
+
+<script>
+  const phases = ['phase1','phase2','phase3','phase4'];
+
+  function togglePhase(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle('open');
+  }
+
+  function toggleTask(el) {
+    el.classList.toggle('done');
+    updateProgress();
+    // Save state
+    saveState();
+  }
+
+  function updateProgress() {
+    let totalTasks = 0, totalDone = 0;
+
+    phases.forEach(pid => {
+      const section = document.getElementById(pid);
+      const tasks = section.querySelectorAll('.task-item');
+      const done = section.querySelectorAll('.task-item.done');
+      const pct = tasks.length > 0 ? Math.round((done.length / tasks.length) * 100) : 0;
+
+      document.getElementById('bar-' + pid).style.width = pct + '%';
+      document.getElementById('pct-' + pid).textContent = pct + '%';
+
+      totalTasks += tasks.length;
+      totalDone += done.length;
+    });
+
+    const overall = totalTasks > 0 ? Math.round((totalDone / totalTasks) * 100) : 0;
+    document.getElementById('overallBar').style.width = overall + '%';
+    document.getElementById('overallPct').textContent = overall + '%';
+  }
+
+  function saveState() {
+    const state = {};
+    phases.forEach(pid => {
+      const section = document.getElementById(pid);
+      const tasks = section.querySelectorAll('.task-item');
+      const doneArr = [];
+      tasks.forEach((t, i) => { if (t.classList.contains('done')) doneArr.push(i); });
+      state[pid] = doneArr;
+    });
+    try { localStorage.setItem('drakesBranchSOP', JSON.stringify(state)); } catch(e) {}
+  }
+
+  function loadState() {
+    try {
+      const raw = localStorage.getItem('drakesBranchSOP');
+      if (!raw) return;
+      const state = JSON.parse(raw);
+      phases.forEach(pid => {
+        if (!state[pid]) return;
+        const section = document.getElementById(pid);
+        const tasks = section.querySelectorAll('.task-item');
+        state[pid].forEach(i => { if (tasks[i]) tasks[i].classList.add('done'); });
+      });
+      updateProgress();
+    } catch(e) {}
+  }
+
+  function resetAll() {
+    if (!confirm('Reset all progress? This cannot be undone.')) return;
+    document.querySelectorAll('.task-item.done').forEach(t => t.classList.remove('done'));
+    try { localStorage.removeItem('drakesBranchSOP'); } catch(e) {}
+    updateProgress();
+  }
+
+  // Open phase 1 by default
+  document.getElementById('phase1').classList.add('open');
+
+  loadState();
+  updateProgress();
+</script>
+</body>
+</html>
