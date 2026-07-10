@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drakes Branch — Records Modernization Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1a3a5c;
+  --navy-light: #eef2f7;
+  --gold: #c9a84c;
+  --gold-light: #f0dfa0;
+  --cream: #faf8f3;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --light-gray: #f3f4f6;
+  --green: #2d6a4f;
+  --green-light: #d8f3dc;
+  --red: #9b2335;
+  --red-light: #fde8ec;
+  --amber: #92400e;
+  --amber-light: #fef3c7;
+  --purple: #5b21b6;
+  --purple-light: #ede9fe;
+  --blue: #1e40af;
+  --blue-light: #dbeafe;
+  --border: #e5e0d5;
+  --shadow: 0 4px 24px rgba(26,58,92,0.10);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: #1f2937; min-height: 100vh; }
+
+/* HEADER */
+.header { background: var(--navy); padding: 44px 32px 36px; text-align: center; position: relative; overflow: hidden; }
+.header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,168,76,0.04) 40px, rgba(201,168,76,0.04) 80px); }
+.header-seal { width: 64px; height: 64px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; position: relative; box-shadow: 0 0 0 4px rgba(201,168,76,0.3); }
+.header h1 { font-family: 'Playfair Display', serif; color: var(--white); font-size: clamp(20px, 4vw, 32px); margin-bottom: 8px; position: relative; }
+.header .subtitle { color: var(--gold-light); font-size: 13px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; position: relative; }
+.gold-line { width: 60px; height: 2px; background: var(--gold); margin: 14px auto; position: relative; }
+
+/* NAV TABS */
+.nav-bar { background: var(--white); border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.nav-inner { max-width: 1000px; margin: 0 auto; display: flex; overflow-x: auto; }
+.nav-tab { padding: 16px 22px; font-size: 13px; font-weight: 600; color: var(--gray); cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; letter-spacing: 0.04em; text-transform: uppercase; }
+.nav-tab:hover { color: var(--navy); }
+.nav-tab.active { color: var(--navy); border-bottom-color: var(--gold); }
+
+/* PAGES */
+.page { display: none; max-width: 1000px; margin: 0 auto; padding: 32px 20px 80px; }
+.page.active { display: block; }
+
+/* ═══════════════════════════════════
+   DASHBOARD
+═══════════════════════════════════ */
+.dash-welcome { background: var(--navy); border-radius: 10px; padding: 28px 32px; margin-bottom: 28px; color: var(--white); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.dash-welcome h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 6px; }
+.dash-welcome p { color: rgba(255,255,255,0.7); font-size: 14px; }
+.dash-date { font-size: 13px; color: var(--gold-light); font-weight: 600; letter-spacing: 0.05em; }
+
+/* STAT CARDS */
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 20px; box-shadow: var(--shadow); }
+.stat-card .s-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray); margin-bottom: 8px; }
+.stat-card .s-val { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--navy); line-height: 1; margin-bottom: 4px; }
+.stat-card .s-sub { font-size: 12px; color: var(--gray); }
+.stat-card.green-card { border-left: 4px solid var(--green); }
+.stat-card.amber-card { border-left: 4px solid #d97706; }
+.stat-card.red-card { border-left: 4px solid var(--red); }
+.stat-card.purple-card { border-left: 4px solid var(--purple); }
+.stat-card.navy-card { border-left: 4px solid var(--navy); }
+.stat-card.gold-card { border-left: 4px solid var(--gold); }
+
+/* PROGRESS BARS DASHBOARD */
+.progress-section { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 24px 28px; margin-bottom: 28px; box-shadow: var(--shadow); }
+.progress-section h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.prog-row { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.prog-row:last-child { margin-bottom: 0; }
+.prog-label { font-size: 13px; font-weight: 600; color: #374151; width: 160px; flex-shrink: 0; }
+.prog-bar-wrap { flex: 1; background: var(--light-gray); border-radius: 99px; height: 10px; overflow: hidden; }
+.prog-bar-fill { height: 100%; border-radius: 99px; transition: width 0.5s ease; }
+.prog-pct { font-size: 13px; font-weight: 700; width: 40px; text-align: right; flex-shrink: 0; }
+.fill-navy { background: var(--navy); }
+.fill-amber { background: #d97706; }
+.fill-red { background: var(--red); }
+.fill-green { background: var(--green); }
+.fill-purple { background: var(--purple); }
+.fill-gold { background: var(--gold); }
+.fill-overall { background: linear-gradient(90deg, var(--navy), var(--gold)); }
+
+/* ALERT CARDS */
+.alerts-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.alert-card { border-radius: 8px; padding: 18px 20px; font-size: 14px; line-height: 1.6; }
+.alert-card .a-title { font-weight: 700; margin-bottom: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.07em; }
+.alert-card.a-action { background: var(--amber-light); border: 1px solid #fcd34d; }
+.alert-card.a-action .a-title { color: var(--amber); }
+.alert-card.a-info { background: var(--navy-light); border: 1px solid #bfdbfe; }
+.alert-card.a-info .a-title { color: var(--navy); }
+.alert-card.a-success { background: var(--green-light); border: 1px solid #6ee7b7; }
+.alert-card.a-success .a-title { color: var(--green); }
+
+/* QUICK LINKS */
+.links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 28px; }
+.link-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; display: flex; align-items: center; gap: 12px; cursor: pointer; transition: all 0.2s; text-decoration: none; box-shadow: var(--shadow); }
+.link-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,58,92,0.12); }
+.link-icon { font-size: 22px; flex-shrink: 0; }
+.link-text .l-title { font-size: 14px; font-weight: 700; color: var(--navy); }
+.link-text .l-sub { font-size: 12px; color: var(--gray); }
+
+/* RECENT ACTIVITY */
+.activity-feed { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 24px 28px; box-shadow: var(--shadow); }
+.activity-feed h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.activity-item { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid #f3f0eb; font-size: 14px; align-items: flex-start; }
+.activity-item:last-child { border-bottom: none; }
+.a-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.dot-green { background: var(--green); }
+.dot-amber { background: #d97706; }
+.dot-navy { background: var(--navy); }
+.dot-red { background: var(--red); }
+.a-text { flex: 1; color: #374151; line-height: 1.5; }
+.a-time { font-size: 12px; color: var(--gray); white-space: nowrap; }
+.no-activity { color: var(--gray); font-style: italic; font-size: 14px; padding: 12px 0; }
+
+/* ═══════════════════════════════════
+   BOX TRACKER
+═══════════════════════════════════ */
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+.section-header h2 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--navy); }
+.btn { padding: 10px 20px; border-radius: 6px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; border: none; letter-spacing: 0.05em; transition: all 0.2s; text-transform: uppercase; }
+.btn-navy { background: var(--navy); color: var(--white); }
+.btn-navy:hover { background: #2a5a8c; }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: #b8943c; }
+.btn-outline { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+.btn-outline:hover { background: var(--navy); color: var(--white); }
+.btn-sm { padding: 6px 14px; font-size: 12px; }
+.btn-red { background: var(--red); color: var(--white); }
+.btn-red:hover { background: #7a1a28; }
+
+.box-legend { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gray); font-weight: 600; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+.box-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 10px; margin-bottom: 28px; }
+.box-tile { border-radius: 8px; padding: 10px 6px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.2s; position: relative; }
+.box-tile:hover { transform: scale(1.05); }
+.box-tile .b-num { font-weight: 700; font-size: 14px; }
+.box-tile .b-status { font-size: 10px; margin-top: 2px; letter-spacing: 0.03em; }
+.box-tile.status-pending { background: #f3f4f6; border-color: #d1d5db; color: var(--gray); }
+.box-tile.status-inventoried { background: var(--amber-light); border-color: #fcd34d; color: var(--amber); }
+.box-tile.status-keep { background: var(--blue-light); border-color: #93c5fd; color: var(--blue); }
+.box-tile.status-transfer { background: var(--purple-light); border-color: #c4b5fd; color: var(--purple); }
+.box-tile.status-destroy { background: var(--red-light); border-color: #fca5a5; color: var(--red); }
+.box-tile.status-complete { background: var(--green-light); border-color: #6ee7b7; color: var(--green); }
+.box-tile.status-complete::after { content: '✓'; position: absolute; top: 2px; right: 4px; font-size: 10px; font-weight: 700; }
+
+/* BOX MODAL */
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px; }
+.modal-overlay.open { display: flex; }
+.modal { background: var(--white); border-radius: 12px; padding: 32px; max-width: 480px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.3); max-height: 90vh; overflow-y: auto; }
+.modal h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 20px; }
+.modal-field { margin-bottom: 16px; }
+.modal-field label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); margin-bottom: 6px; }
+.modal-field input, .modal-field select, .modal-field textarea { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #1f2937; background: var(--cream); }
+.modal-field textarea { min-height: 80px; resize: vertical; }
+.modal-field select { cursor: pointer; }
+.modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+
+/* ═══════════════════════════════════
+   RECORDS LOG
+═══════════════════════════════════ */
+.log-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+.filter-btn { padding: 8px 16px; border-radius: 99px; font-size: 12px; font-weight: 700; cursor: pointer; border: 2px solid var(--border); background: var(--white); color: var(--gray); transition: all 0.2s; }
+.filter-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+.log-table-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 20px; }
+.log-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.log-table th { background: var(--navy); color: var(--white); padding: 12px 14px; text-align: left; font-weight: 600; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; }
+.log-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+.log-table tr:last-child td { border-bottom: none; }
+.log-table tr:hover td { background: #faf8f3; }
+.log-table .empty-row td { text-align: center; color: var(--gray); font-style: italic; padding: 32px; }
+
+/* ═══════════════════════════════════
+   SOP PHASES (from v1)
+═══════════════════════════════════ */
+.phase-section { margin-bottom: 24px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.phase-header { display: flex; align-items: center; gap: 16px; padding: 20px 24px; cursor: pointer; user-select: none; transition: background 0.2s; background: var(--white); }
+.phase-header:hover { background: #f8f6f1; }
+.phase-num { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; flex-shrink: 0; color: var(--white); }
+.p1 .phase-num { background: var(--navy); }
+.p2 .phase-num { background: #d97706; }
+.p3 .phase-num { background: var(--red); }
+.p4 .phase-num { background: var(--green); }
+.phase-title-block { flex: 1; }
+.phase-title { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--navy); margin-bottom: 2px; }
+.phase-desc { font-size: 12px; color: var(--gray); }
+.phase-mini-bar-wrap { width: 90px; background: var(--light-gray); border-radius: 99px; height: 8px; overflow: hidden; flex-shrink: 0; }
+.phase-mini-bar { height: 100%; border-radius: 99px; transition: width 0.4s; width: 0%; }
+.p1 .phase-mini-bar { background: var(--navy); }
+.p2 .phase-mini-bar { background: #d97706; }
+.p3 .phase-mini-bar { background: var(--red); }
+.p4 .phase-mini-bar { background: var(--green); }
+.phase-pct { font-size: 12px; font-weight: 700; color: var(--navy); min-width: 34px; text-align: right; flex-shrink: 0; }
+.phase-chevron { font-size: 16px; color: var(--gray); transition: transform 0.3s; flex-shrink: 0; }
+.phase-section.open .phase-chevron { transform: rotate(180deg); }
+.phase-body { display: none; background: var(--white); border-top: 1px solid var(--border); }
+.phase-section.open .phase-body { display: block; }
+
+.info-box { margin: 20px 24px 0; padding: 14px 18px; border-radius: 6px; font-size: 14px; line-height: 1.6; }
+.info-box.navy { background: var(--navy-light); border-left: 4px solid var(--navy); color: #1a3a5c; }
+.info-box.amber { background: var(--amber-light); border-left: 4px solid #d97706; color: var(--amber); }
+.info-box.red { background: var(--red-light); border-left: 4px solid var(--red); color: var(--red); }
+.info-box.green { background: var(--green-light); border-left: 4px solid var(--green); color: var(--green); }
+
+.task-group { padding: 18px 24px; }
+.task-group-title { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.task-item { display: flex; align-items: flex-start; gap: 12px; padding: 11px 4px; border-bottom: 1px solid #f3f0eb; cursor: pointer; transition: background 0.15s; border-radius: 4px; }
+.task-item:last-child { border-bottom: none; }
+.task-item:hover { background: #faf8f3; }
+.task-item.done .task-text { text-decoration: line-through; color: #aaa; }
+.task-item.done .task-check { background: var(--green); border-color: var(--green); }
+.task-item.done .task-check::after { opacity: 1; }
+.task-check { width: 20px; height: 20px; border: 2px solid #d1cec8; border-radius: 4px; flex-shrink: 0; margin-top: 2px; position: relative; transition: all 0.2s; background: var(--white); }
+.task-check::after { content: '✓'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 12px; font-weight: 700; opacity: 0; transition: opacity 0.2s; }
+.task-text-block { flex: 1; }
+.task-text { font-size: 14px; line-height: 1.5; color: #1f2937; }
+.task-note { font-size: 12px; color: var(--gray); margin-top: 3px; font-style: italic; }
+.task-tag { font-size: 11px; padding: 3px 9px; border-radius: 99px; font-weight: 600; flex-shrink: 0; margin-top: 2px; letter-spacing: 0.03em; }
+.tag-keep { background: var(--green-light); color: var(--green); }
+.tag-transfer { background: var(--blue-light); color: var(--blue); }
+.tag-destroy { background: var(--red-light); color: var(--red); }
+.tag-digital { background: var(--purple-light); color: var(--purple); }
+.tag-form { background: var(--amber-light); color: var(--amber); }
+.tag-action { background: var(--green-light); color: #166534; }
+
+/* RETENTION TABLE */
+.ret-table { margin: 0 24px 20px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; font-size: 13px; }
+.ret-table table { width: 100%; border-collapse: collapse; }
+.ret-table th { background: var(--navy); color: var(--white); padding: 10px 14px; text-align: left; font-weight: 600; font-size: 11px; letter-spacing: 0.05em; }
+.ret-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+.ret-table tr:last-child td { border-bottom: none; }
+.ret-table tr:nth-child(even) td { background: #faf8f3; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 700; }
+.badge-perm { background: var(--green-light); color: var(--green); }
+.badge-years { background: var(--blue-light); color: var(--blue); }
+.badge-dest { background: var(--red-light); color: var(--red); }
+
+/* ═══════════════════════════════════
+   RESOURCES
+═══════════════════════════════════ */
+.resource-section { margin-bottom: 28px; }
+.resource-section h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.resource-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; box-shadow: var(--shadow); transition: all 0.2s; }
+.resource-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.resource-card .r-icon { font-size: 24px; margin-bottom: 10px; }
+.resource-card .r-title { font-weight: 700; font-size: 14px; color: var(--navy); margin-bottom: 4px; }
+.resource-card .r-desc { font-size: 12px; color: var(--gray); line-height: 1.5; margin-bottom: 10px; }
+.resource-card a { font-size: 12px; color: var(--gold); font-weight: 700; text-decoration: none; letter-spacing: 0.04em; }
+.resource-card a:hover { text-decoration: underline; }
+.resource-card .r-placeholder { font-size: 12px; color: #aaa; font-style: italic; }
+
+/* NOTES */
+.notes-area { width: 100%; min-height: 160px; padding: 16px; border: 1px solid var(--border); border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 14px; background: var(--white); resize: vertical; color: #1f2937; line-height: 1.6; }
+.notes-saved { font-size: 12px; color: var(--green); margin-top: 6px; display: none; }
+
+/* CONTACTS */
+.contacts-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.contact-card { background: var(--navy); border-radius: 8px; padding: 20px 22px; color: var(--white); }
+.contact-card .c-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 6px; }
+.contact-card .c-name { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 4px; }
+.contact-card .c-detail { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+.contact-card a { color: var(--gold-light); text-decoration: none; }
+
+@media (max-width: 600px) {
+  .phase-mini-bar-wrap, .phase-pct { display: none; }
+  .dash-welcome { flex-direction: column; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .box-grid { grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-seal">🏛️</div>
+  <h1>Records Modernization Command Center</h1>
+  <div class="gold-line"></div>
+  <div class="subtitle">Town of Drakes Branch, Virginia &nbsp;•&nbsp; Interactive SOP &nbsp;•&nbsp; Living Document</div>
+</div>
+
+<div class="nav-bar">
+  <div class="nav-inner">
+    <div class="nav-tab active" onclick="showPage('dashboard')">📊 Dashboard</div>
+    <div class="nav-tab" onclick="showPage('boxes')">📦 Box Tracker</div>
+    <div class="nav-tab" onclick="showPage('log')">📋 Records Log</div>
+    <div class="nav-tab" onclick="showPage('sop')">✅ SOP Checklist</div>
+    <div class="nav-tab" onclick="showPage('resources')">🔗 Resources & Forms</div>
+    <div class="nav-tab" onclick="showPage('notes')">📝 Notes & Findings</div>
+  </div>
+</div>
+
+<!-- ═══════════════════ DASHBOARD ═══════════════════ -->
+<div class="page active" id="page-dashboard">
+
+  <div class="dash-welcome">
+    <div>
+      <h2>Day 1 Complete — Great Progress! 🏛️</h2>
+      <p>57 boxes inventoried. 2,346 files syncing to Google Drive. Records Modernization is underway.</p>
+    </div>
+    <div class="dash-date" id="dashDate"></div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card navy-card">
+      <div class="s-label">Total Boxes</div>
+      <div class="s-val" id="stat-total-boxes">0</div>
+      <div class="s-sub">estimated 100+</div>
+    </div>
+    <div class="stat-card green-card">
+      <div class="s-label">Completed</div>
+      <div class="s-val" id="stat-complete">0</div>
+      <div class="s-sub">boxes fully processed</div>
+    </div>
+    <div class="stat-card amber-card">
+      <div class="s-label">In Progress</div>
+      <div class="s-val" id="stat-inprogress">0</div>
+      <div class="s-sub">boxes inventoried</div>
+    </div>
+    <div class="stat-card red-card">
+      <div class="s-label">For Destruction</div>
+      <div class="s-val" id="stat-destroy">0</div>
+      <div class="s-sub">pending RM-3 form</div>
+    </div>
+    <div class="stat-card purple-card">
+      <div class="s-label">For Transfer</div>
+      <div class="s-val" id="stat-transfer">0</div>
+      <div class="s-sub">to LVA State Records</div>
+    </div>
+    <div class="stat-card gold-card">
+      <div class="s-label">Records Logged</div>
+      <div class="s-val" id="stat-logged">0</div>
+      <div class="s-sub">in records log</div>
+    </div>
+  </div>
+
+  <div class="progress-section">
+    <h3>Project Progress — All Components</h3>
+    <div class="prog-row">
+      <div class="prog-label">Overall Project</div>
+      <div class="prog-bar-wrap"><div class="prog-bar-fill fill-overall" id="dash-overall" style="width:0%"></div></div>
+      <div class="prog-pct" id="dpct-overall" style="color:var(--navy)">0%</div>
+    </div>
+    <div class="prog-row">
+      <div class="prog-label">Phase 1 — Triage</div>
+      <div class="prog-bar-wrap"><div class="prog-bar-fill fill-navy" id="dash-p1" style="width:0%"></div></div>
+      <div class="prog-pct" id="dpct-p1" style="color:var(--navy)">0%</div>
+    </div>
+    <div class="prog-row">
+      <div class="prog-label">Phase 2 — Retention</div>
+      <div class="prog-bar-wrap"><div class="prog-bar-fill fill-amber" id="dash-p2" style="width:0%"></div></div>
+      <div class="prog-pct" id="dpct-p2" style="color:#d97706">0%</div>
+    </div>
+    <div class="prog-row">
+      <div class="prog-label">Phase 3 — Disposal</div>
+      <div class="prog-bar-wrap"><div class="prog-bar-fill fill-red" id="dash-p3" style="width:0%"></div></div>
+      <div class="prog-pct" id="dpct-p3" style="color:var(--red)">0%</div>
+    </div>
+    <div class="prog-row">
+      <div class="prog-label">Phase 4 — Digital</div>
+      <div class="prog-bar-wrap"><div class="prog-bar-fill fill-green" id="dash-p4" style="width:0%"></div></div>
+      <div class="prog-pct" id="dpct-p4" style="color:var(--green)">0%</div>
+    </div>
+    <div class="prog-row">
+      <div class="prog-label">Box Tracking</div>
+      <div class="prog-bar-wrap"><div class="prog-bar-fill fill-purple" id="dash-boxes" style="width:0%"></div></div>
+      <div class="prog-pct" id="dpct-boxes" style="color:var(--purple)">0%</div>
+    </div>
+  </div>
+
+  <div class="alerts-row">
+    <div class="alert-card a-action">
+      <div class="a-title">⚠️ First Action Required</div>
+      File RM-25 Form with the Library of Virginia to designate the Records Officer before any records can be legally destroyed. Call LVA at (804) 236-3705 to request your free assigned analyst.
+    </div>
+    <div class="alert-card a-info">
+      <div class="a-title">📌 Virginia Law Reference</div>
+      All record destruction requires a signed RM-3 Certificate of Destruction per Virginia Code § 42.1-85. Keep all RM-3 forms permanently on file as legal proof of lawful disposal.
+    </div>
+    <div class="alert-card a-success">
+      <div class="a-title">✅ Free Resources Available</div>
+      LVA provides free consultation, retention schedules, state records storage, and digitization guidance to all Virginia municipalities. No cost to the town.
+    </div>
+  </div>
+
+  <div style="margin-bottom:20px">
+    <div class="section-header"><h2 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--navy)">Quick Access</h2></div>
+    <div class="links-grid">
+      <div class="link-card" onclick="showPage('boxes')">
+        <div class="link-icon">📦</div>
+        <div class="link-text"><div class="l-title">Box Tracker</div><div class="l-sub">Track all 100+ boxes</div></div>
+      </div>
+      <div class="link-card" onclick="showPage('log')">
+        <div class="link-icon">📋</div>
+        <div class="link-text"><div class="l-title">Records Log</div><div class="l-sub">Document each record series</div></div>
+      </div>
+      <div class="link-card" onclick="showPage('sop')">
+        <div class="link-icon">✅</div>
+        <div class="link-text"><div class="l-title">SOP Checklist</div><div class="l-sub">Step-by-step tasks</div></div>
+      </div>
+      <div class="link-card" onclick="showPage('resources')">
+        <div class="link-icon">🔗</div>
+        <div class="link-text"><div class="l-title">Forms & Resources</div><div class="l-sub">LVA forms, Google tools</div></div>
+      </div>
+      <div class="link-card" onclick="showPage('notes')">
+        <div class="link-icon">📝</div>
+        <div class="link-text"><div class="l-title">Notes & Findings</div><div class="l-sub">Capture discoveries</div></div>
+      </div>
+      <div class="link-card" onclick="window.open('https://docs.google.com/spreadsheets/d/1Xwij2CNgIm0aZEBxpdJbwP9OUXf2ebgB_4IAXbkg_iI','_blank')">
+        <div class="link-icon">📊</div>
+        <div class="link-text"><div class="l-title">Google Sheets</div><div class="l-sub">Live box inventory & records log</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-feed">
+    <h3>Recent Activity</h3>
+    <div id="activityFeed">
+      <div class="no-activity">No activity recorded yet. Start by adding boxes in the Box Tracker tab.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ BOX TRACKER ═══════════════════ -->
+<div class="page" id="page-boxes">
+  <div class="section-header">
+    <h2>Box Tracker</h2>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="btn btn-outline btn-sm" onclick="setTotalBoxes()">Set Total Box Count</button>
+      <button class="btn btn-navy btn-sm" onclick="openBoxModal()">+ Add / Update Box</button>
+    </div>
+  </div>
+
+  <div class="box-legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#d1d5db"></div>Pending</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#d97706"></div>Inventoried</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div>Keep</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div>Transfer to LVA</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div>For Destruction</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Complete ✓</div>
+  </div>
+
+  <div class="box-grid" id="boxGrid">
+    <div style="color:var(--gray);font-style:italic;font-size:14px;grid-column:1/-1;padding:24px 0;">Click "Set Total Box Count" to initialize your box grid, then click any box to update its status.</div>
+  </div>
+
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;box-shadow:var(--shadow);">
+    <h3 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:16px;">Box Detail List</h3>
+    <div class="log-table-wrap" style="margin:0;">
+      <table class="log-table" id="boxDetailTable">
+        <thead><tr><th>Box #</th><th>Contents</th><th>Date Range</th><th>Category</th><th>Status</th><th>Notes</th></tr></thead>
+        <tbody id="boxDetailBody">
+          <tr class="empty-row"><td colspan="6">No boxes logged yet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- BOX MODAL -->
+<div class="modal-overlay" id="boxModal">
+  <div class="modal">
+    <h3>📦 Box Details</h3>
+    <div class="modal-field"><label>Box Number</label><input type="number" id="bNum" min="1" placeholder="e.g. 12"></div>
+    <div class="modal-field"><label>Contents Description</label><input type="text" id="bContents" placeholder="e.g. Council Minutes, Water Bills, Correspondence"></div>
+    <div class="modal-field"><label>Approximate Date Range</label><input type="text" id="bDates" placeholder="e.g. 1965–1978"></div>
+    <div class="modal-field"><label>Category</label>
+      <select id="bCategory">
+        <option value="">— Select —</option>
+        <option>Council Records</option>
+        <option>Financial</option>
+        <option>Utilities / Water-Sewer</option>
+        <option>Personnel</option>
+        <option>Correspondence</option>
+        <option>Permits & Land</option>
+        <option>Meeting Tapes / Audio</option>
+        <option>Mixed / Unknown</option>
+      </select>
+    </div>
+    <div class="modal-field"><label>Status</label>
+      <select id="bStatus">
+        <option value="pending">Pending — Not yet reviewed</option>
+        <option value="inventoried">Inventoried — Contents documented</option>
+        <option value="keep">Keep Permanently</option>
+        <option value="transfer">Transfer to LVA State Records</option>
+        <option value="destroy">Eligible for Destruction (RM-3 needed)</option>
+        <option value="complete">Complete — Processed & Filed</option>
+      </select>
+    </div>
+    <div class="modal-field"><label>Notes / Findings</label><textarea id="bNotes" placeholder="Any special items, concerns, historic records found..."></textarea></div>
+    <div class="modal-actions">
+      <button class="btn btn-navy" onclick="saveBox()">Save Box</button>
+      <button class="btn btn-outline" onclick="closeBoxModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ RECORDS LOG ═══════════════════ -->
+<div class="page" id="page-log">
+  <div class="section-header">
+    <h2>Records Log</h2>
+    <button class="btn btn-navy btn-sm" onclick="openLogModal()">+ Add Record Entry</button>
+  </div>
+  <p style="color:var(--gray);font-size:14px;margin-bottom:20px;">Document each record series as it is processed. This log serves as your audit trail and supports the RM-3 destruction documentation.</p>
+
+  <div class="log-filters">
+    <div class="filter-btn active" onclick="filterLog('all',this)">All</div>
+    <div class="filter-btn" onclick="filterLog('keep',this)">Keep</div>
+    <div class="filter-btn" onclick="filterLog('transfer',this)">Transfer</div>
+    <div class="filter-btn" onclick="filterLog('destroy',this)">Destroy</div>
+    <div class="filter-btn" onclick="filterLog('digital',this)">Digitized</div>
+  </div>
+
+  <div class="log-table-wrap">
+    <table class="log-table" id="recordsTable">
+      <thead><tr><th>Box #</th><th>Record Type</th><th>Date Range</th><th>Decision</th><th>RM-3 #</th><th>Notes</th></tr></thead>
+      <tbody id="recordsBody">
+        <tr class="empty-row"><td colspan="6">No records logged yet. Click "+ Add Record Entry" to begin.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- LOG MODAL -->
+<div class="modal-overlay" id="logModal">
+  <div class="modal">
+    <h3>📋 Record Entry</h3>
+    <div class="modal-field"><label>Box Number(s)</label><input type="text" id="lBox" placeholder="e.g. 14, 15, 16"></div>
+    <div class="modal-field"><label>Record Type / Series</label><input type="text" id="lType" placeholder="e.g. Town Council Minutes, Water Bills"></div>
+    <div class="modal-field"><label>Date Range</label><input type="text" id="lDates" placeholder="e.g. 1972–1985"></div>
+    <div class="modal-field"><label>Retention Decision</label>
+      <select id="lDecision">
+        <option value="">— Select —</option>
+        <option value="keep">Keep Permanently</option>
+        <option value="transfer">Transfer to LVA State Records Center</option>
+        <option value="destroy">Destroy — Retention Period Expired</option>
+        <option value="digital">Digitized — Original Destroyed</option>
+        <option value="pending">Pending Decision</option>
+      </select>
+    </div>
+    <div class="modal-field"><label>RM-3 Certificate # (if applicable)</label><input type="text" id="lRM3" placeholder="e.g. RM3-2025-001"></div>
+    <div class="modal-field"><label>Notes</label><textarea id="lNotes" placeholder="Condition of records, special findings, schedule reference..."></textarea></div>
+    <div class="modal-actions">
+      <button class="btn btn-navy" onclick="saveLogEntry()">Save Entry</button>
+      <button class="btn btn-outline" onclick="closeLogModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ SOP CHECKLIST ═══════════════════ -->
+<div class="page" id="page-sop">
+
+  <div style="background:var(--white);border:1px solid var(--border);border-left:5px solid var(--gold);border-radius:8px;padding:24px 28px;margin-bottom:28px;box-shadow:var(--shadow);">
+    <h2 style="font-family:'Playfair Display',serif;color:var(--navy);font-size:20px;margin-bottom:10px;">Step-by-Step SOP Guide</h2>
+    <p style="color:var(--gray);font-size:14px;line-height:1.7;">Work through each phase in order. Check off tasks as they are completed. Progress saves automatically and reflects on the Dashboard.</p>
+  </div>
+
+  <!-- Phase 1 -->
+  <div class="phase-section p1" id="phase1">
+    <div class="phase-header" onclick="togglePhase('phase1')">
+      <div class="phase-num">1</div>
+      <div class="phase-title-block"><div class="phase-title">Triage & Assessment</div><div class="phase-desc">Understand what you have before moving anything</div></div>
+      <div class="phase-mini-bar-wrap"><div class="phase-mini-bar" id="bar-phase1"></div></div>
+      <div class="phase-pct" id="pct-phase1">0%</div>
+      <div class="phase-chevron">▼</div>
+    </div>
+    <div class="phase-body">
+      <div class="info-box navy"><strong>Goal:</strong> Walk through all boxes and create a simple inventory before reorganizing anything. Understanding what exists is the foundation of the entire project.</div>
+      <div class="task-group">
+        <div class="task-group-title">Initial Setup</div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Designate Records Officer — file RM-25 Form with Library of Virginia</div><div class="task-note">Must be done before any records can be legally destroyed. Call LVA (804) 236-3705.</div></div><span class="task-tag tag-form">RM-25</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Contact LVA assigned analyst for free consultation</div><div class="task-note">Every Virginia locality gets a free assigned analyst to guide this entire process.</div></div><span class="task-tag tag-action">Call LVA</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Download Virginia Retention Schedules from lva.virginia.gov</div><div class="task-note">Key: GS-19 Administrative, GS-02 Fiscal, GS-03 Personnel, GS-07 Utilities, GS-06 Land Use</div></div><span class="task-tag tag-action">Download</span></div>
+      </div>
+      <div class="task-group">
+        <div class="task-group-title">Box-by-Box Inventory</div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Number every box before opening — label 1 through final count</div><div class="task-note">Use permanent marker. This creates the reference system for the entire project.</div></div><span class="task-tag tag-action">Physical</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Create Box Inventory in Google Sheets — Box #, Contents, Date Range, Category</div><div class="task-note">Categories: Council Records | Utilities | Personnel | Financial | Correspondence | Permits</div></div><span class="task-tag tag-digital">Sheets</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Complete one inventory entry per box — do not reorganize yet</div><div class="task-note">Estimated 2–3 days. Take photos of contents if helpful.</div></div><span class="task-tag tag-action">Inventory</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Flag boxes containing records from before 1960</div><div class="task-note">Very old records may have historical preservation value — LVA will want to know.</div></div><span class="task-tag tag-keep">Historic</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Identify and flag all dictation tapes and audio recordings</div><div class="task-note">Tapes used to produce officially adopted minutes are legally destroyable once minutes are adopted.</div></div><span class="task-tag tag-action">Tapes</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Enter all boxes into the Box Tracker tab in this document</div></div><span class="task-tag tag-digital">This Doc</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 2 -->
+  <div class="phase-section p2" id="phase2">
+    <div class="phase-header" onclick="togglePhase('phase2')">
+      <div class="phase-num">2</div>
+      <div class="phase-title-block"><div class="phase-title">Retention Decisions</div><div class="phase-desc">Categorize every record: Keep, Transfer, or Destroy</div></div>
+      <div class="phase-mini-bar-wrap"><div class="phase-mini-bar" id="bar-phase2"></div></div>
+      <div class="phase-pct" id="pct-phase2">0%</div>
+      <div class="phase-chevron">▼</div>
+    </div>
+    <div class="phase-body">
+      <div class="info-box amber"><strong>Important:</strong> No records may be destroyed without a signed RM-3 Certificate of Destruction. Virginia law requires this documentation. All RM-3 forms must be kept permanently.</div>
+      <div class="task-group"><div class="task-group-title">Virginia Retention Reference</div></div>
+      <div class="ret-table">
+        <table>
+          <thead><tr><th>Record Type</th><th>Retention</th><th>Disposition</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Council Minutes (official)</strong></td><td><span class="badge badge-perm">Permanent</span></td><td>Keep or transfer to LVA Archives</td></tr>
+            <tr><td><strong>Ordinances & Resolutions</strong></td><td><span class="badge badge-perm">Permanent</span></td><td>Keep in office</td></tr>
+            <tr><td><strong>Deeds, Land Records</strong></td><td><span class="badge badge-perm">Permanent</span></td><td>Keep or transfer to LVA Archives</td></tr>
+            <tr><td><strong>Annual Budget & Audits</strong></td><td><span class="badge badge-perm">Permanent</span></td><td>Keep in office</td></tr>
+            <tr><td><strong>Contracts</strong></td><td><span class="badge badge-years">5 yrs after expiration</span></td><td>Destroy with RM-3</td></tr>
+            <tr><td><strong>Accounts Payable / Receivable</strong></td><td><span class="badge badge-years">3 yrs after fiscal year</span></td><td>Destroy with RM-3</td></tr>
+            <tr><td><strong>Water / Sewer Billing</strong></td><td><span class="badge badge-years">5 yrs</span></td><td>Destroy with RM-3</td></tr>
+            <tr><td><strong>Payroll Records</strong></td><td><span class="badge badge-years">5 yrs</span></td><td>Destroy with RM-3</td></tr>
+            <tr><td><strong>General Correspondence</strong></td><td><span class="badge badge-years">3 yrs</span></td><td>Destroy with RM-3</td></tr>
+            <tr><td><strong>Meeting Audio Recordings</strong></td><td><span class="badge badge-dest">Until minutes adopted</span></td><td>Destroy with RM-3 after adoption vote</td></tr>
+            <tr><td><strong>Duplicate / Draft Copies</strong></td><td><span class="badge badge-dest">No retention required</span></td><td>Destroy — no RM-3 needed</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="task-group">
+        <div class="task-group-title">Sorting Tasks</div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Mark each box: KEEP PERMANENTLY / TRANSFER TO LVA / ELIGIBLE FOR DESTRUCTION</div></div><span class="task-tag tag-action">Sort</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Match each tape recording to its corresponding adopted council minutes</div><div class="task-note">If minutes were officially adopted, that tape is legally destroyable.</div></div><span class="task-tag tag-destroy">Tapes</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Contact LVA to schedule transfer of eligible permanent records to State Records Center</div><div class="task-note">Free, secure, climate-controlled facility at no cost to the town.</div></div><span class="task-tag tag-transfer">Transfer</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Compile destruction list — box numbers, record types, date ranges — for RM-3</div></div><span class="task-tag tag-form">Pre-RM-3</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Log all retention decisions in the Records Log tab</div></div><span class="task-tag tag-digital">This Doc</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 3 -->
+  <div class="phase-section p3" id="phase3">
+    <div class="phase-header" onclick="togglePhase('phase3')">
+      <div class="phase-num">3</div>
+      <div class="phase-title-block"><div class="phase-title">Lawful Disposal</div><div class="phase-desc">Destroy eligible records correctly and document everything</div></div>
+      <div class="phase-mini-bar-wrap"><div class="phase-mini-bar" id="bar-phase3"></div></div>
+      <div class="phase-pct" id="pct-phase3">0%</div>
+      <div class="phase-chevron">▼</div>
+    </div>
+    <div class="phase-body">
+      <div class="info-box red"><strong>Legal Requirement:</strong> No public record may be destroyed without a signed RM-3 on file. Destroying records without this violates Virginia Code § 42.1-85 and exposes the town to liability.</div>
+      <div class="task-group">
+        <div class="task-group-title">RM-3 Destruction Process</div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Download RM-3 Certificate of Records Destruction from lva.virginia.gov</div></div><span class="task-tag tag-form">RM-3</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Complete RM-3 with record series, box numbers, date ranges, and retention schedule reference</div><div class="task-note">Example: "Audio Recording, Council Meeting Nov 4 2024 — minutes adopted Dec 2 2024 — GS-19"</div></div><span class="task-tag tag-form">Complete</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Obtain signatures of Records Officer (Clerk) and approving official (Mayor)</div><div class="task-note">Both signatures required before any destruction begins.</div></div><span class="task-tag tag-form">Sign</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Shred or securely destroy eligible paper records</div></div><span class="task-tag tag-destroy">Shred</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Destroy eligible tapes — cut tape or degauss media</div></div><span class="task-tag tag-destroy">Tapes</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">File completed RM-3 permanently in town office records</div><div class="task-note">RM-3 is itself a permanent record — your legal proof of lawful disposal.</div></div><span class="task-tag tag-keep">File</span></div>
+      </div>
+      <div class="task-group">
+        <div class="task-group-title">Tape-to-Digital Conversion</div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Digitize audio from tapes without confirmed adopted minutes before destroying</div><div class="task-note">Play tape near mic captured by Zoom (record to cloud) or USB cassette converter (~$30).</div></div><span class="task-tag tag-digital">Digitize</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Transcribe audio using Otter.ai, Maestra, or Google Docs Voice Typing (free)</div><div class="task-note">Clean up transcript, format as official minutes, present for council adoption vote.</div></div><span class="task-tag tag-digital">Transcribe</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">After council adoption vote — delete MP3 and complete RM-3 for original tape</div></div><span class="task-tag tag-destroy">Cleanup</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 4 -->
+  <div class="phase-section p4" id="phase4">
+    <div class="phase-header" onclick="togglePhase('phase4')">
+      <div class="phase-num">4</div>
+      <div class="phase-title-block"><div class="phase-title">Digital Filing System</div><div class="phase-desc">Build the system that keeps Drakes Branch organized going forward</div></div>
+      <div class="phase-mini-bar-wrap"><div class="phase-mini-bar" id="bar-phase4"></div></div>
+      <div class="phase-pct" id="pct-phase4">0%</div>
+      <div class="phase-chevron">▼</div>
+    </div>
+    <div class="phase-body">
+      <div class="info-box green"><strong>Goal:</strong> Build a simple, maintainable digital system on Google Drive's free plan so no record ever ends up in a box again.</div>
+      <div class="task-group">
+        <div class="task-group-title">Google Drive Folder Structure</div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Create master folder: "Town of Drakes Branch — Official Records"</div></div><span class="task-tag tag-digital">Drive</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Create six subfolders: 01-Council Records | 02-Financial | 03-Utilities | 04-Personnel | 05-Correspondence | 06-Permits & Land</div><div class="task-note">Number prefixes keep folders in logical order. Color-code each folder.</div></div><span class="task-tag tag-digital">Folders</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Create year subfolders inside each category: 2024, 2025, 2026</div></div><span class="task-tag tag-digital">Year Folders</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Establish and post file naming SOP: [Category]_[YYYY-MM-DD]_[Description]</div><div class="task-note">Example: Minutes_2025-04-01_Adopted.pdf</div></div><span class="task-tag tag-action">SOP</span></div>
+      </div>
+      <div class="task-group">
+        <div class="task-group-title">Scanning & Migration</div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Scan all permanent records first — Minutes, Ordinances, Resolutions, Deeds</div></div><span class="task-tag tag-keep">Priority</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Scan remaining retained records by category</div></div><span class="task-tag tag-digital">Scan</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Set up physical color-coded hanging folder system for remaining paper records</div></div><span class="task-tag tag-action">Physical</span></div>
+      </div>
+      <div class="task-group">
+        <div class="task-group-title">Ongoing Intake</div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Establish same-day filing rule — every document scanned and filed day it arrives</div></div><span class="task-tag tag-action">SOP</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Set up Zoom or Otter.ai for automatic future meeting transcription</div></div><span class="task-tag tag-digital">Zoom AI</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Schedule annual January records review — purge expired records, complete RM-3</div></div><span class="task-tag tag-action">Annual</span></div>
+        <div class="task-item" onclick="toggleTask(this)"><div class="task-check"></div><div class="task-text-block"><div class="task-text">Monitor Google Drive storage — stay within free 15GB by transferring completed year archives</div></div><span class="task-tag tag-digital">Storage</span></div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-outline" style="display:block;margin:32px auto 0;" onclick="if(confirm('Reset all checklist progress?')){resetSOP();}">↺ Reset Checklist</button>
+</div>
+
+<!-- ═══════════════════ RESOURCES ═══════════════════ -->
+<div class="page" id="page-resources">
+  <h2 style="font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);margin-bottom:24px;">Resources, Forms & Working Files</h2>
+
+  <div class="contacts-row">
+    <div class="contact-card">
+      <div class="c-label">Library of Virginia</div>
+      <div class="c-name">Records Management</div>
+      <div class="c-detail">Local Government Records Program<br><a href="tel:8042363705">(804) 236-3705</a><br><a href="https://www.lva.virginia.gov" target="_blank">lva.virginia.gov</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="c-label">Virginia Code</div>
+      <div class="c-name">§ 42.1-85</div>
+      <div class="c-detail">LVA authority over local public records retention & disposition schedules</div>
+    </div>
+    <div class="contact-card">
+      <div class="c-label">Town of Drakes Branch</div>
+      <div class="c-name">Town Office</div>
+      <div class="c-detail">4801 Drakes Branch Main St<br><a href="tel:4345683091">(434) 568-3091</a><br><a href="mailto:drakesbr@hovac.com">drakesbr@hovac.com</a></div>
+    </div>
+  </div>
+
+  <div class="resource-section">
+    <h3>📄 Required Virginia Forms</h3>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="r-icon">📝</div>
+        <div class="r-title">RM-25 — Records Officer Designation</div>
+        <div class="r-desc">Must be filed with LVA before any records can be legally destroyed. Designates the Town Clerk as Records Officer.</div>
+        <a href="https://www.lva.virginia.gov/agencies/records/sched_auth/forms.asp" target="_blank">Download from LVA →</a>
+      </div>
+      <div class="resource-card">
+        <div class="r-icon">📝</div>
+        <div class="r-title">RM-3 — Certificate of Records Destruction</div>
+        <div class="r-desc">Required before destroying any public record. Must be signed by Records Officer and Mayor. Keep permanently on file.</div>
+        <a href="https://www.lva.virginia.gov/agencies/records/sched_auth/forms.asp" target="_blank">Download from LVA →</a>
+      </div>
+      <div class="resource-card">
+        <div class="r-icon">📋</div>
+        <div class="r-title">Virginia Retention Schedules</div>
+        <div class="r-desc">GS-19 Administrative, GS-02 Fiscal, GS-03 Personnel, GS-07 Utilities, GS-06 Land Use. Free download.</div>
+        <a href="https://www.lva.virginia.gov/agencies/records/sched_auth/local.asp" target="_blank">View All Schedules →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="resource-section">
+    <h3>📊 Working Files & Spreadsheets</h3>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="r-icon">📊</div>
+        <div class="r-title">Box Inventory Spreadsheet</div>
+        <div class="r-desc">Live Google Sheet for logging all boxes — Box #, contents, date range, category, retention decision, RM-3 log, and Quilla Cares ministry hours. Already created and ready to use.</div>
+        <a href="https://docs.google.com/spreadsheets/d/1Xwij2CNgIm0aZEBxpdJbwP9OUXf2ebgB_4IAXbkg_iI" target="_blank">Open Live Inventory Sheet →</a>
+      </div>
+      <div class="resource-card">
+        <div class="r-icon">📁</div>
+        <div class="r-title">Google Drive — Town Records Folder</div>
+        <div class="r-desc">Primary digital storage for all town records. Free plan (15GB). Create master folder structure per Phase 4 SOP.</div>
+        <a href="https://drive.google.com" target="_blank">Open Google Drive →</a>
+      </div>
+      <div class="resource-card">
+        <div class="r-icon">🎙️</div>
+        <div class="r-title">Otter.ai — Free Transcription</div>
+        <div class="r-desc">Free meeting transcription. Upload audio files or use live. Export transcripts directly to Google Drive.</div>
+        <a href="https://otter.ai" target="_blank">Open Otter.ai →</a>
+      </div>
+      <div class="resource-card">
+        <div class="r-icon">🎬</div>
+        <div class="r-title">Zoom — Meeting Recording</div>
+        <div class="r-desc">Record council meetings to cloud or local. Play tape near mic to capture audio. Export MP3 for transcription.</div>
+        <a href="https://zoom.us" target="_blank">Open Zoom →</a>
+      </div>
+      <div class="resource-card">
+        <div class="r-icon">📄</div>
+        <div class="r-title">Google Docs — Meeting Minutes Template</div>
+        <div class="r-desc">Create a standard minutes template for all future council meetings. Store in 01-Council Records folder.</div>
+        <a href="https://docs.google.com" target="_blank">Open Google Docs →</a>
+      </div>
+      <div class="resource-card">
+        <div class="r-icon">🏛️</div>
+        <div class="r-title">LVA State Records Center</div>
+        <div class="r-desc">Free secure storage for inactive permanent records. Contact your LVA analyst to arrange transfer.</div>
+        <a href="https://www.lva.virginia.gov/agencies/records/state_records_center.asp" target="_blank">Learn More →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="resource-section">
+    <h3>📚 Reference Materials</h3>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="r-icon">⚖️</div>
+        <div class="r-title">Virginia FOIA — Public Records Law</div>
+        <div class="r-desc">Virginia Freedom of Information Act. Town Clerk serves as FOIA Officer — must respond to citizen records requests within required timeframes.</div>
+        <a href="https://foiacouncil.dls.virginia.gov" target="_blank">FOIA Council →</a>
+      </div>
+      <div class="resource-card">
+        <div class="r-icon">📖</div>
+        <div class="r-title">Virginia Code § 42.1-85</div>
+        <div class="r-desc">Authorizes LVA to issue regulations governing retention and disposition of all state and local public records.</div>
+        <a href="https://law.lis.virginia.gov/vacode/title42.1/chapter3/section42.1-85/" target="_blank">Read Code →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ NOTES ═══════════════════ -->
+<div class="page" id="page-notes">
+  <h2 style="font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);margin-bottom:8px;">Notes & Findings</h2>
+  <p style="color:var(--gray);font-size:14px;margin-bottom:24px;">Capture discoveries, unusual records, historic finds, concerns, or anything noteworthy as sorting progresses. Notes save automatically.</p>
+
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;box-shadow:var(--shadow);margin-bottom:24px;">
+    <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray);margin-bottom:10px;">General Project Notes</div>
+    <textarea class="notes-area" id="generalNotes" placeholder="General observations, project status updates, decisions made..." oninput="saveNotes('generalNotes')"></textarea>
+    <div class="notes-saved" id="saved-generalNotes">✓ Saved</div>
+  </div>
+
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;box-shadow:var(--shadow);margin-bottom:24px;">
+    <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray);margin-bottom:10px;">Historic & Notable Findings</div>
+    <textarea class="notes-area" id="historicNotes" placeholder="Historic records found, items of unusual age or significance, items to flag for LVA..." oninput="saveNotes('historicNotes')"></textarea>
+    <div class="notes-saved" id="saved-historicNotes">✓ Saved</div>
+  </div>
+
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;box-shadow:var(--shadow);margin-bottom:24px;">
+    <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray);margin-bottom:10px;">Issues & Action Items</div>
+    <textarea class="notes-area" id="issueNotes" placeholder="Problems discovered, items needing follow-up, questions for LVA analyst, missing records..." oninput="saveNotes('issueNotes')"></textarea>
+    <div class="notes-saved" id="saved-issueNotes">✓ Saved</div>
+  </div>
+
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;box-shadow:var(--shadow);">
+    <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray);margin-bottom:10px;">Technology & Modernization Ideas</div>
+    <textarea class="notes-area" id="techNotes" placeholder="Ideas for workflow improvements, automation opportunities, tools to implement..." oninput="saveNotes('techNotes')"></textarea>
+    <div class="notes-saved" id="saved-techNotes">✓ Saved</div>
+  </div>
+</div>
+
+<script>
+// ═══ DATA STORE ═══
+let state = {
+  tasks: {},
+  boxes: {},
+  totalBoxes: 0,
+  records: [],
+  activity: []
+};
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem('drakesBranchV2');
+    if (raw) state = JSON.parse(raw);
+    // Load notes
+    ['generalNotes','historicNotes','issueNotes','techNotes'].forEach(id => {
+      const val = localStorage.getItem('note_' + id);
+      if (val) document.getElementById(id).value = val;
+    });
+  } catch(e) {}
+}
+
+function saveState() {
+  try { localStorage.setItem('drakesBranchV2', JSON.stringify(state)); } catch(e) {}
+}
+
+// ═══ NAVIGATION ═══
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  const tabs = document.querySelectorAll('.nav-tab');
+  const map = {dashboard:0,boxes:1,log:2,sop:3,resources:4,notes:5};
+  if (map[id] !== undefined) tabs[map[id]].classList.add('active');
+  updateDashboard();
+}
+
+// ═══ DATE ═══
+function setDate() {
+  const d = new Date();
+  document.getElementById('dashDate').textContent = d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+}
+
+// ═══ SOP TASKS ═══
+function togglePhase(id) { document.getElementById(id).classList.toggle('open'); }
+
+function toggleTask(el) {
+  el.classList.toggle('done');
+  const phaseEl = el.closest('.phase-section');
+  const phaseId = phaseEl ? phaseEl.id : null;
+  if (phaseId) {
+    const tasks = phaseEl.querySelectorAll('.task-item');
+    const taskIdx = Array.from(tasks).indexOf(el);
+    const key = phaseId + '_' + taskIdx;
+    if (el.classList.contains('done')) {
+      state.tasks[key] = true;
+      addActivity('dot-green', el.querySelector('.task-text').textContent.trim(), 'SOP');
+    } else {
+      delete state.tasks[key];
+    }
+  }
+  saveState();
+  updateProgress();
+  updateDashboard();
+}
+
+function updateProgress() {
+  const phases = ['phase1','phase2','phase3','phase4'];
+  let totalAll = 0, doneAll = 0;
+  phases.forEach((pid, i) => {
+    const section = document.getElementById(pid);
+    if (!section) return;
+    const tasks = section.querySelectorAll('.task-item');
+    const done = section.querySelectorAll('.task-item.done');
+    const pct = tasks.length > 0 ? Math.round((done.length / tasks.length) * 100) : 0;
+    const bar = document.getElementById('bar-' + pid);
+    const pctEl = document.getElementById('pct-' + pid);
+    if (bar) bar.style.width = pct + '%';
+    if (pctEl) pctEl.textContent = pct + '%';
+    totalAll += tasks.length;
+    doneAll += done.length;
+  });
+  const overall = totalAll > 0 ? Math.round((doneAll / totalAll) * 100) : 0;
+  ['dash-p1','dash-p2','dash-p3','dash-p4'].forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const section = document.getElementById('phase' + (i+1));
+      if (section) {
+        const t = section.querySelectorAll('.task-item').length;
+        const d = section.querySelectorAll('.task-item.done').length;
+        const p = t > 0 ? Math.round((d/t)*100) : 0;
+        el.style.width = p + '%';
+        const pEl = document.getElementById('dpct-p' + (i+1));
+        if (pEl) pEl.textContent = p + '%';
+      }
+    }
+  });
+  const ob = document.getElementById('dash-overall');
+  const op = document.getElementById('dpct-overall');
+  if (ob) ob.style.width = overall + '%';
+  if (op) op.textContent = overall + '%';
+}
+
+function restoreTasks() {
+  const phases = ['phase1','phase2','phase3','phase4'];
+  phases.forEach(pid => {
+    const section = document.getElementById(pid);
+    if (!section) return;
+    const tasks = section.querySelectorAll('.task-item');
+    tasks.forEach((t, i) => {
+      const key = pid + '_' + i;
+      if (state.tasks[key]) t.classList.add('done');
+    });
+  });
+  updateProgress();
+}
+
+function resetSOP() {
+  document.querySelectorAll('.task-item.done').forEach(t => t.classList.remove('done'));
+  state.tasks = {};
+  saveState();
+  updateProgress();
+  updateDashboard();
+}
+
+// ═══ BOX TRACKER ═══
+function setTotalBoxes() {
+  const n = parseInt(prompt('How many boxes total? (Enter a number)', state.totalBoxes || 100));
+  if (!n || isNaN(n)) return;
+  state.totalBoxes = n;
+  saveState();
+  renderBoxGrid();
+  updateDashboard();
+}
+
+function renderBoxGrid() {
+  const grid = document.getElementById('boxGrid');
+  if (!state.totalBoxes) { grid.innerHTML = '<div style="color:var(--gray);font-style:italic;font-size:14px;grid-column:1/-1;padding:24px 0;">Click "Set Total Box Count" to initialize your box grid.</div>'; return; }
+  let html = '';
+  for (let i = 1; i <= state.totalBoxes; i++) {
+    const box = state.boxes[i] || {};
+    const status = box.status || 'pending';
+    const labels = {pending:'Pending',inventoried:'Inventoried',keep:'Keep',transfer:'Transfer',destroy:'Destroy',complete:'Complete'};
+    html += `<div class="box-tile status-${status}" onclick="openBoxModal(${i})"><div class="b-num">#${i}</div><div class="b-status">${labels[status]||status}</div></div>`;
+  }
+  grid.innerHTML = html;
+  renderBoxTable();
+}
+
+function renderBoxTable() {
+  const tbody = document.getElementById('boxDetailBody');
+  const entries = Object.values(state.boxes).sort((a,b) => (a.num||0) - (b.num||0));
+  if (!entries.length) { tbody.innerHTML = '<tr class="empty-row"><td colspan="6">No boxes logged yet.</td></tr>'; return; }
+  const statusColors = {pending:'var(--gray)',inventoried:'#d97706',keep:'var(--blue)',transfer:'var(--purple)',destroy:'var(--red)',complete:'var(--green)'};
+  tbody.innerHTML = entries.map(b => `
+    <tr>
+      <td><strong>#${b.num}</strong></td>
+      <td>${b.contents||'—'}</td>
+      <td>${b.dates||'—'}</td>
+      <td>${b.category||'—'}</td>
+      <td><span style="color:${statusColors[b.status]||'inherit'};font-weight:700;">${b.status||'pending'}</span></td>
+      <td style="max-width:200px;font-size:12px;">${b.notes||'—'}</td>
+    </tr>`).join('');
+}
+
+function openBoxModal(num) {
+  const modal = document.getElementById('boxModal');
+  modal.classList.add('open');
+  if (num) {
+    document.getElementById('bNum').value = num;
+    const box = state.boxes[num] || {};
+    document.getElementById('bContents').value = box.contents || '';
+    document.getElementById('bDates').value = box.dates || '';
+    document.getElementById('bCategory').value = box.category || '';
+    document.getElementById('bStatus').value = box.status || 'pending';
+    document.getElementById('bNotes').value = box.notes || '';
+  } else {
+    document.getElementById('bNum').value = '';
+    document.getElementById('bContents').value = '';
+    document.getElementById('bDates').value = '';
+    document.getElementById('bCategory').value = '';
+    document.getElementById('bStatus').value = 'pending';
+    document.getElementById('bNotes').value = '';
+  }
+}
+
+function closeBoxModal() { document.getElementById('boxModal').classList.remove('open'); }
+
+function saveBox() {
+  const num = parseInt(document.getElementById('bNum').value);
+  if (!num) { alert('Please enter a box number.'); return; }
+  const prevStatus = state.boxes[num] ? state.boxes[num].status : null;
+  state.boxes[num] = {
+    num,
+    contents: document.getElementById('bContents').value,
+    dates: document.getElementById('bDates').value,
+    category: document.getElementById('bCategory').value,
+    status: document.getElementById('bStatus').value,
+    notes: document.getElementById('bNotes').value
+  };
+  if (!state.totalBoxes || num > state.totalBoxes) state.totalBoxes = Math.max(state.totalBoxes||0, num);
+  addActivity('dot-amber', `Box #${num} updated to "${state.boxes[num].status}"`, 'Boxes');
+  saveState();
+  closeBoxModal();
+  renderBoxGrid();
+  updateDashboard();
+}
+
+// ═══ RECORDS LOG ═══
+function openLogModal() { document.getElementById('logModal').classList.add('open'); }
+function closeLogModal() { document.getElementById('logModal').classList.remove('open'); ['lBox','lType','lDates','lRM3','lNotes'].forEach(id => document.getElementById(id).value = ''); document.getElementById('lDecision').value = ''; }
+
+function saveLogEntry() {
+  const entry = {
+    box: document.getElementById('lBox').value,
+    type: document.getElementById('lType').value,
+    dates: document.getElementById('lDates').value,
+    decision: document.getElementById('lDecision').value,
+    rm3: document.getElementById('lRM3').value,
+    notes: document.getElementById('lNotes').value,
+    id: Date.now()
+  };
+  if (!entry.type) { alert('Please enter a record type.'); return; }
+  state.records.push(entry);
+  addActivity('dot-navy', `Record logged: "${entry.type}" — ${entry.decision||'pending'}`, 'Log');
+  saveState();
+  closeLogModal();
+  renderRecordsTable('all');
+  updateDashboard();
+}
+
+function renderRecordsTable(filter) {
+  const tbody = document.getElementById('recordsBody');
+  let records = state.records || [];
+  if (filter !== 'all') records = records.filter(r => r.decision === filter);
+  if (!records.length) { tbody.innerHTML = `<tr class="empty-row"><td colspan="6">${filter === 'all' ? 'No records logged yet.' : 'No records matching this filter.'}</td></tr>`; return; }
+  const decColors = {keep:'var(--green)',transfer:'var(--blue)',destroy:'var(--red)',digital:'var(--purple)',pending:'var(--amber)'};
+  tbody.innerHTML = records.map(r => `
+    <tr>
+      <td>${r.box||'—'}</td>
+      <td><strong>${r.type||'—'}</strong></td>
+      <td>${r.dates||'—'}</td>
+      <td><span style="color:${decColors[r.decision]||'inherit'};font-weight:700;">${r.decision||'—'}</span></td>
+      <td>${r.rm3||'—'}</td>
+      <td style="max-width:200px;font-size:12px;">${r.notes||'—'}</td>
+    </tr>`).join('');
+}
+
+function filterLog(filter, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderRecordsTable(filter);
+}
+
+// ═══ ACTIVITY ═══
+function addActivity(dotClass, text, source) {
+  const now = new Date();
+  const time = now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+  state.activity.unshift({dotClass, text, source, time});
+  if (state.activity.length > 20) state.activity = state.activity.slice(0,20);
+  renderActivity();
+}
+
+function renderActivity() {
+  const feed = document.getElementById('activityFeed');
+  if (!state.activity || !state.activity.length) { feed.innerHTML = '<div class="no-activity">No activity recorded yet.</div>'; return; }
+  feed.innerHTML = state.activity.slice(0,8).map(a => `
+    <div class="activity-item">
+      <div class="a-dot ${a.dotClass}"></div>
+      <div class="a-text">${a.text} <span style="font-size:11px;color:#aaa;">[${a.source}]</span></div>
+      <div class="a-time">${a.time}</div>
+    </div>`).join('');
+}
+
+// ═══ DASHBOARD STATS ═══
+function updateDashboard() {
+  const boxes = Object.values(state.boxes);
+  document.getElementById('stat-total-boxes').textContent = state.totalBoxes || 0;
+  document.getElementById('stat-complete').textContent = boxes.filter(b => b.status === 'complete').length;
+  document.getElementById('stat-inprogress').textContent = boxes.filter(b => b.status === 'inventoried').length;
+  document.getElementById('stat-destroy').textContent = boxes.filter(b => b.status === 'destroy').length;
+  document.getElementById('stat-transfer').textContent = boxes.filter(b => b.status === 'transfer').length;
+  document.getElementById('stat-logged').textContent = (state.records || []).length;
+
+  // Box progress bar
+  const bp = state.totalBoxes > 0 ? Math.round((boxes.filter(b => b.status === 'complete').length / state.totalBoxes) * 100) : 0;
+  const bbar = document.getElementById('dash-boxes');
+  const bpct = document.getElementById('dpct-boxes');
+  if (bbar) bbar.style.width = bp + '%';
+  if (bpct) bpct.textContent = bp + '%';
+
+  renderActivity();
+}
+
+// ═══ NOTES ═══
+let noteSaveTimers = {};
+function saveNotes(id) {
+  clearTimeout(noteSaveTimers[id]);
+  noteSaveTimers[id] = setTimeout(() => {
+    try { localStorage.setItem('note_' + id, document.getElementById(id).value); } catch(e) {}
+    const s = document.getElementById('saved-' + id);
+    if (s) { s.style.display = 'block'; setTimeout(() => s.style.display = 'none', 2000); }
+  }, 800);
+}
+
+// ═══ INIT ═══
+loadState();
+
+// Pre-populate Day 1 data if first load
+if (!state.totalBoxes) {
+  state.totalBoxes = 57;
+  saveState();
+}
+if (!state.activity || state.activity.length === 0) {
+  state.activity = [
+    { dotClass: 'dot-green', text: 'Google Workspace set up — 2,346 files syncing across both office computers', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-green', text: 'All 57 boxes photographed, documented and inventoried', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-amber', text: '🚨 Business Meeting Minutes 1915-1995 found — flagged for LVA State Archives evaluation', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-red', text: '🚨 Loose W/S payment stubs in unlabeled tub — possible uncredited resident payments', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-green', text: 'Lead & Copper Files 1996-2021 located — flagged for permanent EPA retention', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-green', text: 'Meeting Tapes box located — queued for Zoom digitization before lawful destruction', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-amber', text: 'Old Computer & Hard Drives found — check drives for digital records before disposal', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-navy', text: 'Complete 57-box inventory uploaded to Google Sheets with retention decisions', source: 'Day 1', time: 'Jul 10' },
+  ];
+  saveState();
+}
+
+restoreTasks();
+renderBoxGrid();
+renderRecordsTable('all');
+renderActivity();
+updateDashboard();
+updateProgress();
+setDate();
+document.getElementById('phase1').classList.add('open');
+</script>
+</body>
+</html>
