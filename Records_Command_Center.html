@@ -306,8 +306,8 @@ body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color
 
   <div class="dash-welcome">
     <div>
-      <h2>Good day, Drakes Branch 👋</h2>
-      <p>This is your live records modernization command center. All progress updates automatically as tasks are completed.</p>
+      <h2>Day 1 Complete — Great Progress! 🏛️</h2>
+      <p>57 boxes inventoried. 2,346 files syncing to Google Drive. Records Modernization is underway.</p>
     </div>
     <div class="dash-date" id="dashDate"></div>
   </div>
@@ -1146,6 +1146,26 @@ function saveNotes(id) {
 
 // ═══ INIT ═══
 loadState();
+
+// Pre-populate Day 1 data if first load
+if (!state.totalBoxes) {
+  state.totalBoxes = 57;
+  saveState();
+}
+if (!state.activity || state.activity.length === 0) {
+  state.activity = [
+    { dotClass: 'dot-green', text: 'Google Workspace set up — 2,346 files syncing across both office computers', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-green', text: 'All 57 boxes photographed, documented and inventoried', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-amber', text: '🚨 Business Meeting Minutes 1915-1995 found — flagged for LVA State Archives evaluation', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-red', text: '🚨 Loose W/S payment stubs in unlabeled tub — possible uncredited resident payments', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-green', text: 'Lead & Copper Files 1996-2021 located — flagged for permanent EPA retention', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-green', text: 'Meeting Tapes box located — queued for Zoom digitization before lawful destruction', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-amber', text: 'Old Computer & Hard Drives found — check drives for digital records before disposal', source: 'Day 1', time: 'Jul 10' },
+    { dotClass: 'dot-navy', text: 'Complete 57-box inventory uploaded to Google Sheets with retention decisions', source: 'Day 1', time: 'Jul 10' },
+  ];
+  saveState();
+}
+
 restoreTasks();
 renderBoxGrid();
 renderRecordsTable('all');
