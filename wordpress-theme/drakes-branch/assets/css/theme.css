@@ -1,0 +1,2025 @@
+/* ==========================================================================
+   Town of Drakes Branch — design system
+   Contrast ratios verified against WCAG 2.1 AA. Values noted inline.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+	/* Color. Ratios are against --paper unless noted.
+	   The primary is the town's own logo navy, deepened and slightly
+	   desaturated so it holds a full-width header without glare. */
+	--ink: #131a26; /* 14.6:1 — body text, headings */
+	--branch: #16265e; /* 13.1:1 — primary brand; white on it is 14.3:1 */
+	--branch-deep: #101c46; /* hover/active for branch surfaces */
+	--pine: #2f5d3f; /* 7.0:1 — confirmations, meeting rail */
+	--clay: #a9553a; /* 4.8:1 — accent, links, focus ring */
+	--clay-deep: #8a4230; /* hover for clay text */
+	--stone: #6b6660; /* 5.2:1 — meta text, captions */
+	--rule: #ddd8d1; /* decorative hairlines — exempt from 1.4.11 */
+	/* Borders that identify a control (form fields, pagination) must clear
+	   3:1 against the page. This is 3.7:1 on --paper and 4.3:1 on white. */
+	--rule-strong: #857e75;
+	--paper: #f7f5f2; /* page background */
+	--card: #ffffff;
+	--sand: #efeae3; /* quiet fill for rail cards, table stripes */
+
+	/* Status. Both pass 4.5:1 on --paper and on white. */
+	--error: #a4262c;
+	--error-bg: #fdf2f2;
+	--success: #2f5d3f;
+	--success-bg: #f0f5f1;
+
+	/* Focus ring: --clay clears 3:1 against paper, card and sand.
+	   Dark surfaces override --focus to a light tone (see .is-dark). */
+	--focus: var(--clay);
+
+	/* Type */
+	--font-display: "Zilla Slab", "Rockwell", "Roboto Slab", Georgia, serif;
+	--font-body: "Source Sans 3", "Source Sans Pro", -apple-system,
+		BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+	/* Fluid type scale. Mobile floor never drops below 16px for body. */
+	--text-xs: 0.8125rem; /* 13px — legal, captions only */
+	--text-sm: 0.9375rem; /* 15px — meta */
+	--text-base: 1.0625rem; /* 17px — body */
+	--text-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.3125rem);
+	--text-xl: clamp(1.3125rem, 1.2rem + 0.6vw, 1.5rem);
+	--text-2xl: clamp(1.5rem, 1.34rem + 0.8vw, 1.875rem);
+	--text-3xl: clamp(1.875rem, 1.6rem + 1.4vw, 2.5rem);
+	--text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3.5rem);
+
+	/* Spacing — 4px base */
+	--sp-1: 0.25rem;
+	--sp-2: 0.5rem;
+	--sp-3: 0.75rem;
+	--sp-4: 1rem;
+	--sp-5: 1.5rem;
+	--sp-6: 2rem;
+	--sp-7: 3rem;
+	--sp-8: 4rem;
+	--sp-9: 6rem;
+
+	--radius: 4px;
+	--radius-lg: 6px;
+
+	/* Restrained elevation. Two levels, no more. */
+	--shadow: 0 1px 2px rgba(16, 33, 46, 0.06), 0 2px 8px rgba(16, 33, 46, 0.05);
+	--shadow-lift: 0 2px 4px rgba(16, 33, 46, 0.08),
+		0 8px 20px rgba(16, 33, 46, 0.09);
+
+	--measure: 68ch; /* readable line length */
+	--container: 76rem;
+	--tap: 44px; /* WCAG 2.5.5 minimum target */
+}
+
+/* Dark surfaces (site header, footer, hero panel) need a light focus ring —
+   --clay only reaches 1.8:1 against --branch. */
+.is-dark {
+	--focus: #f6d8c8; /* 8.4:1 on --branch */
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset and base
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background-color: var(--paper);
+	color: var(--ink);
+	font-family: var(--font-body);
+	font-size: var(--text-base);
+	line-height: 1.65;
+	font-synthesis-weight: none;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+	display: block;
+	max-width: 100%;
+}
+
+img,
+video {
+	height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   3. Typography
+   -------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 var(--sp-4);
+	font-family: var(--font-display);
+	font-weight: 600;
+	line-height: 1.18;
+	text-wrap: balance;
+	color: var(--ink);
+}
+
+h1 {
+	font-size: var(--text-3xl);
+	letter-spacing: -0.018em;
+}
+
+h2 {
+	font-size: var(--text-2xl);
+	letter-spacing: -0.012em;
+}
+
+h3 {
+	font-size: var(--text-xl);
+	letter-spacing: -0.008em;
+}
+
+h4 {
+	font-size: var(--text-lg);
+}
+
+h5,
+h6 {
+	font-size: var(--text-base);
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+table,
+figure,
+pre {
+	margin: 0 0 var(--sp-5);
+}
+
+p,
+li {
+	text-wrap: pretty;
+}
+
+:where(.entry-content, .prose) p,
+:where(.entry-content, .prose) li {
+	max-width: var(--measure);
+}
+
+ul,
+ol {
+	padding-left: var(--sp-5);
+}
+
+li + li {
+	margin-top: var(--sp-2);
+}
+
+strong,
+b {
+	font-weight: 600;
+}
+
+small {
+	font-size: var(--text-sm);
+}
+
+blockquote {
+	margin-left: 0;
+	padding: var(--sp-2) 0 var(--sp-2) var(--sp-5);
+	border-left: 3px solid var(--clay);
+	font-size: var(--text-lg);
+}
+
+blockquote > :last-child {
+	margin-bottom: 0;
+}
+
+hr {
+	height: 1px;
+	margin: var(--sp-7) 0;
+	border: 0;
+	background-color: var(--rule);
+}
+
+code,
+pre,
+.tabular {
+	font-variant-numeric: tabular-nums;
+}
+
+/* Eyebrow — small caps label above a heading. Used for section kickers
+   and the meta line on dated items. */
+.eyebrow {
+	display: block;
+	margin-bottom: var(--sp-2);
+	color: var(--stone);
+	font-size: var(--text-sm);
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	line-height: 1.3;
+}
+
+.lead {
+	max-width: 46ch;
+	font-size: var(--text-lg);
+	line-height: 1.55;
+	color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   4. Links and focus
+   -------------------------------------------------------------------------- */
+
+/* Links are branch, not clay. Clay is reserved for the few places that carry
+   meaning: the dated rule, the current page marker and the focus ring. Used
+   for every link it stops reading as an accent. */
+a {
+	color: var(--branch);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+}
+
+a:hover {
+	color: var(--branch-deep);
+	text-decoration-thickness: 2px;
+}
+
+/* Focus is visible on every interactive element and never removed.
+   :focus-visible keeps it off mouse clicks but on for keyboard users. */
+:focus-visible {
+	outline: 3px solid var(--focus);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* Older engines that lack :focus-visible still get a ring. */
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
+.skip-link {
+	position: absolute;
+	top: 0;
+	left: var(--sp-4);
+	z-index: 999;
+	padding: var(--sp-3) var(--sp-5);
+	background-color: var(--card);
+	color: var(--branch);
+	font-weight: 600;
+	text-decoration: none;
+	border: 2px solid var(--branch);
+	border-top: 0;
+	border-radius: 0 0 var(--radius) var(--radius);
+	transform: translateY(-110%);
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   5. Layout
+   -------------------------------------------------------------------------- */
+
+.container {
+	width: 100%;
+	max-width: var(--container);
+	margin-inline: auto;
+	padding-inline: var(--sp-5);
+}
+
+@media (min-width: 48rem) {
+	.container {
+		padding-inline: var(--sp-6);
+	}
+}
+
+.section {
+	padding-block: var(--sp-7);
+}
+
+@media (min-width: 48rem) {
+	.section {
+		padding-block: var(--sp-8);
+	}
+}
+
+.section--tight {
+	padding-block: var(--sp-6);
+}
+
+.section--sand {
+	background-color: var(--sand);
+}
+
+.section__head {
+	margin-bottom: var(--sp-6);
+}
+
+.section__head > :last-child {
+	margin-bottom: 0;
+}
+
+.stack > * {
+	margin-bottom: 0;
+}
+
+.stack > * + * {
+	margin-top: var(--sp-5);
+}
+
+/* The rail: main column plus a column of dated civic information.
+   Mobile puts the rail first — "when is the meeting" is the top phone task. */
+.with-rail {
+	display: grid;
+	gap: var(--sp-6);
+	grid-template-columns: 1fr;
+}
+
+.with-rail__rail {
+	order: -1;
+}
+
+@media (min-width: 64rem) {
+	.with-rail {
+		grid-template-columns: minmax(0, 1fr) 20.5rem;
+		gap: var(--sp-7);
+		align-items: start;
+	}
+
+	.with-rail__rail {
+		order: 0;
+		position: sticky;
+		top: var(--sp-5);
+	}
+}
+
+/* A list used purely for grouping cards keeps its semantics but drops the
+   default markers and indent. */
+.card-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.card-list > li + li {
+	margin-top: 0;
+}
+
+.card-list > li {
+	display: flex;
+}
+
+/* Any card-like child fills its cell, so cards in a row match height and
+   width regardless of how much text each one holds. */
+.card-list > li > * {
+	flex: 1;
+	min-width: 0;
+}
+
+/* Generic auto-fitting grid for card decks. */
+.grid {
+	display: grid;
+	gap: var(--sp-4);
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 34rem) {
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--sp-5);
+	}
+}
+
+@media (min-width: 64rem) {
+	.grid--3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* --------------------------------------------------------------------------
+   6. Buttons
+   -------------------------------------------------------------------------- */
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--sp-2);
+	min-height: var(--tap);
+	padding: var(--sp-3) var(--sp-5);
+	border: 2px solid transparent;
+	border-radius: var(--radius);
+	background-color: var(--branch);
+	color: #fff; /* 9.3:1 */
+	font-family: var(--font-body);
+	font-size: var(--text-base);
+	font-weight: 600;
+	line-height: 1.25;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+	background-color: var(--branch-deep);
+	color: #fff;
+	text-decoration: none;
+}
+
+.btn[disabled],
+.btn[aria-disabled="true"] {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.btn--secondary {
+	background-color: transparent;
+	border-color: var(--branch);
+	color: var(--branch); /* 8.5:1 */
+}
+
+.btn--secondary:hover {
+	background-color: var(--branch);
+	color: #fff;
+}
+
+/* For placing on dark surfaces. */
+.btn--inverse {
+	background-color: var(--paper);
+	color: var(--branch);
+}
+
+.btn--inverse:hover {
+	background-color: #fff;
+	color: var(--branch-deep);
+}
+
+.btn--wide {
+	width: 100%;
+}
+
+/* Text link that behaves like a call to action. The arrow is decorative and
+   hidden from assistive tech. */
+.arrow-link {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-2);
+	min-height: var(--tap);
+	font-weight: 600;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+}
+
+.arrow-link::after {
+	content: "\2192";
+	transition: transform 0.15s ease;
+}
+
+.arrow-link:hover::after {
+	transform: translateX(3px);
+}
+
+.arrow-link:hover {
+	border-bottom-color: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   7. Cards
+   -------------------------------------------------------------------------- */
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: var(--sp-5);
+	background-color: var(--card);
+	border: 1px solid var(--rule);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow);
+	transition: box-shadow 0.15s ease, border-color 0.15s ease,
+		transform 0.15s ease;
+}
+
+.card__title {
+	margin-bottom: var(--sp-2);
+	font-size: var(--text-lg);
+}
+
+.card__title a {
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.card__text {
+	margin-bottom: 0;
+	color: var(--stone);
+	font-size: var(--text-sm);
+	line-height: 1.55;
+}
+
+/* Whole-card click target. The anchor inside .card__title stretches to cover
+   the card, so the accessible name stays the heading text. */
+.card--linked .card__title a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+}
+
+.card--linked:hover {
+	border-color: var(--rule-strong);
+	box-shadow: var(--shadow-lift);
+	transform: translateY(-2px);
+}
+
+.card--linked:focus-within {
+	outline: 3px solid var(--focus);
+	outline-offset: 2px;
+}
+
+.card--linked:focus-within .card__title a:focus-visible {
+	outline: none;
+}
+
+/* Icon sits above the title. Decorative — mark aria-hidden in markup. */
+.card__icon {
+	width: 28px;
+	height: 28px;
+	margin-bottom: var(--sp-4);
+	color: var(--branch);
+}
+
+/* --------------------------------------------------------------------------
+   8. Dated rule — the signature element
+   A hairline broken by a slab-set date. Municipal information is dated
+   information, so the date reads as the primary key, not as decoration.
+   -------------------------------------------------------------------------- */
+
+.dated {
+	display: grid;
+	gap: var(--sp-1) var(--sp-5);
+	padding-block: var(--sp-5);
+	border-top: 1px solid var(--rule);
+	grid-template-columns: 1fr;
+}
+
+.dated:last-child {
+	border-bottom: 1px solid var(--rule);
+}
+
+.dated__date {
+	display: flex;
+	align-items: baseline;
+	gap: var(--sp-2);
+	font-family: var(--font-display);
+	font-size: var(--text-sm);
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.02em;
+	color: var(--clay);
+	text-transform: uppercase;
+}
+
+/* The tick that breaks the rule. */
+.dated__date::before {
+	content: "";
+	flex: none;
+	width: 18px;
+	height: 2px;
+	background-color: var(--clay);
+	transform: translateY(-0.28em);
+}
+
+.dated__title {
+	margin-bottom: var(--sp-2);
+	font-size: var(--text-lg);
+}
+
+.dated__title a {
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.dated__title a:hover {
+	color: var(--branch);
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.dated__text {
+	margin-bottom: 0;
+	color: var(--stone);
+	font-size: var(--text-sm);
+}
+
+@media (min-width: 48rem) {
+	.dated {
+		grid-template-columns: 10.5rem minmax(0, 1fr);
+	}
+
+	.dated__date {
+		padding-top: 0.35em;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   9. Rail cards — dated civic facts
+   -------------------------------------------------------------------------- */
+
+.rail-card {
+	padding: var(--sp-5);
+	background-color: var(--card);
+	border: 1px solid var(--rule);
+	border-top: 3px solid var(--branch);
+	border-radius: var(--radius-lg);
+}
+
+.rail-card + .rail-card {
+	margin-top: var(--sp-4);
+}
+
+.rail-card--meeting {
+	border-top-color: var(--pine);
+}
+
+/* After-hours emergency numbers. Clay rather than the error red: this is
+   important, but it is not a warning that something has gone wrong. */
+.rail-card--urgent {
+	background-color: var(--sand);
+	border-top-color: var(--clay);
+}
+
+.rail-card__title {
+	margin-bottom: var(--sp-4);
+	font-family: var(--font-body);
+	font-size: var(--text-sm);
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--stone);
+}
+
+.rail-card__headline {
+	margin-bottom: var(--sp-1);
+	font-size: var(--text-xl);
+	font-variant-numeric: tabular-nums;
+}
+
+.rail-card__meta {
+	margin-bottom: var(--sp-4);
+	color: var(--stone);
+	font-size: var(--text-sm);
+}
+
+.rail-card__meta:last-child {
+	margin-bottom: 0;
+}
+
+/* Definition list for office hours and contact rows. */
+.fact-list {
+	margin: 0;
+	font-size: var(--text-sm);
+}
+
+.fact-list__row {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--sp-4);
+	padding-block: var(--sp-2);
+	border-top: 1px solid var(--rule);
+}
+
+.fact-list__row:first-child {
+	border-top: 0;
+	padding-top: 0;
+}
+
+.fact-list__key {
+	color: var(--stone);
+}
+
+.fact-list__val {
+	margin: 0;
+	font-weight: 600;
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+}
+
+.rail-card__links {
+	margin: var(--sp-4) 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.rail-card__links li + li {
+	margin-top: 0;
+	border-top: 1px solid var(--rule);
+}
+
+.rail-card__links a {
+	display: flex;
+	align-items: center;
+	min-height: var(--tap);
+	font-size: var(--text-sm);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.rail-card__links a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+/* --------------------------------------------------------------------------
+   10. Site header and navigation
+   -------------------------------------------------------------------------- */
+
+.site-header {
+	background-color: var(--branch);
+	color: #fff;
+}
+
+.site-header__bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--sp-4);
+	min-height: 4.5rem;
+}
+
+.site-brand {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	color: #fff;
+	text-decoration: none;
+	padding-block: var(--sp-2);
+}
+
+/* The seal image is a square whose disc touches all four edges, so a 50%
+   radius trims the corners exactly. The ring keeps it from dissolving into
+   the dark header. */
+.site-brand__mark {
+	flex: none;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+.site-brand__name {
+	display: block;
+	font-family: var(--font-display);
+	font-size: 1.0625rem;
+	font-weight: 600;
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+}
+
+.site-brand__place {
+	display: block;
+	font-size: var(--text-xs);
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.78); /* 6.6:1 on --branch */
+}
+
+/* On the narrowest phones the county line wraps into the menu button, so it
+   is dropped. The town name alone is enough to identify the site. */
+@media (max-width: 26rem) {
+	.site-brand__place {
+		display: none;
+	}
+
+	.site-brand__name {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 48rem) {
+	.site-brand__name {
+		font-size: 1.25rem;
+	}
+
+	.site-brand__mark {
+		width: 46px;
+		height: 46px;
+	}
+}
+
+/* Toggle is hidden on desktop where the menu is always visible. */
+.nav-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-2);
+	min-height: var(--tap);
+	min-width: var(--tap);
+	padding: var(--sp-2) var(--sp-3);
+	background-color: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	border-radius: var(--radius);
+	color: #fff;
+	font-size: var(--text-sm);
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.nav-toggle:hover {
+	border-color: #fff;
+}
+
+.nav-toggle__bars {
+	position: relative;
+	width: 18px;
+	height: 2px;
+	background-color: currentColor;
+}
+
+.nav-toggle__bars::before,
+.nav-toggle__bars::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 18px;
+	height: 2px;
+	background-color: currentColor;
+}
+
+.nav-toggle__bars::before {
+	top: -6px;
+}
+
+.nav-toggle__bars::after {
+	top: 6px;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars {
+	background-color: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars::before {
+	top: 0;
+	transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars::after {
+	top: 0;
+	transform: rotate(-45deg);
+}
+
+.primary-nav {
+	display: none;
+	padding-bottom: var(--sp-4);
+}
+
+.primary-nav.is-open {
+	display: block;
+}
+
+.primary-nav__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.primary-nav__list li + li {
+	margin-top: 0;
+}
+
+.primary-nav a {
+	display: flex;
+	align-items: center;
+	min-height: var(--tap);
+	padding: var(--sp-2) 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+	color: #fff;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.primary-nav a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+/* Current page is marked with a rule, not colour alone (WCAG 1.4.1). */
+.primary-nav .current-menu-item > a,
+.primary-nav .current_page_item > a,
+.primary-nav .current-menu-ancestor > a {
+	border-left: 3px solid var(--focus);
+	padding-left: var(--sp-3);
+}
+
+/* Submenus are disclosed by a button, never by hover alone. */
+.primary-nav .sub-menu {
+	margin: 0 0 var(--sp-2) var(--sp-4);
+	padding: 0;
+	list-style: none;
+}
+
+.primary-nav .sub-menu a {
+	font-weight: 400;
+	font-size: var(--text-sm);
+}
+
+.submenu-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: var(--tap);
+	min-width: var(--tap);
+	padding: 0;
+	background: transparent;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+}
+
+.submenu-toggle svg {
+	width: 14px;
+	height: 14px;
+	transition: transform 0.15s ease;
+}
+
+.submenu-toggle[aria-expanded="true"] svg {
+	transform: rotate(180deg);
+}
+
+.menu-item-has-children > .nav-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--sp-2);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.menu-item-has-children > .nav-row > a {
+	flex: 1;
+	border-bottom: 0;
+}
+
+@media (min-width: 64rem) {
+	.nav-toggle {
+		display: none;
+	}
+
+	.site-header__bar {
+		gap: var(--sp-6);
+	}
+
+	.primary-nav {
+		display: block;
+		padding-bottom: 0;
+	}
+
+	.primary-nav__list {
+		display: flex;
+		align-items: center;
+		gap: var(--sp-1);
+	}
+
+	.primary-nav a {
+		padding: var(--sp-2) var(--sp-3);
+		border-bottom: 0;
+		font-size: var(--text-sm);
+	}
+
+	.primary-nav .current-menu-item > a,
+	.primary-nav .current_page_item > a,
+	.primary-nav .current-menu-ancestor > a {
+		border-left: 0;
+		padding-left: var(--sp-3);
+		box-shadow: inset 0 -3px 0 var(--focus);
+	}
+
+	.menu-item-has-children {
+		position: relative;
+	}
+
+	/* On desktop the row hugs its contents so the chevron sits beside its
+	   label instead of being pushed to the far edge. */
+	.menu-item-has-children > .nav-row {
+		border-bottom: 0;
+		justify-content: flex-start;
+		gap: 0;
+	}
+
+	.menu-item-has-children > .nav-row > a {
+		flex: 0 0 auto;
+		padding-right: var(--sp-1);
+	}
+
+	.menu-item-has-children > .submenu-toggle,
+	.nav-row > .submenu-toggle {
+		min-width: 2rem;
+	}
+
+	.primary-nav .sub-menu {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 50;
+		min-width: 14rem;
+		margin: 0;
+		padding: var(--sp-2);
+		background-color: var(--branch-deep);
+		border-radius: 0 0 var(--radius) var(--radius);
+		box-shadow: var(--shadow-lift);
+	}
+
+	.primary-nav .sub-menu[hidden] {
+		display: none;
+	}
+}
+
+/* Utility bar above the header for the payment call to action. */
+.utility-bar {
+	background-color: var(--branch-deep);
+	color: #fff;
+	font-size: var(--text-sm);
+}
+
+.utility-bar__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end;
+	gap: var(--sp-2) var(--sp-5);
+	min-height: 2.75rem;
+}
+
+.utility-bar a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: #fff;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.utility-bar a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+/* --------------------------------------------------------------------------
+   11. Hero — type-led, with a bounded image rather than a scrimmed background
+   -------------------------------------------------------------------------- */
+
+.hero {
+	padding-block: var(--sp-7) var(--sp-6);
+	border-bottom: 1px solid var(--rule);
+}
+
+.hero__grid {
+	display: grid;
+	gap: var(--sp-6);
+	grid-template-columns: 1fr;
+	align-items: center;
+}
+
+.hero__eyebrow {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	margin-bottom: var(--sp-4);
+	color: var(--stone);
+	font-size: var(--text-sm);
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.hero__eyebrow::before {
+	content: "";
+	width: 32px;
+	height: 2px;
+	background-color: var(--clay);
+}
+
+.hero__title {
+	margin-bottom: var(--sp-4);
+	font-size: var(--text-4xl);
+	line-height: 1.08;
+	letter-spacing: -0.025em;
+}
+
+.hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-3);
+	margin-top: var(--sp-5);
+}
+
+/* Full width on phones, so the two calls to action read as a deliberate pair
+   rather than two differently sized buttons. */
+@media (max-width: 34rem) {
+	.hero__actions .btn {
+		width: 100%;
+	}
+}
+
+.hero__figure {
+	margin: 0;
+}
+
+.hero__figure img {
+	width: 100%;
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-lift);
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+}
+
+.hero__caption {
+	margin-top: var(--sp-3);
+	color: var(--stone);
+	font-size: var(--text-xs);
+}
+
+@media (min-width: 64rem) {
+	.hero {
+		padding-block: var(--sp-8) var(--sp-7);
+	}
+
+	.hero__grid {
+		grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+		gap: var(--sp-8);
+	}
+}
+
+/* Compact page banner for interior pages. */
+.page-banner {
+	padding-block: var(--sp-6);
+	background-color: var(--branch);
+	color: #fff;
+}
+
+.page-banner__title {
+	margin-bottom: 0;
+	color: #fff;
+	font-size: var(--text-3xl);
+}
+
+.page-banner__intro {
+	max-width: 52ch;
+	margin: var(--sp-3) 0 0;
+	color: rgba(255, 255, 255, 0.88); /* 7.5:1 on --branch */
+	font-size: var(--text-lg);
+}
+
+.breadcrumbs {
+	margin-bottom: var(--sp-3);
+	font-size: var(--text-sm);
+}
+
+.breadcrumbs ol {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-2);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.breadcrumbs li + li {
+	margin-top: 0;
+}
+
+.breadcrumbs li + li::before {
+	content: "/";
+	margin-right: var(--sp-2);
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs a {
+	color: rgba(255, 255, 255, 0.88);
+}
+
+.breadcrumbs [aria-current="page"] {
+	color: #fff;
+	font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   12. Forms
+   -------------------------------------------------------------------------- */
+
+.form {
+	max-width: 42rem;
+}
+
+.field {
+	margin-bottom: var(--sp-5);
+}
+
+.field__label {
+	display: block;
+	margin-bottom: var(--sp-2);
+	font-weight: 600;
+}
+
+/* Required marker pairs a symbol with text for screen readers, so the
+   requirement is never conveyed by colour alone. */
+.field__required {
+	color: var(--error);
+	font-weight: 700;
+}
+
+/* Hint text is referenced by aria-describedby on the input. */
+.field__hint {
+	display: block;
+	margin-bottom: var(--sp-2);
+	color: var(--stone);
+	font-size: var(--text-sm);
+	line-height: 1.5;
+}
+
+.field__control {
+	display: block;
+	width: 100%;
+	min-height: var(--tap);
+	padding: var(--sp-3);
+	background-color: var(--card);
+	border: 1px solid var(--rule-strong); /* 3:1 non-text contrast */
+	border-radius: var(--radius);
+	color: var(--ink);
+	font-size: var(--text-base);
+}
+
+.field__control:hover {
+	border-color: var(--stone);
+}
+
+textarea.field__control {
+	min-height: 9rem;
+	resize: vertical;
+	line-height: 1.55;
+}
+
+select.field__control {
+	appearance: none;
+	padding-right: var(--sp-7);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236b6660'%3E%3Cpath d='M8 11L3 5.5h10z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right var(--sp-4) center;
+	background-size: 14px;
+}
+
+.field__control[aria-invalid="true"] {
+	border-color: var(--error);
+	border-width: 2px;
+	background-color: var(--error-bg);
+}
+
+/* Error text is announced via aria-describedby and role=alert. */
+.field__error {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--sp-2);
+	margin-top: var(--sp-2);
+	color: var(--error);
+	font-size: var(--text-sm);
+	font-weight: 600;
+}
+
+.field__error:empty {
+	display: none;
+}
+
+.field__error::before {
+	content: "\26A0";
+	flex: none;
+	font-size: 1em;
+}
+
+/* Radio and checkbox groups use a fieldset so the legend labels the set. */
+.fieldset {
+	margin: 0 0 var(--sp-5);
+	padding: 0;
+	border: 0;
+}
+
+.fieldset__legend {
+	padding: 0;
+	margin-bottom: var(--sp-3);
+	font-weight: 600;
+}
+
+.choice {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--sp-3);
+	min-height: var(--tap);
+	padding: var(--sp-2) 0;
+	cursor: pointer;
+}
+
+.choice input {
+	flex: none;
+	width: 22px;
+	height: 22px;
+	margin: 0;
+	accent-color: var(--branch);
+}
+
+.choice__label {
+	line-height: 1.4;
+	padding-top: 1px;
+}
+
+/* File inputs get a visible border so the control edge meets 3:1. */
+.field__control[type="file"] {
+	padding: var(--sp-2);
+	line-height: 2;
+}
+
+/* Honeypot — hidden from sight and from assistive tech, but still submitted.
+   Uses position rather than display:none so bots that skip hidden fields
+   still fill it in. */
+.honeypot {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.form__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--sp-4);
+	margin-top: var(--sp-6);
+}
+
+.form__note {
+	margin: 0;
+	color: var(--stone);
+	font-size: var(--text-sm);
+}
+
+.search-form {
+	max-width: 34rem;
+}
+
+.search-form__row {
+	display: flex;
+	gap: var(--sp-2);
+}
+
+.search-form__row .field__control {
+	flex: 1;
+}
+
+/* Submission feedback. role=status / role=alert in markup. */
+.form-message {
+	margin-bottom: var(--sp-5);
+	padding: var(--sp-4) var(--sp-5);
+	border: 1px solid;
+	border-left-width: 4px;
+	border-radius: var(--radius);
+	font-weight: 600;
+}
+
+.form-message:empty {
+	display: none;
+}
+
+.form-message--success {
+	background-color: var(--success-bg);
+	border-color: var(--success);
+	color: var(--success);
+}
+
+.form-message--error {
+	background-color: var(--error-bg);
+	border-color: var(--error);
+	color: var(--error);
+}
+
+.form-message p {
+	margin: 0;
+}
+
+.form-message p + p {
+	margin-top: var(--sp-2);
+}
+
+/* Error summary at the top of a failed form, focused on submit. */
+.error-summary ul {
+	margin: var(--sp-2) 0 0;
+	padding-left: var(--sp-5);
+	font-weight: 400;
+}
+
+.error-summary a {
+	color: var(--error);
+	font-weight: 600;
+}
+
+/* Submit button while the form is sending. The label is replaced by a spinner;
+   the button also carries an aria-label so the state is announced. */
+.is-busy {
+	position: relative;
+	color: transparent;
+}
+
+.is-busy::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 18px;
+	height: 18px;
+	margin: -9px 0 0 -9px;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	border-top-color: #fff;
+	border-radius: 50%;
+	animation: spin 0.7s linear infinite;
+}
+
+/* Without motion, show a static ring rather than nothing at all. */
+@media (prefers-reduced-motion: reduce) {
+	.is-busy::after {
+		border-top-color: rgba(255, 255, 255, 0.9);
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* --------------------------------------------------------------------------
+   13. Tables
+   -------------------------------------------------------------------------- */
+
+.table-wrap {
+	overflow-x: auto;
+	margin-bottom: var(--sp-5);
+	border: 1px solid var(--rule);
+	border-radius: var(--radius-lg);
+	background-color: var(--card);
+}
+
+.table {
+	width: 100%;
+	margin: 0;
+	border-collapse: collapse;
+	font-size: var(--text-sm);
+	font-variant-numeric: tabular-nums;
+}
+
+.table caption {
+	padding: var(--sp-4) var(--sp-5);
+	border-bottom: 1px solid var(--rule);
+	color: var(--stone);
+	font-size: var(--text-sm);
+	text-align: left;
+}
+
+.table th,
+.table td {
+	padding: var(--sp-3) var(--sp-5);
+	text-align: left;
+	vertical-align: top;
+	border-bottom: 1px solid var(--rule);
+}
+
+.table thead th {
+	background-color: var(--sand);
+	font-family: var(--font-body);
+	font-size: var(--text-xs);
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--ink);
+	white-space: nowrap;
+}
+
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.table a {
+	font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   14. Video archive
+   -------------------------------------------------------------------------- */
+
+.video-embed {
+	position: relative;
+	aspect-ratio: 16 / 9;
+	background-color: var(--ink);
+	border-radius: var(--radius);
+	overflow: hidden;
+}
+
+.video-embed iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.video-card__body {
+	padding-top: var(--sp-4);
+}
+
+/* --------------------------------------------------------------------------
+   15. Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+	background-color: var(--ink);
+	color: rgba(255, 255, 255, 0.86);
+	padding-block: var(--sp-7) var(--sp-5);
+}
+
+.site-footer h2,
+.site-footer h3 {
+	color: #fff;
+	font-size: var(--text-sm);
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	font-family: var(--font-body);
+	margin-bottom: var(--sp-4);
+}
+
+.site-footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.site-footer a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.footer-grid {
+	display: grid;
+	gap: var(--sp-6);
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 40rem) {
+	.footer-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 64rem) {
+	.footer-grid {
+		grid-template-columns: 1.4fr 1fr 1fr 1fr;
+		gap: var(--sp-7);
+	}
+}
+
+.footer-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: var(--text-sm);
+}
+
+.footer-list li + li {
+	margin-top: 0;
+}
+
+.footer-list a {
+	display: flex;
+	align-items: center;
+	min-height: var(--tap);
+}
+
+.footer-address {
+	font-style: normal;
+	font-size: var(--text-sm);
+	line-height: 1.7;
+}
+
+/* Emergency numbers sit above the small print, in a band that separates them
+   from the routine footer links. */
+.footer-emergency {
+	margin: var(--sp-7) 0 0;
+	padding: var(--sp-4) var(--sp-5);
+	background-color: rgba(255, 255, 255, 0.07);
+	border-left: 3px solid var(--clay);
+	border-radius: 0 var(--radius) var(--radius) 0;
+	font-size: var(--text-sm);
+	color: #fff;
+}
+
+.footer-emergency + .footer-bottom {
+	margin-top: var(--sp-5);
+}
+
+.footer-bottom {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: var(--sp-4);
+	margin-top: var(--sp-7);
+	padding-top: var(--sp-5);
+	border-top: 1px solid rgba(255, 255, 255, 0.18);
+	font-size: var(--text-xs);
+	color: rgba(255, 255, 255, 0.78); /* 9.9:1 on --ink */
+}
+
+.footer-bottom p {
+	margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   16. Posts and pagination
+   -------------------------------------------------------------------------- */
+
+.entry-content > :last-child,
+.prose > :last-child {
+	margin-bottom: 0;
+}
+
+.entry-content a,
+.prose a {
+	font-weight: 600;
+}
+
+.entry-meta {
+	margin-bottom: var(--sp-5);
+	color: var(--stone);
+	font-size: var(--text-sm);
+}
+
+.entry-content img {
+	border-radius: var(--radius);
+}
+
+.entry-content figure {
+	margin-inline: 0;
+}
+
+.entry-content figcaption {
+	margin-top: var(--sp-2);
+	color: var(--stone);
+	font-size: var(--text-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Officials
+   -------------------------------------------------------------------------- */
+
+/* A short index, because the officials page is long on a phone. */
+.jump-nav {
+	margin-bottom: var(--sp-8);
+	padding: var(--sp-5);
+	background-color: var(--sand);
+	border-radius: var(--radius-lg);
+}
+
+.jump-nav__title {
+	margin: 0 0 var(--sp-3);
+	font-family: var(--font-body);
+	font-size: var(--text-xs);
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--stone);
+}
+
+.jump-nav__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-2) var(--sp-5);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.jump-nav__list a {
+	display: inline-flex;
+	align-items: center;
+	min-height: var(--tap);
+	font-weight: 600;
+}
+
+.person {
+	display: flex;
+	gap: var(--sp-4);
+	padding: var(--sp-5);
+	background-color: #fff;
+	border: 1px solid var(--rule);
+	border-radius: var(--radius-lg);
+}
+
+.person__photo,
+.person__initials {
+	flex: none;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+/* Initials rather than a stock silhouette: a placeholder face reads as a
+   broken image, while initials read as a deliberate choice. */
+.person__initials {
+	display: grid;
+	place-items: center;
+	background-color: var(--sand);
+	color: var(--branch);
+	font-family: var(--font-display);
+	font-size: 1.25rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+}
+
+.person__body {
+	min-width: 0;
+}
+
+.person__name {
+	margin: 0;
+	font-size: var(--text-lg);
+	line-height: 1.3;
+}
+
+.person__role {
+	margin: var(--sp-1) 0 0;
+	color: var(--branch);
+	font-weight: 600;
+	font-size: var(--text-sm);
+}
+
+.person__meta {
+	margin: var(--sp-1) 0 0;
+	color: var(--stone);
+	font-size: var(--text-sm);
+}
+
+.person__contact {
+	margin: var(--sp-3) 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: var(--text-sm);
+}
+
+.person__contact li + li {
+	margin-top: var(--sp-1);
+}
+
+.person__contact a {
+	display: inline-flex;
+	align-items: center;
+	min-height: var(--tap);
+	overflow-wrap: anywhere;
+}
+
+.person__note {
+	margin-top: var(--sp-3);
+	font-size: var(--text-sm);
+	color: var(--stone);
+}
+
+.person__note > :last-child {
+	margin-bottom: 0;
+}
+
+/* A quiet aside that points somewhere more useful than the page it sits on. */
+.callout {
+	padding: var(--sp-5) var(--sp-6);
+	background-color: var(--sand);
+	border-left: 3px solid var(--branch);
+	border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.callout__title {
+	margin: 0 0 var(--sp-2);
+	font-size: var(--text-lg);
+}
+
+/* Links to documents announce their type in the markup; this adds a visual
+   cue that does not rely on colour. */
+.doc-link {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-2);
+	min-height: var(--tap);
+	font-weight: 600;
+}
+
+.doc-link svg {
+	flex: none;
+	width: 18px;
+	height: 18px;
+}
+
+.pagination {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-2);
+	margin-top: var(--sp-7);
+	padding-top: var(--sp-5);
+	border-top: 1px solid var(--rule);
+}
+
+.pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: var(--tap);
+	min-height: var(--tap);
+	padding: 0 var(--sp-3);
+	border: 1px solid var(--rule-strong);
+	border-radius: var(--radius);
+	color: var(--branch);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.pagination .page-numbers:hover {
+	background-color: var(--sand);
+}
+
+.pagination .page-numbers.current {
+	background-color: var(--branch);
+	border-color: var(--branch);
+	color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   17. Utilities
+   -------------------------------------------------------------------------- */
+
+.screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.screen-reader-text:focus {
+	position: static !important;
+	width: auto;
+	height: auto;
+	margin: 0;
+	clip: auto;
+	white-space: normal;
+}
+
+.text-meta {
+	color: var(--stone);
+	font-size: var(--text-sm);
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+
+.mt-4 {
+	margin-top: var(--sp-4);
+}
+
+.mt-5 {
+	margin-top: var(--sp-5);
+}
+
+/* WordPress core alignment classes. */
+.alignleft {
+	float: left;
+	margin: 0 var(--sp-5) var(--sp-4) 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 var(--sp-4) var(--sp-5);
+}
+
+.aligncenter {
+	display: block;
+	margin-inline: auto;
+}
+
+.alignwide,
+.alignfull {
+	margin-bottom: var(--sp-5);
+}
+
+.wp-caption {
+	max-width: 100%;
+}
+
+.sticky,
+.gallery-caption,
+.bypostauthor {
+	/* Required by the WordPress theme review guidelines. */
+}
+
+/* --------------------------------------------------------------------------
+   18. Motion and print
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Windows High Contrast Mode — keep focus and state visible when the
+   author's colours are discarded. */
+@media (forced-colors: active) {
+	.btn,
+	.card,
+	.field__control,
+	.rail-card {
+		border: 1px solid ButtonText;
+	}
+
+	:focus-visible {
+		outline: 3px solid Highlight;
+	}
+}
+
+@media print {
+	.site-header,
+	.site-footer,
+	.utility-bar,
+	.nav-toggle,
+	.skip-link,
+	.form__actions,
+	.pagination {
+		display: none;
+	}
+
+	body {
+		background: #fff;
+		color: #000;
+		font-size: 12pt;
+	}
+
+	.container {
+		max-width: none;
+		padding: 0;
+	}
+
+	/* Print the destination of links so a paper copy stays useful. */
+	.entry-content a[href^="http"]::after {
+		content: " (" attr(href) ")";
+		font-size: 10pt;
+		word-break: break-all;
+	}
+}

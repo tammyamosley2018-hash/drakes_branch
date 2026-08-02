@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request public records — Town of Drakes Branch</title>
+<meta name="description" content="Request records under the Virginia Freedom of Information Act. The town has five working days to respond.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/form.css">
+<style>.screen-reader-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}</style>
+</head>
+<body>
+
+<a class="skip-link" href="#form">Skip to the form</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a href="https://towndrakesbranch.com">
+      <img class="masthead__seal" src="assets/town-seal.png" width="268" height="268" alt="">
+      <span>
+        <span class="masthead__name">Town of Drakes Branch</span>
+        <span class="masthead__place">Charlotte County, Virginia</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <h1>Request public records</h1>
+  <p class="lead">Request records under the Virginia Freedom of Information Act. The town has five working days to respond.</p>
+
+  <div class="notice" data-result hidden></div>
+
+  <form class="form" id="form" data-town-form data-form-type="foia"
+        data-confirm="Your records request has been received. Virginia law gives the town five working days to respond." novalidate>
+
+    <div class="notice" data-error-summary hidden></div>
+
+    <input type="hidden" name="form_type" value="foia">
+
+        <div class="field" data-maxlength="120">
+          <label class="field__label" for="foia-name">Your name <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <input type="text" id="foia-name" name="name" class="field__control" required aria-required="true" aria-describedby="foia-name-error" autocomplete="name" maxlength="120">
+          <span class="field__error" id="foia-name-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="190">
+          <label class="field__label" for="foia-email">Email address <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <span class="field__hint" id="foia-email-hint">We use this to reply to you.</span>
+          <input type="email" id="foia-email" name="email" class="field__control" required aria-required="true" aria-describedby="foia-email-hint foia-email-error" autocomplete="email" maxlength="190">
+          <span class="field__error" id="foia-email-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="40">
+          <label class="field__label" for="foia-phone">Phone number <span class="optional">(optional)</span></label>
+          <input type="tel" id="foia-phone" name="phone" class="field__control" aria-describedby="foia-phone-error" autocomplete="tel" maxlength="40">
+          <span class="field__error" id="foia-phone-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="400">
+          <label class="field__label" for="foia-mailing_address">Mailing address <span class="optional">(optional)</span></label>
+          <span class="field__hint" id="foia-mailing_address-hint">Needed only if you want the records mailed to you.</span>
+          <textarea id="foia-mailing_address" name="mailing_address" class="field__control" aria-describedby="foia-mailing_address-hint foia-mailing_address-error" maxlength="400" rows="6"></textarea>
+          <span class="field__error" id="foia-mailing_address-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="4000">
+          <label class="field__label" for="foia-records">Which records do you want? <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <span class="field__hint" id="foia-records-hint">Describe the records as specifically as you can, including dates if you know them. A narrower request is usually answered faster and costs less.</span>
+          <textarea id="foia-records" name="records" class="field__control" required aria-required="true" aria-describedby="foia-records-hint foia-records-error" maxlength="4000" rows="6"></textarea>
+          <span class="field__error" id="foia-records-error" data-error role="alert"></span>
+        </div>
+
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">How would you like to receive them? <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></legend>
+          <div class="choice">
+            <input type="radio" id="foia-format-email" name="format" value="email" required aria-describedby="foia-format-error">
+            <label for="foia-format-email">By email</label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="foia-format-paper" name="format" value="paper" required aria-describedby="foia-format-error">
+            <label for="foia-format-paper">Paper copies</label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="foia-format-inspect" name="format" value="inspect" required aria-describedby="foia-format-error">
+            <label for="foia-format-inspect">I will read them at the town office</label>
+          </div>
+          <span class="field__error" id="foia-format-error" data-error role="alert"></span>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">Charges <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></legend>
+          <span class="field__hint" id="foia-cost_limit-hint">The town may charge for staff time and copying. We will contact you before doing any work that costs more than you agree to here.</span>
+          <div class="choice">
+            <input type="radio" id="foia-cost_limit-contact" name="cost_limit" value="contact" required aria-describedby="foia-cost_limit-hint foia-cost_limit-error">
+            <label for="foia-cost_limit-contact">Contact me with an estimate before starting</label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="foia-cost_limit-25" name="cost_limit" value="25" required aria-describedby="foia-cost_limit-hint foia-cost_limit-error">
+            <label for="foia-cost_limit-25">Proceed if the cost is under $25</label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="foia-cost_limit-50" name="cost_limit" value="50" required aria-describedby="foia-cost_limit-hint foia-cost_limit-error">
+            <label for="foia-cost_limit-50">Proceed if the cost is under $50</label>
+          </div>
+          <span class="field__error" id="foia-cost_limit-error" data-error role="alert"></span>
+        </fieldset>
+
+    <div class="hp" aria-hidden="true">
+      <label for="foia-website">Leave this field empty</label>
+      <input type="text" id="foia-website" name="website" class="hp-field" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="form__actions">
+      <button type="submit" class="btn" data-submit>Submit records request</button>
+    </div>
+  </form>
+
+  <div class="aside">
+    <h2>Rather not use this form?</h2>
+    <p>
+      Call the town office on <a href="tel:+14345683091">434-568-3091</a>,
+      email <a href="mailto:drakesbr@hovac.com">drakesbr@hovac.com</a>,
+      or come by Monday to Friday between 8:30am and 2:30pm.
+      We will fill this in with you.
+    </p>
+  </div>
+
+  <p class="footer">
+    Town of Drakes Branch &middot; P.O. Box 191, 4801 Drakes Branch Main St.,
+    Drakes Branch, VA 23937
+  </p>
+</main>
+
+<script src="assets/config.js"></script>
+<script src="assets/form.js"></script>
+</body>
+</html>

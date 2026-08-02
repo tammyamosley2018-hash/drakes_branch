@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report a problem or share feedback — Town of Drakes Branch</title>
+<meta name="description" content="Tell us about a street light, a water problem, trash collection, or anything else that needs attention.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/form.css">
+<style>.screen-reader-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}</style>
+</head>
+<body>
+
+<a class="skip-link" href="#form">Skip to the form</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a href="https://towndrakesbranch.com">
+      <img class="masthead__seal" src="assets/town-seal.png" width="268" height="268" alt="">
+      <span>
+        <span class="masthead__name">Town of Drakes Branch</span>
+        <span class="masthead__place">Charlotte County, Virginia</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <h1>Report a problem or share feedback</h1>
+  <p class="lead">Tell us about a street light, a water problem, trash collection, or anything else that needs attention.</p>
+
+  <div class="notice" data-result hidden></div>
+
+  <form class="form" id="form" data-town-form data-form-type="feedback"
+        data-confirm="Thank you. Your message has been recorded and passed to the town office." novalidate>
+
+    <div class="notice" data-error-summary hidden></div>
+
+    <input type="hidden" name="form_type" value="feedback">
+
+        <div class="field" data-maxlength="120">
+          <label class="field__label" for="feedback-name">Your name <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <input type="text" id="feedback-name" name="name" class="field__control" required aria-required="true" aria-describedby="feedback-name-error" autocomplete="name" maxlength="120">
+          <span class="field__error" id="feedback-name-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="190">
+          <label class="field__label" for="feedback-email">Email address <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <span class="field__hint" id="feedback-email-hint">We use this to reply to you.</span>
+          <input type="email" id="feedback-email" name="email" class="field__control" required aria-required="true" aria-describedby="feedback-email-hint feedback-email-error" autocomplete="email" maxlength="190">
+          <span class="field__error" id="feedback-email-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="40">
+          <label class="field__label" for="feedback-phone">Phone number <span class="optional">(optional)</span></label>
+          <input type="tel" id="feedback-phone" name="phone" class="field__control" aria-describedby="feedback-phone-error" autocomplete="tel" maxlength="40">
+          <span class="field__error" id="feedback-phone-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="feedback-category">What is this about? <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <select id="feedback-category" name="category" class="field__control" required aria-required="true" aria-describedby="feedback-category-error">
+            <option value="">Choose one…</option>
+            <option value="street">Streets, signs or lighting</option>
+            <option value="water">Water or sewer</option>
+            <option value="trash">Trash collection</option>
+            <option value="property">Property or nuisance concern</option>
+            <option value="suggestion">A suggestion for the town</option>
+            <option value="other">Something else</option>
+          </select>
+          <span class="field__error" id="feedback-category-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="200">
+          <label class="field__label" for="feedback-location">Where is it? <span class="optional">(optional)</span></label>
+          <span class="field__hint" id="feedback-location-hint">A street address or nearby landmark helps us find it.</span>
+          <input type="text" id="feedback-location" name="location" class="field__control" aria-describedby="feedback-location-hint feedback-location-error" maxlength="200">
+          <span class="field__error" id="feedback-location-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="4000">
+          <label class="field__label" for="feedback-description">Tell us what happened <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <textarea id="feedback-description" name="description" class="field__control" required aria-required="true" aria-describedby="feedback-description-error" maxlength="4000" rows="6"></textarea>
+          <span class="field__error" id="feedback-description-error" data-error role="alert"></span>
+        </div>
+
+    <div class="hp" aria-hidden="true">
+      <label for="feedback-website">Leave this field empty</label>
+      <input type="text" id="feedback-website" name="website" class="hp-field" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="form__actions">
+      <button type="submit" class="btn" data-submit>Send report</button>
+    </div>
+  </form>
+
+  <div class="aside">
+    <h2>Rather not use this form?</h2>
+    <p>
+      Call the town office on <a href="tel:+14345683091">434-568-3091</a>,
+      email <a href="mailto:drakesbr@hovac.com">drakesbr@hovac.com</a>,
+      or come by Monday to Friday between 8:30am and 2:30pm.
+      We will fill this in with you.
+    </p>
+  </div>
+
+  <p class="footer">
+    Town of Drakes Branch &middot; P.O. Box 191, 4801 Drakes Branch Main St.,
+    Drakes Branch, VA 23937
+  </p>
+</main>
+
+<script src="assets/config.js"></script>
+<script src="assets/form.js"></script>
+</body>
+</html>

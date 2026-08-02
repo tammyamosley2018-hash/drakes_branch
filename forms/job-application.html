@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply for a position — Town of Drakes Branch</title>
+<meta name="description" content="Apply for a position with the Town of Drakes Branch. We review applications as they arrive.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/form.css">
+<style>.screen-reader-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}</style>
+</head>
+<body>
+
+<a class="skip-link" href="#form">Skip to the form</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a href="https://towndrakesbranch.com">
+      <img class="masthead__seal" src="assets/town-seal.png" width="268" height="268" alt="">
+      <span>
+        <span class="masthead__name">Town of Drakes Branch</span>
+        <span class="masthead__place">Charlotte County, Virginia</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <h1>Apply for a position</h1>
+  <p class="lead">Apply for a position with the Town of Drakes Branch. We review applications as they arrive.</p>
+
+  <div class="notice" data-result hidden></div>
+
+  <form class="form" id="form" data-town-form data-form-type="jobs"
+        data-confirm="Your application has been submitted. We review applications as they arrive and will be in touch within five to seven business days." novalidate>
+
+    <div class="notice" data-error-summary hidden></div>
+
+    <input type="hidden" name="form_type" value="jobs">
+
+        <div class="field" data-maxlength="120">
+          <label class="field__label" for="jobs-name">Full name <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <input type="text" id="jobs-name" name="name" class="field__control" required aria-required="true" aria-describedby="jobs-name-error" autocomplete="name" maxlength="120">
+          <span class="field__error" id="jobs-name-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="190">
+          <label class="field__label" for="jobs-email">Email address <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <span class="field__hint" id="jobs-email-hint">We use this to reply to you.</span>
+          <input type="email" id="jobs-email" name="email" class="field__control" required aria-required="true" aria-describedby="jobs-email-hint jobs-email-error" autocomplete="email" maxlength="190">
+          <span class="field__error" id="jobs-email-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="40">
+          <label class="field__label" for="jobs-phone">Phone number <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <input type="tel" id="jobs-phone" name="phone" class="field__control" required aria-required="true" aria-describedby="jobs-phone-error" autocomplete="tel" maxlength="40">
+          <span class="field__error" id="jobs-phone-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="160">
+          <label class="field__label" for="jobs-position">Position you are applying for <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <span class="field__hint" id="jobs-position-hint">Open positions are listed on the town website.</span>
+          <input type="text" id="jobs-position" name="position" class="field__control" required aria-required="true" aria-describedby="jobs-position-hint jobs-position-error" maxlength="160">
+          <span class="field__error" id="jobs-position-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="jobs-resume">Résumé <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <span class="field__hint" id="jobs-resume-hint">PDF or Word document, up to 8 MB.</span>
+          <input type="file" id="jobs-resume" name="resume" class="field__control" required aria-required="true" aria-describedby="jobs-resume-hint jobs-resume-error" accept=".pdf,.doc,.docx">
+          <span class="field__error" id="jobs-resume-error" data-error role="alert"></span>
+        </div>
+
+        <div class="field" data-maxlength="4000">
+          <label class="field__label" for="jobs-cover_letter">Why are you a good fit? <span class="required" aria-hidden="true">*</span><span class="screen-reader-only"> (required)</span></label>
+          <span class="field__hint" id="jobs-cover_letter-hint">A few sentences is plenty.</span>
+          <textarea id="jobs-cover_letter" name="cover_letter" class="field__control" required aria-required="true" aria-describedby="jobs-cover_letter-hint jobs-cover_letter-error" maxlength="4000" rows="6"></textarea>
+          <span class="field__error" id="jobs-cover_letter-error" data-error role="alert"></span>
+        </div>
+
+    <div class="hp" aria-hidden="true">
+      <label for="jobs-website">Leave this field empty</label>
+      <input type="text" id="jobs-website" name="website" class="hp-field" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="form__actions">
+      <button type="submit" class="btn" data-submit>Submit application</button>
+    </div>
+  </form>
+
+  <div class="aside">
+    <h2>Rather not use this form?</h2>
+    <p>
+      Call the town office on <a href="tel:+14345683091">434-568-3091</a>,
+      email <a href="mailto:drakesbr@hovac.com">drakesbr@hovac.com</a>,
+      or come by Monday to Friday between 8:30am and 2:30pm.
+      We will fill this in with you.
+    </p>
+  </div>
+
+  <p class="footer">
+    Town of Drakes Branch &middot; P.O. Box 191, 4801 Drakes Branch Main St.,
+    Drakes Branch, VA 23937
+  </p>
+</main>
+
+<script src="assets/config.js"></script>
+<script src="assets/form.js"></script>
+</body>
+</html>

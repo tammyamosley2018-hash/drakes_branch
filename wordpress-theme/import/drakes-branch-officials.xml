@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Town of Drakes Branch — officials, taken from towndrakesbranch.com.
+  Import with Tools > Import > WordPress. Roles and groupings are as
+  published; check them against the current council before publishing.
+-->
+<rss version="2.0"
+  xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+  <title>Town of Drakes Branch — officials</title>
+  <link>https://towndrakesbranch.com</link>
+  <description>Town officials directory</description>
+  <language>en-US</language>
+  <wp:wxr_version>1.2</wp:wxr_version>
+  <wp:term>
+    <wp:term_taxonomy>db_body</wp:term_taxonomy>
+    <wp:term_slug>town-council</wp:term_slug>
+    <wp:term_parent></wp:term_parent>
+    <wp:term_name><![CDATA[Town Council]]></wp:term_name>
+    <wp:term_description><![CDATA[The council meets monthly. Meetings are open to the public.]]></wp:term_description>
+    <wp:termmeta>
+      <wp:meta_key><![CDATA[db_body_order]]></wp:meta_key>
+      <wp:meta_value><![CDATA[1]]></wp:meta_value>
+    </wp:termmeta>
+  </wp:term>
+  <wp:term>
+    <wp:term_taxonomy>db_body</wp:term_taxonomy>
+    <wp:term_slug>town-office</wp:term_slug>
+    <wp:term_parent></wp:term_parent>
+    <wp:term_name><![CDATA[Town Office]]></wp:term_name>
+    <wp:term_description><![CDATA[Day-to-day administration, records and billing.]]></wp:term_description>
+    <wp:termmeta>
+      <wp:meta_key><![CDATA[db_body_order]]></wp:meta_key>
+      <wp:meta_value><![CDATA[2]]></wp:meta_value>
+    </wp:termmeta>
+  </wp:term>
+  <wp:term>
+    <wp:term_taxonomy>db_body</wp:term_taxonomy>
+    <wp:term_slug>public-works</wp:term_slug>
+    <wp:term_parent></wp:term_parent>
+    <wp:term_name><![CDATA[Public Works]]></wp:term_name>
+    <wp:term_description><![CDATA[Water, sewer, streets and trash collection.]]></wp:term_description>
+    <wp:termmeta>
+      <wp:meta_key><![CDATA[db_body_order]]></wp:meta_key>
+      <wp:meta_value><![CDATA[3]]></wp:meta_value>
+    </wp:termmeta>
+  </wp:term>
+  <wp:term>
+    <wp:term_taxonomy>db_body</wp:term_taxonomy>
+    <wp:term_slug>planning-commission</wp:term_slug>
+    <wp:term_parent></wp:term_parent>
+    <wp:term_name><![CDATA[Planning Commission]]></wp:term_name>
+    <wp:term_description><![CDATA[Advises the council on zoning and land use.]]></wp:term_description>
+    <wp:termmeta>
+      <wp:meta_key><![CDATA[db_body_order]]></wp:meta_key>
+      <wp:meta_value><![CDATA[4]]></wp:meta_value>
+    </wp:termmeta>
+  </wp:term>
+  <wp:term>
+    <wp:term_taxonomy>db_body</wp:term_taxonomy>
+    <wp:term_slug>board-of-zoning-appeals</wp:term_slug>
+    <wp:term_parent></wp:term_parent>
+    <wp:term_name><![CDATA[Board of Zoning Appeals]]></wp:term_name>
+    <wp:term_description><![CDATA[Hears appeals and requests for variances.]]></wp:term_description>
+    <wp:termmeta>
+      <wp:meta_key><![CDATA[db_body_order]]></wp:meta_key>
+      <wp:meta_value><![CDATA[5]]></wp:meta_value>
+    </wp:termmeta>
+  </wp:term>
+  <item>
+    <title><![CDATA[Deborah Kennedy]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:01:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9001</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:01:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:01:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[deborah-kennedy]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="town-council"><![CDATA[Town Council]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[Mayor]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Peery Wells Sr.]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:02:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9002</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:02:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:02:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[peery-wells-sr]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="town-council"><![CDATA[Town Council]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[Vice-Mayor]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Thomas Pettus]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:03:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9003</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:03:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:03:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[thomas-pettus]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>3</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="town-council"><![CDATA[Town Council]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[Council Member]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Charles Errickson]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:04:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9004</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:04:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:04:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[charles-errickson]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>4</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="town-council"><![CDATA[Town Council]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[Council Member]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Liz Davis]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:05:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9005</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:05:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:05:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[liz-davis]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>5</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="town-council"><![CDATA[Town Council]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[Council Member]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[James D. Gregory]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:06:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9006</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:06:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:06:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[james-d-gregory]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>6</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="town-council"><![CDATA[Town Council]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[Council Member]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Eugene D. Wells, Jr.]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:07:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9007</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:07:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:07:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[eugene-d-wells-jr]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>7</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="town-council"><![CDATA[Town Council]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[Council Member and Zoning Administrator]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Vickie Cliborne]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:08:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9008</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:08:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:08:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[vickie-cliborne]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="town-office"><![CDATA[Town Office]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[Clerk and FOIA Officer]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Carroll Anderson]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:09:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9009</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:09:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:09:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[carroll-anderson]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="public-works"><![CDATA[Public Works]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Cary Brazil]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:10:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9010</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:10:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:10:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[cary-brazil]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="public-works"><![CDATA[Public Works]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Ralph Simpson]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:11:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9011</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:11:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:11:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[ralph-simpson]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>3</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="public-works"><![CDATA[Public Works]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Brent Simpson]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:12:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9012</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:12:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:12:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[brent-simpson]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>4</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="public-works"><![CDATA[Public Works]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Mary Lou Toombs]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:13:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9013</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:13:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:13:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[mary-lou-toombs]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="planning-commission"><![CDATA[Planning Commission]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Phillip Flippen]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:14:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9014</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:14:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:14:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[phillip-flippen]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="planning-commission"><![CDATA[Planning Commission]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Roscoe Eubanks, Jr.]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:15:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9015</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:15:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:15:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[roscoe-eubanks-jr]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>3</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="planning-commission"><![CDATA[Planning Commission]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Dorothea Knott]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:16:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9016</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:16:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:16:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[dorothea-knott]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>4</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="planning-commission"><![CDATA[Planning Commission]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[Secretary]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Jerris Wells]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:17:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9017</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:17:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:17:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[jerris-wells]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>6</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="planning-commission"><![CDATA[Planning Commission]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[David West]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:18:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9018</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:18:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:18:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[david-west]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>7</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="planning-commission"><![CDATA[Planning Commission]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Noah Davis]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:19:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9019</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:19:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:19:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[noah-davis]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>1</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="board-of-zoning-appeals"><![CDATA[Board of Zoning Appeals]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Thelma Jones]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:20:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9020</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:20:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:20:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[thelma-jones]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>2</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="board-of-zoning-appeals"><![CDATA[Board of Zoning Appeals]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[Secretary]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Sharon Stovall]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:21:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9021</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:21:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:21:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[sharon-stovall]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>3</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="board-of-zoning-appeals"><![CDATA[Board of Zoning Appeals]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Derek Smith]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:22:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9022</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:22:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:22:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[derek-smith]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>4</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="board-of-zoning-appeals"><![CDATA[Board of Zoning Appeals]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title><![CDATA[Janice Wells]]></title>
+    <pubDate>Sat, 01 Aug 2026 12:23:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <content:encoded><![CDATA[]]></content:encoded>
+    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <wp:post_id>9023</wp:post_id>
+    <wp:post_date><![CDATA[2026-08-01 12:23:00]]></wp:post_date>
+    <wp:post_date_gmt><![CDATA[2026-08-01 12:23:00]]></wp:post_date_gmt>
+    <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+    <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+    <wp:post_name><![CDATA[janice-wells]]></wp:post_name>
+    <wp:status><![CDATA[publish]]></wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>5</wp:menu_order>
+    <wp:post_type><![CDATA[db_official]]></wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+    <category domain="db_body" nicename="planning-commission"><![CDATA[Planning Commission]]></category>
+    <category domain="db_body" nicename="board-of-zoning-appeals"><![CDATA[Board of Zoning Appeals]]></category>
+    <wp:postmeta>
+      <wp:meta_key><![CDATA[_db_official_role]]></wp:meta_key>
+      <wp:meta_value><![CDATA[]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+</channel>
+</rss>

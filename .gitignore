@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------
+# NEVER COMMIT — this repository is public.
+# ---------------------------------------------------------------------------
+# A WordPress database dump holds user accounts, email addresses and password
+# hashes. The site backup holds wp-config.php, which holds live database
+# credentials. Publishing either would be a serious data breach.
+
+*.sql
+*.sql.gz
+*.zip
+public_html/
+wp-config.php
+.htaccess
+*.pem
+*.key
+.env
+.env.*
+
+# Working files ------------------------------------------------------------
+
+.DS_Store
+Thumbs.db
+node_modules/
+.claude/
+
+# Local previews and scratch, not deliverables.
+wordpress-theme/_preview.html
+wordpress-theme/_preview-officials.html
+wordpress-theme/_contact.html
+wordpress-theme/_thumbs/
+
+# Source images stay out of the repo: the large originals are heavy, and the
+# officials' portraits are already cropped into the theme where they are used.
+#
+# Anchored with a leading slash so this matches only the folder at the top of
+# the project. Unanchored, git on macOS matches case-insensitively and would
+# also swallow the theme's own assets/images/ directory — taking the town seal
+# and every portrait with it.
+/Images/
+/Images /
