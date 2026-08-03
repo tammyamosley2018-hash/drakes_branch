@@ -294,6 +294,7 @@ footer.pagefoot a{color:var(--seal)}
 
 @media print{
   .topbar,.rail,.noprint,#totop,#readbar,.sec-toggle,.tbltools,.calc-head button,.btnrow,.notebtn,.search{display:none!important}
+  #votes,#download{display:none!important}  /* live tool + circular PDF link */
   body{background:#fff;font-size:10.5pt;line-height:1.4}
   .cols{grid-template-columns:1fr}
   .sec-body{padding-left:0;display:block!important}
@@ -431,6 +432,20 @@ footer.pagefoot a{color:var(--seal)}
     and passed on a unanimous voice vote of all AYES. <strong>Absent:</strong> Liz Davis.</p>
 
     <h3>Account balances &amp; bills</h3>
+    <p>Account balances with The Bank of Charlotte County were reported as follows:</p>
+    <div class="tablewrap">
+      <table class="t-compact">
+        <caption>As read into the record, July 6, 2026</caption>
+        <thead><tr><th>Account</th><th class="num">Balance</th></tr></thead>
+        <tbody>
+          <tr><td>Security Deposit Escrow</td><td class="num">$4,409.34</td></tr>
+          <tr><td>Water / Sewer</td><td class="num">$3,787.86</td></tr>
+          <tr><td>General Fund</td><td class="num">$107,684.28</td></tr>
+          <tr><td>LGIP</td><td class="num">$313,312.64</td></tr>
+          <tr><td>LGIP &mdash; EM</td><td class="num">$208,249.92</td></tr>
+        </tbody>
+      </table>
+    </div>
     <p>After reviewing all account balances, bills paid and bills to be paid, a motion by Thomas Pettus
     to accept, seconded by Peery Wells, Sr., passed on a unanimous roll call vote as follows &mdash;
     <strong>AYES:</strong> Charles Errickson, Eugene Wells, Jr., James Gregory, Thomas Pettus and
@@ -546,10 +561,11 @@ footer.pagefoot a{color:var(--seal)}
         <tfoot><tr><td>Total held in LGIP</td><td class="num">$521,562.56</td></tr></tfoot>
       </table>
     </div>
+    <p class="tiny">Balances as of August 3, 2026.</p>
     <div class="stats">
       <div class="stat"><span class="lbl">Operating accounts</span><span class="val">$200,126.10</span></div>
       <div class="stat"><span class="lbl">Investment pool</span><span class="val">$521,562.56</span></div>
-      <div class="stat"><span class="lbl">All Town funds</span><span class="val">$721,688.66</span></div>
+      <div class="stat"><span class="lbl">All Town funds</span><span class="val">$721,688.66</span><span class="foot">matches the Clerk's August 3 balance sheet</span></div>
     </div>
   </div>
 </section>
@@ -558,12 +574,40 @@ footer.pagefoot a{color:var(--seal)}
 <section id="bills">
   <div class="sec-head">
     <div class="rn">VII</div>
-    <h2>Bills Paid &amp; Bills to Be Paid<span class="sub">Check registers &middot; July 1 &ndash; July 31, 2026</span></h2>
+    <h2>Bills to Be Paid &amp; Bills Paid<span class="sub">Invoices pending as of Aug. 3 &middot; July register, July 1 &ndash; 31, 2026</span></h2>
   </div>
   <div class="sec-body">
+    <h3>Bills to be paid</h3>
+    <p>Invoices received and awaiting Council approval, per the Clerk's balance sheet dated August 3, 2026.</p>
+<div class="tablewrap"><table class="t-compact"><caption>General Fund</caption>
+<thead><tr><th>Date due</th><th>Vendor</th><th>Reason</th><th class="num">Amount</th></tr></thead><tbody>
+<tr><td class="date">09/01/26</td><td>Dominion Power</td><td>Street lights</td><td class="num">$1,946.83</td></tr>
+<tr><td class="date">08/25/26</td><td>Dominion Power</td><td>Street light at corporate limit</td><td class="num">$17.55</td></tr>
+<tr><td class="date">08/25/26</td><td>Drakes Farm &amp; Home</td><td>Ammunition and keys</td><td class="num">$130.51</td></tr>
+</tbody><tfoot><tr><td colspan="3">Total</td><td class="num">$2,094.89</td></tr></tfoot></table></div>
+<div class="tablewrap"><table class="t-compact"><caption>Water / Sewer Fund</caption>
+<thead><tr><th>Date due</th><th>Vendor</th><th>Reason</th><th class="num">Amount</th></tr></thead><tbody>
+<tr><td class="date">08/21/26</td><td>Dominion Power</td><td>Sewage treatment plant</td><td class="num">$934.28</td></tr>
+<tr><td class="date">08/21/26</td><td>Dominion Power</td><td>Well 5</td><td class="num">$91.13</td></tr>
+<tr><td class="date">08/21/26</td><td>Dominion Power</td><td>Rt. 623 pump</td><td class="num">$21.92</td></tr>
+<tr><td class="date">08/21/26</td><td>Dominion Power</td><td>WPS well</td><td class="num">$326.75</td></tr>
+<tr><td class="date">08/21/26</td><td>Dominion Power</td><td>Well 4</td><td class="num">$143.15</td></tr>
+<tr><td class="date">08/21/26</td><td>Dominion Power</td><td>Lift pump station</td><td class="num">$83.99</td></tr>
+<tr><td class="date">08/21/26</td><td>Dominion Power</td><td>Well 6</td><td class="num">$97.46</td></tr>
+<tr><td class="date">08/23/26</td><td>NAPA</td><td>Drive belt</td><td class="num">$38.99</td></tr>
+<tr><td class="date">08/21/26</td><td>NAPA</td><td>Pulley</td><td class="num">$55.99</td></tr>
+<tr><td class="date">08/20/26</td><td>NAPA</td><td>Booster pac</td><td class="num">$129.00</td></tr>
+<tr><td class="date">07/28/26</td><td>B&amp;B Consultants</td><td>Wastewater testing</td><td class="num">$820.00</td></tr>
+<tr><td class="date">08/25/26</td><td>Drakes Farm &amp; Home</td><td>Blades, adhesive, trash bags, batteries</td><td class="num">$154.23</td></tr>
+</tbody><tfoot><tr><td colspan="3">Total</td><td class="num">$2,896.89</td></tr></tfoot></table></div>
+    <div class="stats">
+      <div class="stat"><span class="lbl">General Fund</span><span class="val">$2,094.89</span></div>
+      <div class="stat"><span class="lbl">Water / Sewer Fund</span><span class="val">$2,896.89</span></div>
+      <div class="stat"><span class="lbl">Total to be paid</span><span class="val">$4,991.78</span></div>
+    </div>
+    <h3>Bills paid &mdash; July 2026</h3>
     <p>Every disbursement and deposit posted to the Town's two operating accounts during July is listed
-    below exactly as it appears in the accounting register. Council is asked to review and act on these
-    under agenda item VII.</p>
+    below exactly as it appears in the accounting register.</p>
     <div class="stats">
       <div class="stat"><span class="lbl">General Fund closing</span><span class="val">$100,390.13</span><span class="foot">at July 31, 2026</span></div>
       <div class="stat"><span class="lbl">Water / Sewer closing</span><span class="val">$3,576.08</span><span class="foot">at July 31, 2026</span></div>
@@ -1151,7 +1195,7 @@ footer.pagefoot a{color:var(--seal)}
   <div class="cols">
     <div></div>
     <div>
-      {priv}
+      
       <p><strong>Town of Drakes Branch</strong><br>
       P.O. Box 191, Drakes Branch, VA 23937<br>
       Municipal Building &mdash; 4801 Drakes Main Street<br>
