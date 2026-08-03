@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Council Meeting Agenda — August 3, 2026 | Town of Drakes Branch</title>
+<meta name="description" content="Agenda, minutes, account balances, bills, and supporting documents for the regular meeting of the Drakes Branch Town Council on Monday, August 3, 2026 at 7:00 p.m.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16211C; --seal:#2C5545; --seal-soft:#42705C;
+  --rule:#C9D3CC; --rule-faint:#E4EAE5;
+  --paper:#FBFBF7; --paper-alt:#F3F6F2;
+  --stamp:#8E2F26; --stamp-soft:#FBF0EE;
+  --gold:#A8842C; --muted:#5C6B63; --measure:74ch;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Newsreader','Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+  font-size:17.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.mono,.util{font-family:'IBM Plex Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:60;background:var(--seal);color:#EEF4EF;border-bottom:3px solid var(--gold)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:.5rem 1.25rem;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.topbar .tb-title{font-weight:600;white-space:nowrap}
+.topbar .tb-meta{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:#B9D2C4;white-space:nowrap}
+.topbar .spacer{flex:1 1 1rem}
+.btn{display:inline-block;border:1px solid currentColor;border-radius:2px;padding:.32rem .75rem;
+  font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  background:transparent;color:inherit;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{background:rgba(255,255,255,.14)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* search */
+.search{position:relative;flex:1 1 190px;max-width:330px;min-width:150px}
+.search input{width:100%;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.3);border-radius:2px;
+  color:#fff;padding:.36rem 1.6rem .36rem 1.9rem;font-family:'IBM Plex Mono',monospace;font-size:.74rem}
+.search input::placeholder{color:#9FBFAE;letter-spacing:.08em;text-transform:uppercase;font-size:.64rem}
+.search .icn{position:absolute;left:.55rem;top:50%;transform:translateY(-50%);color:#9FBFAE;font-size:.8rem;pointer-events:none}
+.search .clr{position:absolute;right:.25rem;top:50%;transform:translateY(-50%);background:none;border:0;
+  color:#B9D2C4;cursor:pointer;font-size:1rem;line-height:1;padding:.1rem .3rem;display:none}
+.search.has .clr{display:block}
+.hitcount{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.08em;color:var(--gold);white-space:nowrap;display:none}
+.hitcount.show{display:inline}
+mark.hit{background:#FFE9A8;color:#2A2306;padding:0 .08em;border-radius:2px}
+.noresults{display:none;padding:2.5rem 0;text-align:center;color:var(--muted);
+  font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.08em}
+.noresults.show{display:block}
+section.hidden-by-search{display:none}
+
+#readbar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:70;transition:width .1s linear}
+
+/* masthead */
+.masthead{max-width:1180px;margin:0 auto;padding:3rem 1.25rem 1.5rem}
+.crest{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--seal-soft);margin:0 0 1.1rem}
+.masthead h1{font-size:clamp(2.3rem,6vw,3.9rem);line-height:1.02;margin:0 0 .5rem;font-weight:500;letter-spacing:-.02em}
+.masthead h1 em{font-style:italic;color:var(--seal)}
+.dateline{font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:.9rem 0 0}
+.dateline b{color:var(--ink);font-weight:600}
+.hairline{border:0;border-top:1px solid var(--rule);margin:1.8rem 0}
+.hairline.thick{border-top:3px double var(--seal)}
+.stamp{display:inline-block;border:3px double var(--stamp);color:var(--stamp);padding:.55rem 1.1rem;
+  transform:rotate(-2.2deg);font-family:'IBM Plex Mono',monospace;font-size:.74rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;line-height:1.5;background:var(--stamp-soft);margin:0 0 1.4rem}
+.stamp span{display:block;font-size:.62rem;letter-spacing:.14em;font-weight:400;opacity:.85}
+
+/* layout */
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.25rem 6rem}
+.cols{display:grid;grid-template-columns:210px minmax(0,1fr);gap:3rem;align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr;gap:1.5rem}}
+
+/* rail */
+.rail{position:sticky;top:70px;font-family:'IBM Plex Mono',monospace;font-size:.74rem}
+@media(max-width:900px){.rail{position:static;border:1px solid var(--rule);padding:1rem;background:var(--paper-alt)}}
+.rail h2{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 .8rem;font-weight:500}
+.rail ol{list-style:none;margin:0;padding:0}
+.rail li{margin:0 0 .1rem}
+.rail a{display:grid;grid-template-columns:2.6rem 1fr;gap:.4rem;padding:.3rem .3rem .3rem 0;color:var(--ink);
+  text-decoration:none;border-left:2px solid transparent;line-height:1.35}
+.rail a:hover{border-left-color:var(--gold);background:var(--paper-alt)}
+.rail a.active{border-left-color:var(--seal);background:var(--paper-alt);font-weight:600}
+.rail a .num{color:var(--seal-soft);text-align:right;font-weight:600}
+.rail a.flag .num{color:var(--stamp)}
+.rail .sep{border-top:1px solid var(--rule);margin:.7rem 0 .6rem;padding-top:.6rem}
+.railtools{margin-top:1.1rem;display:flex;gap:.35rem;flex-wrap:wrap}
+.railtools button{background:none;border:1px solid var(--rule);color:var(--muted);cursor:pointer;
+  font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.26rem .5rem;border-radius:2px}
+.railtools button:hover{background:var(--paper-alt);color:var(--seal);border-color:var(--seal)}
+
+/* sections */
+section{scroll-margin-top:80px;margin:0 0 3.4rem}
+.sec-head{display:grid;grid-template-columns:3.2rem 1fr auto;gap:1rem;align-items:baseline;margin:0 0 1rem}
+.sec-head .rn{font-family:'IBM Plex Mono',monospace;font-size:1.05rem;font-weight:600;color:var(--seal);text-align:right}
+.sec-head h2{margin:0;font-size:1.72rem;font-weight:500;letter-spacing:-.01em;line-height:1.2}
+.sec-head h2 .sub{display:block;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin-top:.45rem;font-weight:400}
+.sec-toggle{background:none;border:1px solid var(--rule);color:var(--muted);cursor:pointer;
+  font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.25rem .55rem;border-radius:2px;white-space:nowrap}
+.sec-toggle:hover{border-color:var(--seal);color:var(--seal)}
+section.collapsed .sec-body{display:none}
+.sec-body{padding-left:4.2rem}
+@media(max-width:900px){
+  .sec-head{grid-template-columns:1fr auto;gap:.2rem .6rem}
+  .sec-head .rn{text-align:left;grid-column:1}
+  .sec-head h2{grid-column:1}
+  .sec-toggle{grid-column:2;grid-row:1/3}
+  .sec-body{padding-left:0}
+}
+.sec-body>*:first-child{margin-top:0}
+p,li{max-width:var(--measure)}
+h3{font-size:1.14rem;font-weight:600;margin:2rem 0 .6rem}
+h4{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--seal);margin:1.6rem 0 .5rem;font-weight:600}
+a{color:var(--seal);text-underline-offset:2px}
+
+/* agenda */
+.agenda{list-style:none;margin:0;padding:0;max-width:none}
+.agenda>li{display:grid;grid-template-columns:3.2rem 1fr;gap:1rem;padding:.62rem 0;border-bottom:1px solid var(--rule-faint);align-items:baseline}
+.agenda>li>.rn{font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600;color:var(--seal);text-align:right}
+.agenda .item-title{font-size:1.02rem}
+.agenda ul{list-style:none;margin:.5rem 0 0;padding:0}
+.agenda ul li{display:grid;grid-template-columns:1.6rem 1fr;gap:.6rem;padding:.16rem 0;font-size:.95rem;color:#2C3A33}
+.agenda ul li .ltr{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--muted)}
+.agenda a.jump{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;border-bottom:1px solid var(--rule);color:var(--seal-soft);margin-left:.5rem;white-space:nowrap}
+.agenda a.jump:hover{color:var(--seal);border-bottom-color:var(--seal)}
+.agenda>li.tracked{grid-template-columns:1.5rem 3.2rem 1fr}
+.agenda .tick{appearance:none;-webkit-appearance:none;width:1.05rem;height:1.05rem;border:1.5px solid var(--rule);
+  border-radius:2px;cursor:pointer;background:#fff;position:relative;margin:0;align-self:center}
+.agenda .tick:checked{background:var(--seal);border-color:var(--seal)}
+.agenda .tick:checked::after{content:"";position:absolute;left:.3rem;top:.08rem;width:.26rem;height:.55rem;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+.agenda>li.done{opacity:.55}
+.agenda>li.done .item-title{text-decoration:line-through}
+.itemnote{width:100%;max-width:52ch;margin:.45rem 0 .1rem;border:1px solid var(--rule);background:#fff;
+  border-radius:2px;padding:.4rem .55rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;
+  line-height:1.5;resize:vertical;min-height:2.4rem;color:var(--ink);display:none}
+.agenda>li.noting .itemnote{display:block}
+.notebtn{background:none;border:0;color:var(--muted);cursor:pointer;font-family:'IBM Plex Mono',monospace;
+  font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.1rem .3rem;margin-left:.4rem}
+.notebtn:hover{color:var(--seal)}
+.notebtn.has{color:var(--gold);font-weight:600}
+.trackbar{display:flex;align-items:center;gap:.8rem;margin:0 0 1.2rem;flex-wrap:wrap;
+  font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.trackbar .track{flex:1;height:5px;background:var(--rule-faint);border-radius:3px;overflow:hidden;max-width:300px;min-width:120px}
+.trackbar .fill2{height:100%;width:0;background:var(--seal);transition:width .25s}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:1.2rem 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;font-size:.83rem}
+caption{caption-side:top;text-align:left;padding:.7rem .85rem;background:var(--paper-alt);border-bottom:1px solid var(--rule);
+  font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--seal);font-weight:600}
+th,td{padding:.42rem .7rem;text-align:left;border-bottom:1px solid var(--rule-faint);vertical-align:top}
+thead th{background:var(--seal);color:#EEF4EF;font-family:'IBM Plex Mono',monospace;font-size:.64rem;
+  letter-spacing:.11em;text-transform:uppercase;font-weight:500}
+tbody tr:nth-child(even){background:#F7FAF7}
+td.num,th.num{text-align:right;font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.bal{font-weight:600;color:var(--seal)}
+td.ref,td.date{font-family:'IBM Plex Mono',monospace;font-size:.76rem;white-space:nowrap;color:var(--muted)}
+tbody tr.dep td{color:var(--seal-soft)}
+tfoot td{background:var(--paper-alt);font-weight:600;border-top:2px solid var(--seal)}
+.t-compact td,.t-compact th{padding:.34rem .6rem}
+tr.filtered{display:none}
+th.sortable{cursor:pointer;user-select:none;position:relative;padding-right:1.5rem}
+th.sortable:hover{background:var(--seal-soft)}
+th.sortable::after{content:"\2195";position:absolute;right:.45rem;opacity:.45}
+th.sortable.asc::after{content:"\2191";opacity:1}
+th.sortable.desc::after{content:"\2193";opacity:1}
+.tbltools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:1.5rem 0 -.7rem}
+.tbltools input{border:1px solid var(--rule);background:#fff;border-radius:2px;padding:.36rem .6rem;
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;min-width:180px;color:var(--ink)}
+.tbltools button{background:#fff;border:1px solid var(--rule);color:var(--muted);cursor:pointer;
+  font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.32rem .6rem;border-radius:2px}
+.tbltools button:hover{border-color:var(--seal);color:var(--seal)}
+.tbltools button.on{background:var(--seal);border-color:var(--seal);color:#fff}
+.tbltools .count{font-family:'IBM Plex Mono',monospace;font-size:.64rem;color:var(--muted);letter-spacing:.06em}
+
+/* callouts */
+.box{border:1px solid var(--rule);border-left:4px solid var(--seal);background:var(--paper-alt);padding:1rem 1.2rem;margin:1.3rem 0}
+.box>*:first-child{margin-top:0}.box>*:last-child{margin-bottom:0}
+.box.alert{border-left-color:var(--stamp);background:var(--stamp-soft)}
+.box.gold{border-left-color:var(--gold);background:#FBF7EC}
+.box h4{margin-top:0}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 .35rem}
+.motion{border:2px solid var(--seal);padding:1.1rem 1.3rem;margin:1.4rem 0;background:#fff}
+.motion .kicker{color:var(--seal)}
+.motion p{font-style:italic;margin:.3rem 0 0}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:0;border:1px solid var(--rule);margin:1.4rem 0;background:#fff}
+.stat{padding:1rem 1.1rem;border-right:1px solid var(--rule-faint)}
+.stat:last-child{border-right:0}
+.stat .lbl{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+.stat .val{font-family:'IBM Plex Mono',monospace;font-size:1.24rem;font-weight:600;color:var(--seal);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat .val.neg{color:var(--stamp)}
+.stat .foot{display:block;font-size:.76rem;color:var(--muted);margin-top:.25rem;line-height:1.4}
+
+/* calculators */
+.calc{border:1px solid var(--rule);background:#fff;margin:1.5rem 0}
+.calc-head{background:var(--paper-alt);border-bottom:1px solid var(--rule);padding:.7rem .95rem;
+  font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--seal);font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.calc-head button{background:none;border:1px solid var(--rule);color:var(--muted);cursor:pointer;font:inherit;
+  font-size:.58rem;padding:.2rem .5rem;border-radius:2px;letter-spacing:.08em}
+.calc-head button:hover{border-color:var(--seal);color:var(--seal)}
+.calc-body{padding:1.1rem .95rem;display:grid;gap:1.5rem;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media(max-width:760px){.calc-body{grid-template-columns:1fr}}
+.calc fieldset{border:0;margin:0;padding:0}
+.calc legend{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:0 0 .5rem}
+.field{display:grid;grid-template-columns:1fr auto;gap:.5rem;align-items:center;padding:.34rem 0;border-bottom:1px solid var(--rule-faint)}
+.field label{font-size:.87rem;max-width:none}
+.field input{width:7.5rem;text-align:right;border:1px solid var(--rule);border-radius:2px;padding:.3rem .45rem;
+  font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--ink);background:#fff}
+.out{display:grid;gap:.05rem}
+.out .row{display:flex;justify-content:space-between;gap:1rem;padding:.4rem 0;border-bottom:1px solid var(--rule-faint);font-size:.87rem;align-items:baseline}
+.out .row span:first-child{max-width:none}
+.out .row.total{border-bottom:0;border-top:2px solid var(--seal);margin-top:.4rem;padding-top:.6rem;font-weight:600}
+.out .row .v{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--seal);font-weight:600}
+.out .row.total .v{font-size:1.15rem}
+.out .row .v.neg{color:var(--stamp)}
+.out .note{font-size:.78rem;color:var(--muted);margin-top:.7rem;line-height:1.5}
+
+/* vote recorder */
+.vote .calc-body{grid-template-columns:1fr}
+.vote textarea{width:100%;border:1px solid var(--rule);border-radius:2px;padding:.5rem .6rem;
+  font-family:'Newsreader',Georgia,serif;font-size:.92rem;resize:vertical;min-height:3rem;color:var(--ink);background:#fff}
+.vote .field2{display:grid;gap:.7rem;grid-template-columns:1fr 1fr}
+@media(max-width:700px){.vote .field2{grid-template-columns:1fr}}
+.vote select,.vote .txt{width:100%;border:1px solid var(--rule);border-radius:2px;padding:.4rem .5rem;
+  font-family:'IBM Plex Mono',monospace;font-size:.76rem;background:#fff;color:var(--ink)}
+.members{display:grid;gap:.1rem;margin:.9rem 0 0}
+.mrow{display:grid;grid-template-columns:1fr auto;gap:.7rem;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--rule-faint)}
+.mrow .nm{font-size:.9rem}
+.mrow .nm small{color:var(--muted);font-size:.74rem}
+.seg{display:flex;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.seg button{background:#fff;border:0;border-right:1px solid var(--rule-faint);cursor:pointer;
+  font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.05em;padding:.3rem .5rem;color:var(--muted)}
+.seg button:last-child{border-right:0}
+.seg button:hover{background:var(--paper-alt)}
+.seg button.on{color:#fff}
+.seg button.on[data-v="AYE"]{background:var(--seal)}
+.seg button.on[data-v="NAY"]{background:var(--stamp)}
+.seg button.on[data-v="ABSTAIN"]{background:var(--gold)}
+.seg button.on[data-v="ABSENT"]{background:var(--muted)}
+.tally{display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin:.9rem 0 .4rem;
+  font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;color:var(--muted)}
+.tally b{color:var(--seal);font-size:.95rem}
+.result{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .6rem;border:1px solid;border-radius:2px}
+.result.pass{color:var(--seal);border-color:var(--seal);background:var(--paper-alt)}
+.result.fail{color:var(--stamp);border-color:var(--stamp);background:var(--stamp-soft)}
+.minutestext{margin-top:1rem;background:var(--paper-alt);border:1px solid var(--rule);padding:.8rem .9rem;font-size:.9rem;line-height:1.55}
+.btnrow{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.9rem;align-items:center}
+.btnrow button{background:#fff;border:1px solid var(--seal);color:var(--seal);cursor:pointer;
+  font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .8rem;border-radius:2px}
+.btnrow button:hover{background:var(--seal);color:#fff}
+.btnrow button.ghost{border-color:var(--rule);color:var(--muted)}
+.btnrow button.ghost:hover{background:var(--paper-alt);color:var(--seal);border-color:var(--seal)}
+.flash{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--gold);letter-spacing:.08em;opacity:0;transition:opacity .3s}
+.flash.show{opacity:1}
+.log{margin-top:1.2rem;border-top:1px solid var(--rule);padding-top:.8rem}
+.log .entry{border-left:3px solid var(--seal);padding:.55rem .8rem;margin:.5rem 0;background:var(--paper-alt);font-size:.88rem;position:relative}
+.log .entry.failed{border-left-color:var(--stamp);background:var(--stamp-soft)}
+.log .entry button{position:absolute;right:.4rem;top:.35rem;background:none;border:0;color:var(--muted);cursor:pointer;font-size:1rem;line-height:1}
+
+/* misc */
+.chip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;
+  padding:.16rem .5rem;border:1px solid var(--rule);color:var(--muted);border-radius:2px;margin-right:.4rem}
+dl.kv{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1.2rem;margin:1rem 0;font-size:.95rem}
+dl.kv dt{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:.22rem}
+dl.kv dd{margin:0}
+.legal{font-size:.94rem}
+.legal h4{color:var(--ink);font-family:'Newsreader',Georgia,serif;font-size:1rem;letter-spacing:0;text-transform:none;font-style:italic;margin:1.4rem 0 .4rem}
+.legal .secno{font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-style:normal;color:var(--seal);font-weight:600}
+.fill{display:inline-block;min-width:8rem;border-bottom:1px solid var(--muted);height:1em}
+.redline{color:var(--stamp);font-weight:600}
+.dl-btn{display:inline-flex;align-items:center;gap:.7rem;background:var(--seal);color:#fff;text-decoration:none;
+  padding:.85rem 1.3rem;border:0;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
+.dl-btn:hover{background:var(--ink)}
+.dl-btn .ic{font-size:1.1rem;line-height:1}
+footer.pagefoot{border-top:3px double var(--seal);margin-top:3rem;padding:2rem 0 0;font-size:.86rem;color:var(--muted)}
+footer.pagefoot a{color:var(--seal)}
+.tiny{font-size:.8rem;color:var(--muted);line-height:1.5}
+#totop{position:fixed;right:1.1rem;bottom:1.1rem;z-index:55;background:var(--seal);color:#fff;border:0;border-radius:2px;
+  width:2.5rem;height:2.5rem;cursor:pointer;font-size:1rem;opacity:0;pointer-events:none;transition:opacity .2s}
+#totop.show{opacity:.92;pointer-events:auto}
+#totop:hover{background:var(--ink)}
+
+@media print{
+  .topbar,.rail,.noprint,#totop,#readbar,.sec-toggle,.tbltools,.calc-head button,.btnrow,.notebtn,.search{display:none!important}
+  body{background:#fff;font-size:10.5pt;line-height:1.4}
+  .cols{grid-template-columns:1fr}
+  .sec-body{padding-left:0;display:block!important}
+  section{page-break-inside:auto;margin-bottom:1.5rem}
+  section.hidden-by-search{display:block!important}
+  .sec-head{page-break-after:avoid;grid-template-columns:3.2rem 1fr}
+  table{font-size:8.5pt}
+  tr.filtered{display:table-row!important}
+  thead th{background:#2C5545!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .stamp,.box,.motion,.stats,.calc,.log .entry{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .itemnote{display:block!important;border:1px solid #bbb}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#555}
+  .page-break{page-break-before:always}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body data-doc="public">
+<div id="readbar"></div>
+
+
+<div class="topbar noprint">
+  <div class="topbar-in">
+    <span class="tb-title">Town of Drakes Branch</span>
+    <span class="tb-meta">Agenda &middot; Aug. 3, 2026</span>
+    <div class="search" id="searchwrap">
+      <span class="icn">&#9906;</span>
+      <input id="q" type="search" placeholder="Search packet" aria-label="Search this packet" autocomplete="off">
+      <button class="clr" id="qclear" aria-label="Clear search">&times;</button>
+    </div>
+    <span class="hitcount" id="hitcount" role="status" aria-live="polite"></span>
+    <span class="spacer"></span>
+    
+    <button class="btn" id="printbtn">Print</button>
+  </div>
+</div>
+
+
+<header class="masthead">
+  <p class="crest">Town of Drakes Branch &middot; Charlotte County &middot; Commonwealth of Virginia</p>
+  
+  <h1>Town Council<br><em>Meeting Agenda</em></h1>
+  <p class="dateline"><b>Monday, August 3, 2026</b> &nbsp;&middot;&nbsp; 7:00 p.m. &nbsp;&middot;&nbsp;
+     Municipal Building, 4801 Drakes Main Street</p>
+  <hr class="hairline thick">
+  <p style="max-width:66ch">This is the agenda and supporting material for the regular monthly meeting of the Drakes Branch Town Council. The meeting is open to the public. Anyone wishing to address Council should sign in at the door before the meeting begins.</p>
+  <p class="tiny noprint" style="max-width:66ch">Search the whole packet from the bar above, or press <kbd>/</kbd>. The check registers can be filtered and sorted, and totals update as you narrow them. Any section can be hidden to shorten the page, and Print produces a clean copy.</p>
+</header>
+
+<div class="wrap"><div class="cols">
+<nav class="rail" aria-label="Packet contents"><h2>In this packet</h2><ol>
+<li><a href="#agenda"><span class="num">&mdash;</span><span>Order of business</span></a></li>
+<li><a href="#minutes"><span class="num">V</span><span>Minutes for approval</span></a></li>
+<li><a href="#balances"><span class="num">VI</span><span>Account balances</span></a></li>
+<li><a href="#bills"><span class="num">VII</span><span>Bills paid &amp; to be paid</span></a></li>
+<li><a href="#reports"><span class="num">IX</span><span>Committee attachments</span></a></li>
+<li><a href="#cigarette"><span class="num">X&middot;C</span><span>Cigarette tax draft</span></a></li>
+<li><a href="#crc"><span class="num">&sect;</span><span>Regional reports</span></a></li>
+</ol>
+<div class="railtools noprint"><button type="button" id="expandall">Expand all</button><button type="button" id="collapseall">Collapse all</button></div>
+</nav>
+<main>
+
+<section id="agenda">
+  <div class="sec-head">
+    <div class="rn">&mdash;</div>
+    <h2>Order of Business<span class="sub">Regular monthly meeting &middot; Monday, August 3, 2026 &middot; 7:00 p.m.</span></h2>
+  </div>
+  <div class="sec-body">
+    <p>Municipal Building, 4801 Drakes Main Street, Drakes Branch, Virginia. The meeting is open
+    to the public except for the closed session noted at item XIII.</p>
+    <ol class="agenda">
+      <li><span class="rn">I</span><div class="item-title">Open Meeting</div></li>
+      <li><span class="rn">II</span><div class="item-title">Roll Call</div></li>
+      <li><span class="rn">III</span><div class="item-title">Invocation</div></li>
+      <li><span class="rn">IV</span><div class="item-title">Pledge of Allegiance</div></li>
+      <li><span class="rn">V</span><div class="item-title">Minutes of July Regular Meeting &amp; June Public Hearing Minutes <a class="jump" href="#minutes">View &rsaquo;</a></div></li>
+      <li><span class="rn">VI</span><div class="item-title">Account Balances <a class="jump" href="#balances">View &rsaquo;</a></div></li>
+      <li><span class="rn">VII</span><div class="item-title">Bills to be Paid / Bills Paid <a class="jump" href="#bills">View &rsaquo;</a></div></li>
+      <li><span class="rn">VIII</span><div class="item-title">Speakers to Address Council: David West</div></li>
+      <li><span class="rn">IX</span><div class="item-title">Committee Reports <a class="jump" href="#reports">View &rsaquo;</a>
+        <ul>
+          <li><span class="ltr">A</span><span>Finance &mdash; D. Kennedy &amp; E. Wells, Jr.</span></li>
+          <li><span class="ltr">B</span><span>Water / Sewer &mdash; P. Wells, Sr. &amp; T. Pettus</span></li>
+          <li><span class="ltr">C</span><span>Streets &mdash; C. Errickson &amp; Liz Davis</span></li>
+          <li><span class="ltr">D</span><span>Museum &mdash; D. Kennedy</span></li>
+          <li><span class="ltr">E</span><span>Buildings &amp; Grounds &mdash; J. Gregory &amp; E. Wells, Jr.</span></li>
+          <li><span class="ltr">F</span><span>Personnel &mdash; P. Wells, Sr. &amp; C. Errickson</span></li>
+          <li><span class="ltr">G</span><span>Grants &mdash; L. Davis &amp; D. Kennedy</span></li>
+          <li><span class="ltr">H</span><span>Event Committee &mdash; J. Gregory &amp; L. Davis</span></li>
+        </ul></div></li>
+      <li><span class="rn">X</span><div class="item-title">Old Business
+        <ul>
+          <li><span class="ltr">A</span><span>Acoustic panels for meeting room</span></li>
+          <li><span class="ltr">B</span><span>Chair rails / painting meeting room</span></li>
+          <li><span class="ltr">C</span><span>Cigarette tax <a class="jump" href="#cigarette">Draft ordinance &rsaquo;</a></span></li>
+          <li><span class="ltr">D</span><span>Repairs to pavilion</span></li>
+          <li><span class="ltr">E</span><span>Water rate audit</span></li>
+        </ul></div></li>
+      <li><span class="rn">XI</span><div class="item-title">New Business
+        <ul>
+          <li><span class="ltr">A</span><span>Room rental requests: none</span></li>
+          <li><span class="ltr">B</span><span>Repairs needed to White Street where pipe repair damaged asphalt</span></li>
+          <li><span class="ltr">C</span><span>New window blind needed for clerk's office, not to exceed $40</span></li>
+          <li><span class="ltr">D</span><span>Add Tammy to Bank of Charlotte accounts</span></li>
+        </ul></div></li>
+      <li><span class="rn">XII</span><div class="item-title">Any Other Business</div></li>
+      <li><span class="rn">XIII</span><div class="item-title">Closed Session &mdash; in accordance with Virginia Code &sect;2.2-3711(A)(1)
+        <div class="tiny" style="margin-top:.35rem;max-width:62ch">Discussion, consideration, or interviews of prospective
+        candidates for employment; assignment, appointment, promotion, performance, demotion, salaries, disciplining,
+        or resignation of specific public officers, appointees, or employees of any public body.</div></div></li>
+      <li><span class="rn">XIV</span><div class="item-title">Return to Open Session</div></li>
+      <li><span class="rn">XV</span><div class="item-title">Adjourn</div></li>
+    </ol>
+  </div>
+</section>
+
+
+<section id="minutes">
+  <div class="sec-head">
+    <div class="rn">V</div>
+    <h2>Minutes for Approval<span class="sub">Regular meeting of July 6, 2026 &mdash; draft, pending Council action</span></h2>
+  </div>
+  <div class="sec-body">
+    <p>The regular meeting of the Town Council of Drakes Branch was held Monday, July 6, 2026 at
+    7:00 p.m. in the Municipal Building located at 4801 Drakes Main Street, Drakes Branch, Virginia.</p>
+
+    <p>Mayor Deborah Kennedy called the meeting to order and Stephanie Clay, Clerk, recorded the minutes.
+    Members present were Vice Mayor Peery Wells, Sr., Eugene Wells, Jr., Charles Errickson, James Gregory
+    and Thomas Pettus. Council member Liz Davis was absent. Peery Wells, Sr. gave the invocation and
+    Mayor Deborah Kennedy led the Pledge of Allegiance to the Flag.</p>
+
+    <p>A motion by Charles Errickson to accept the June Regular Council Meeting Minutes and Joint Public
+    Hearing with Planning Commission / Special Council Meeting Minutes was seconded by Peery Wells, Sr.,
+    and passed on a unanimous voice vote of all AYES. <strong>Absent:</strong> Liz Davis.</p>
+
+    <h3>Account balances &amp; bills</h3>
+    <p>After reviewing all account balances, bills paid and bills to be paid, a motion by Thomas Pettus
+    to accept, seconded by Peery Wells, Sr., passed on a unanimous roll call vote as follows &mdash;
+    <strong>AYES:</strong> Charles Errickson, Eugene Wells, Jr., James Gregory, Thomas Pettus and
+    Peery Wells, Sr. <strong>NAYS:</strong> None. <strong>Absent:</strong> Liz Davis.</p>
+
+    <h3>Speakers</h3>
+    <p>David West addressed the Council and commended Councilman Gregory on the success of the
+    100-mile yard sale.</p>
+
+    <h3>Committee reports</h3>
+    <dl class="kv">
+      <dt>Finance</dt><dd>None.</dd>
+      <dt>Streets</dt><dd>Peery Wells, Sr. spoke about addressing the grass not being maintained at Dollar General.
+        Clerk Clay stated she would get an ordinance violation notice out to DG immediately.</dd>
+      <dt>Museum</dt><dd>None.</dd>
+      <dt>Buildings &amp; Grounds</dt><dd>Needs to determine if the Ladies Club is going to continue &mdash; if so, a lease is needed.</dd>
+      <dt>Water / Sewer</dt><dd>Peery Wells, Sr. addressed the Council and provided an update on the back-up at the pump station.
+        An electrician was coming to look at the power issue the following Tuesday.</dd>
+      <dt>Personnel</dt><dd>To be discussed in closed session.</dd>
+      <dt>Events</dt><dd>James Gregory gave a summary of the 100-mile yard sale event, which was affected by extreme heat
+        but still had a decent turn out. Mayor Kennedy asked Councilman Gregory to start preparing for a Fall Festival.</dd>
+      <dt>Grants</dt><dd>The SLFRF grant program was completed as of Dec. 25, 2025 and has been officially closed out as of
+        June 2026. The Town is still waiting on WACO to provide contract amendments before proceeding with the FEMA project.</dd>
+    </dl>
+
+    <h3>Old business</h3>
+    <ul>
+      <li><strong>Acoustic panels.</strong> Tabled until Councilman Gregory can provide more information on purchasing
+        and installing panels by town maintenance. Zach McKinney Technology had provided a bid of $8,235.</li>
+      <li><strong>Chair rails.</strong> Eugene Wells received a bid from Chris Cook to install and paint chair rails in
+        the meeting room &mdash; $669. Tabled until Councilman Wells could ask Mr. Cook to bid on painting the entire meeting room.</li>
+      <li><strong>Tractor.</strong> Councilman Errickson made a motion to sell the Town's old tractor and get bids on
+        purchasing a new one. Seconded by Peery Wells, Sr. Passed on a roll call vote &mdash; <strong>AYES:</strong>
+        Charles Errickson, James Gregory, Thomas Pettus, Eugene Wells, Jr., Peery Wells, Sr. <strong>NAYS:</strong> None.
+        <strong>Absent:</strong> Liz Davis.</li>
+      <li><strong>Trimmer.</strong> Councilman Errickson made a motion to approve the purchase of a new trimmer for town
+        maintenance, seconded by Councilman Gregory. Passed on a roll call vote &mdash; <strong>AYES:</strong>
+        Charles Errickson, James Gregory, Thomas Pettus, Eugene Wells, Jr., Peery Wells, Sr. <strong>NAYS:</strong> None.
+        <strong>Absent:</strong> Liz Davis.</li>
+      <li><strong>Town office hours.</strong> Mayor Kennedy voiced the clerks' request to amend the Town office hours to
+        Monday, Wednesday and Friday from 8:30 a.m. to 3:30 p.m. Thomas Pettus made a motion to accept the new hours,
+        seconded by Charles Errickson. Passed on a roll call vote &mdash; <strong>AYES:</strong> Charles Errickson,
+        James Gregory, Thomas Pettus, Eugene Wells, Jr., Peery Wells, Sr. <strong>NAYS:</strong> None.
+        <strong>Absent:</strong> Liz Davis.</li>
+      <li><strong>Cigarette tax.</strong> Town Council requested the Clerk to provide guidance on implementing a cigarette tax.</li>
+      <li><strong>Pavilion.</strong> Mayor Kennedy informed Council of the need of a new globe repair at the Town Pavilion,
+        with Town Maintenance performing the labor.</li>
+      <li><strong>Town Lake lease.</strong> Discussion moved to August.</li>
+      <li><strong>Sound reduction panels.</strong> James Gregory has contacted Zach McKinney Technology to give a bid.</li>
+    </ul>
+
+    <h3>New business &amp; other business</h3>
+    <p>None.</p>
+
+    <h3>Closed session</h3>
+    <p>A motion was made by Charles Errickson, seconded by Peery Wells, Sr., that the Council convene in
+    closed session in accordance with Virginia Code 2.2-3711(A)(1), to discuss applicants for personnel
+    matters. The motion passed on a roll call vote as follows &mdash; <strong>AYES:</strong> Charles Errickson,
+    James Gregory, Thomas Pettus, Eugene Wells, Sr., and Peery Wells, Sr. <strong>NAYS:</strong> None.
+    <strong>Absent:</strong> Liz Davis.</p>
+
+    <h3>Open session</h3>
+    <p>A motion by Charles Errickson, seconded by Eugene Wells, Jr., to return to open session, passed on a
+    roll call vote &mdash; <strong>AYES:</strong> Charles Errickson, James Gregory, Thomas Pettus,
+    Eugene Wells, Sr., and Peery Wells, Sr. <strong>NAYS:</strong> None. <strong>Absent:</strong> Liz Davis.</p>
+
+    <p>A motion was made by Charles Errickson, and seconded by Eugene Wells, Jr., to adopt Exhibit A, the
+    Certificate of Closed Session, and topics as discussed regarding applicants for Public Works Dept. and
+    to hire T. Harmon under a contract basis to help update office manuals. The motion passed on a roll call
+    vote &mdash; <strong>AYES:</strong> Charles Errickson, James Gregory, Thomas Pettus, Eugene Wells, Sr.,
+    and Peery Wells, Sr. <strong>NAYS:</strong> None. <strong>Absent:</strong> Liz Davis.</p>
+
+    <p>Eugene Wells, Jr. made a motion to adjourn the Town Council meeting, seconded by Charles Errickson.
+    All agreed on a unanimous voice vote of all AYES. <strong>NAYS:</strong> None. <strong>Absent:</strong> Liz Davis.
+    The meeting adjourned at 10:00 p.m.</p>
+
+    <div class="box">
+      <p class="kicker">Certified by</p>
+      <p style="margin:0">Deborah Kennedy, Mayor &nbsp;&middot;&nbsp; Stephanie Clay, Clerk</p>
+    </div>
+    <p class="tiny">Also before Council for approval: the minutes of the June 24, 2026 joint public hearing held
+    with the Planning Commission on the Comprehensive Plan. Paper copies are available at the Town Office.</p>
+  </div>
+</section>
+
+
+<section id="balances">
+  <div class="sec-head">
+    <div class="rn">VI</div>
+    <h2>Account Balances<span class="sub">The Bank of Charlotte County &amp; Virginia LGIP</span></h2>
+  </div>
+  <div class="sec-body">
+    <div class="tablewrap">
+      <table>
+        <caption>Bank of Charlotte County &mdash; operating accounts</caption>
+        <thead><tr><th>Account</th><th class="num">Balance</th></tr></thead>
+        <tbody>
+          <tr><td>Security Deposit Escrow</td><td class="num bal">$4,207.29</td></tr>
+          <tr><td>Water / Sewer</td><td class="num bal">$12,217.86</td></tr>
+          <tr><td>General Fund</td><td class="num bal">$183,700.95</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total in operating accounts</td><td class="num">$200,126.10</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <caption>Virginia Local Government Investment Pool</caption>
+        <thead><tr><th>Account</th><th class="num">Balance</th></tr></thead>
+        <tbody>
+          <tr><td>LGIP</td><td class="num bal">$313,312.64</td></tr>
+          <tr><td>LGIP &mdash; EM</td><td class="num bal">$208,249.92</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total held in LGIP</td><td class="num">$521,562.56</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="lbl">Operating accounts</span><span class="val">$200,126.10</span></div>
+      <div class="stat"><span class="lbl">Investment pool</span><span class="val">$521,562.56</span></div>
+      <div class="stat"><span class="lbl">All Town funds</span><span class="val">$721,688.66</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="bills">
+  <div class="sec-head">
+    <div class="rn">VII</div>
+    <h2>Bills Paid &amp; Bills to Be Paid<span class="sub">Check registers &middot; July 1 &ndash; July 31, 2026</span></h2>
+  </div>
+  <div class="sec-body">
+    <p>Every disbursement and deposit posted to the Town's two operating accounts during July is listed
+    below exactly as it appears in the accounting register. Council is asked to review and act on these
+    under agenda item VII.</p>
+    <div class="stats">
+      <div class="stat"><span class="lbl">General Fund closing</span><span class="val">$100,390.13</span><span class="foot">at July 31, 2026</span></div>
+      <div class="stat"><span class="lbl">Water / Sewer closing</span><span class="val">$3,576.08</span><span class="foot">at July 31, 2026</span></div>
+      <div class="stat"><span class="lbl">Largest single item</span><span class="val">$16,000.00</span><span class="foot">Commonwealth Regional Council &mdash; Modified Comprehensive Plan</span></div>
+      <div class="stat"><span class="lbl">Register entries</span><span class="val">117</span><span class="foot">both accounts combined</span></div>
+    </div>
+    <div class="tablewrap"><table class="t-compact" data-register="1"><caption>General Fund &mdash; Bank of Charlotte County &middot; 07/01/2026 &ndash; 07/31/2026</caption>
+<thead><tr><th>Date</th><th>No.</th><th>Payee</th><th>Account</th><th>Memo</th><th class="num">Payment</th><th class="num">Deposit</th><th class="num">Balance</th></tr></thead><tbody>
+<tr><td class="date">07/01/2026</td><td class="ref">2680</td><td>Vickie C. Cliborne</td><td class="tiny">-split-</td><td class="tiny">Payroll 06/24/26</td><td class="num">$474.32</td><td class="num"></td><td class="num bal">$127,674.63</td></tr>
+<tr><td class="date">07/01/2026</td><td class="ref">2681</td><td>Stephanie A. Clay</td><td class="tiny">-split-</td><td class="tiny">Payroll 06/01/26</td><td class="num">$439.07</td><td class="num"></td><td class="num bal">$127,235.56</td></tr>
+<tr><td class="date">07/01/2026</td><td class="ref">2682</td><td>Weldon R. Wilmoth Jr.</td><td class="tiny">-split-</td><td class="tiny">Payroll 06/20/26</td><td class="num">$582.64</td><td class="num"></td><td class="num bal">$126,652.92</td></tr>
+<tr><td class="date">07/01/2026</td><td class="ref">2683</td><td>Fuel Freedom Card</td><td class="tiny">6600-02 &middot; Automobile</td><td class="tiny">Account # 1&hellip;</td><td class="num">$214.94</td><td class="num"></td><td class="num bal">$126,437.98</td></tr>
+<tr><td class="date">07/01/2026</td><td class="ref">2684</td><td>Cintas Corporation</td><td class="tiny">6001-12 &middot; Janitorial</td><td class="tiny">Customer# 143&hellip;</td><td class="num">$77.19</td><td class="num"></td><td class="num bal">$126,360.79</td></tr>
+<tr class="dep"><td class="date">07/03/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$4,218.05</td><td class="num bal">$130,578.84</td></tr>
+<tr><td class="date">07/03/2026</td><td class="ref">2685</td><td>RDA Systems, Inc.</td><td class="tiny">6300-08 &middot; Dues &amp; Subscriptions</td><td class="tiny">Inv. # RR0701&hellip;</td><td class="num">$3,412.80</td><td class="num"></td><td class="num bal">$127,166.04</td></tr>
+<tr><td class="date">07/03/2026</td><td class="ref">2686</td><td>Farmville Newsmedia</td><td class="tiny">6300-03 &middot; Advertising</td><td class="tiny">Advertising</td><td class="num">$627.50</td><td class="num"></td><td class="num bal">$126,538.54</td></tr>
+<tr><td class="date">07/03/2026</td><td class="ref">2687</td><td>Commonwealth Regional Council</td><td class="tiny">6004-05 &middot; Consulting</td><td class="tiny">Modified Comp Plan</td><td class="num">$16,000.00</td><td class="num"></td><td class="num bal">$110,538.54</td></tr>
+<tr><td class="date">07/03/2026</td><td class="ref">2688</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account #0008&hellip;</td><td class="num">$1,500.55</td><td class="num"></td><td class="num bal">$109,037.99</td></tr>
+<tr><td class="date">07/03/2026</td><td class="ref">2689</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account #2100&hellip;</td><td class="num">$26.68</td><td class="num"></td><td class="num bal">$109,011.31</td></tr>
+<tr><td class="date">07/03/2026</td><td class="ref">2690</td><td>Virginia Utility Protection</td><td class="tiny">6300-08 &middot; Dues &amp; Subscriptions</td><td class="tiny">Invoice# 06202&hellip;</td><td class="num">$2.40</td><td class="num"></td><td class="num bal">$109,008.91</td></tr>
+<tr><td class="date">07/03/2026</td><td class="ref">2691</td><td>Larrys New Look</td><td class="tiny">6001-12 &middot; Janitorial</td><td class="tiny">June cleaning</td><td class="num">$300.00</td><td class="num"></td><td class="num bal">$108,708.91</td></tr>
+<tr><td class="date">07/03/2026</td><td class="ref">2692</td><td>Drakes Farm &amp; Home</td><td class="tiny">6600-03 &middot; Weapons</td><td class="tiny">Invoice# 26&hellip;</td><td class="num">$71.97</td><td class="num"></td><td class="num bal">$108,636.94</td></tr>
+<tr><td class="date">07/03/2026</td><td class="ref">2693</td><td>Charlotte County Christmas</td><td class="tiny">5300-00 &middot; Donations</td><td class="tiny">Donation-2026</td><td class="num">$100.00</td><td class="num"></td><td class="num bal">$108,536.94</td></tr>
+<tr class="dep"><td class="date">07/08/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">5503-00 &middot; Tower Rental</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$1,837.50</td><td class="num bal">$110,374.44</td></tr>
+<tr><td class="date">07/08/2026</td><td class="ref">2694</td><td>Vickie C. Cliborne</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/02/26</td><td class="num">$444.19</td><td class="num"></td><td class="num bal">$109,930.25</td></tr>
+<tr><td class="date">07/08/2026</td><td class="ref">2695</td><td>Weldon R. Wilmoth Jr.</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/02/26</td><td class="num">$457.69</td><td class="num"></td><td class="num bal">$109,472.56</td></tr>
+<tr class="dep"><td class="date">07/13/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">5600-01 &middot; Real Estate</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$27.48</td><td class="num bal">$109,500.04</td></tr>
+<tr class="dep"><td class="date">07/15/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$63.94</td><td class="num bal">$109,563.98</td></tr>
+<tr><td class="date">07/16/2026</td><td class="ref">2696</td><td>USPS</td><td class="tiny">6300-07 &middot; Postage</td><td class="tiny">Roll of stamps</td><td class="num">$78.00</td><td class="num"></td><td class="num bal">$109,485.98</td></tr>
+<tr><td class="date">07/16/2026</td><td class="ref">2697</td><td>Vickie C. Cliborne</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/02/26</td><td class="num">$472.92</td><td class="num"></td><td class="num bal">$109,013.06</td></tr>
+<tr><td class="date">07/16/2026</td><td class="ref">2698</td><td>Weldon R. Wilmoth Jr.</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/09/26</td><td class="num">$397.22</td><td class="num"></td><td class="num bal">$108,615.84</td></tr>
+<tr><td class="date">07/16/2026</td><td class="ref">2699</td><td>Quilla Cares</td><td class="tiny">6004-05 &middot; Consulting</td><td class="tiny">07/10/26&ndash;07/15/26</td><td class="num">$341.70</td><td class="num"></td><td class="num bal">$108,274.14</td></tr>
+<tr class="dep"><td class="date">07/17/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">5600-01 &middot; Real Estate</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$20.00</td><td class="num bal">$108,294.14</td></tr>
+<tr class="dep"><td class="date">07/21/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">5600-02 &middot; Personal Property</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$13.22</td><td class="num bal">$108,307.36</td></tr>
+<tr><td class="date">07/22/2026</td><td class="ref">2701</td><td>Vickie C. Cliborne</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/16/26</td><td class="num">$402.05</td><td class="num"></td><td class="num bal">$107,905.31</td></tr>
+<tr><td class="date">07/22/2026</td><td class="ref">2702</td><td>Tammy Harmon</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/16/26</td><td class="num">$523.54</td><td class="num"></td><td class="num bal">$107,381.77</td></tr>
+<tr><td class="date">07/22/2026</td><td class="ref">2703</td><td>Weldon R. Wilmoth Jr.</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/16/26</td><td class="num">$306.19</td><td class="num"></td><td class="num bal">$107,075.58</td></tr>
+<tr class="dep"><td class="date">07/27/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$1,030.71</td><td class="num bal">$108,106.29</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2704</td><td>Tammy Harmon</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/23/26</td><td class="num">$327.72</td><td class="num"></td><td class="num bal">$107,778.57</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2705</td><td>Vickie C. Cliborne</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/23/26</td><td class="num">$388.16</td><td class="num"></td><td class="num bal">$107,390.41</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2706</td><td>Weldon R. Wilmoth Jr.</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/23/26</td><td class="num">$400.01</td><td class="num"></td><td class="num bal">$106,990.40</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2707</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account #0002&hellip;</td><td class="num">$15.40</td><td class="num"></td><td class="num bal">$106,975.00</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2708</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account #0094&hellip;</td><td class="num">$24.36</td><td class="num"></td><td class="num bal">$106,950.64</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2709</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account #0060&hellip;</td><td class="num">$9.25</td><td class="num"></td><td class="num bal">$106,941.39</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2710</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account #0002&hellip;</td><td class="num">$7.59</td><td class="num"></td><td class="num bal">$106,933.80</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2711</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account #0040&hellip;</td><td class="num">$326.09</td><td class="num"></td><td class="num bal">$106,607.71</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2712</td><td>White's Building Supply</td><td class="tiny">6540-00 &middot; Buildings Maintenance</td><td class="tiny">Inv. 68607/1</td><td class="num">$28.99</td><td class="num"></td><td class="num bal">$106,578.72</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2713</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account #2100&hellip;</td><td class="num">$27.71</td><td class="num"></td><td class="num bal">$106,551.01</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2714</td><td>Planet Networks</td><td class="tiny">6003-02 &middot; Internet</td><td class="tiny">Acc# SUB-220&hellip;</td><td class="num">$79.95</td><td class="num"></td><td class="num bal">$106,471.06</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2715</td><td>Drakes Tire &amp; Repair</td><td class="tiny">6600-06 &middot; Vehicle Expense</td><td class="tiny">Inv. 9173</td><td class="num">$21.98</td><td class="num"></td><td class="num bal">$106,449.08</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2716</td><td>Virginia Municipal League</td><td class="tiny">6300-08 &middot; Dues &amp; Subscriptions</td><td class="tiny">Inv # 27924</td><td class="num">$562.00</td><td class="num"></td><td class="num bal">$105,887.08</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2717</td><td>VEPGA</td><td class="tiny">6300-08 &middot; Dues &amp; Subscriptions</td><td class="tiny">Inv. 27433</td><td class="num">$25.00</td><td class="num"></td><td class="num bal">$105,862.08</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2718</td><td>The Bank of Charlotte</td><td class="tiny">6300-06 &middot; Bank Service</td><td class="tiny">Safety deposit box</td><td class="num">$80.00</td><td class="num"></td><td class="num bal">$105,782.08</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2719</td><td>Cintas Corporation</td><td class="tiny">6001-12 &middot; Janitorial</td><td class="tiny">Customer# 143&hellip;</td><td class="num">$77.19</td><td class="num"></td><td class="num bal">$105,704.89</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2720</td><td>Larrys New Look</td><td class="tiny">6001-12 &middot; Janitorial</td><td class="tiny">July cleaning</td><td class="num">$300.00</td><td class="num"></td><td class="num bal">$105,404.89</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2721</td><td>Phyllis Watts</td><td class="tiny">6600-01 &middot; Uniforms</td><td class="tiny">Hemming police uniforms</td><td class="num">$26.00</td><td class="num"></td><td class="num bal">$105,378.89</td></tr>
+<tr><td class="date">07/27/2026</td><td class="ref">2722</td><td>Virginia Dept of Taxation</td><td class="tiny">2100-04 &middot; State Tax Withholding</td><td class="tiny">Account # 30-5&hellip;</td><td class="num">$24.75</td><td class="num"></td><td class="num bal">$105,354.14</td></tr>
+<tr><td class="date">07/28/2026</td><td class="ref">941-6.26</td><td>Internal Revenue Service</td><td class="tiny">-split-</td><td class="tiny">Employer ID 5&hellip;</td><td class="num">$5,683.99</td><td class="num"></td><td class="num bal">$99,670.15</td></tr>
+<tr><td class="date">07/28/2026</td><td class="ref">VA5-7.26</td><td>Virginia Dept of Taxation</td><td class="tiny">2100-04 &middot; State Tax Withholding</td><td class="tiny">Account # 30-5&hellip;</td><td class="num">$1,454.42</td><td class="num"></td><td class="num bal">$98,215.73</td></tr>
+<tr><td class="date">07/28/2026</td><td class="ref">VEC-726</td><td>Virginia Employment Commission</td><td class="tiny">2100-05 &middot; Unemployment</td><td class="tiny">FC-20 Unemployment</td><td class="num">$35.76</td><td class="num"></td><td class="num bal">$98,179.97</td></tr>
+<tr class="dep"><td class="date">07/30/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">5503-00 &middot; Tower Rental</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$1,400.00</td><td class="num bal">$99,579.97</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">2723</td><td>Eugene D. Wells Jr.</td><td class="tiny">6002-01 &middot; Planning Commission</td><td class="tiny">Jan 2026&ndash;July 2026</td><td class="num">$346.50</td><td class="num"></td><td class="num bal">$99,233.47</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">2724</td><td>Stephanie A. Clay</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/01/26</td><td class="num">$537.03</td><td class="num"></td><td class="num bal">$98,696.44</td></tr>
+<tr class="dep"><td class="date">07/31/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$1,693.69</td><td class="num bal">$100,390.13</td></tr>
+</tbody><tfoot><tr><td colspan="5">Totals for the period</td><td class="num">$38,063.41</td><td class="num">$10,304.59</td><td class="num">$100,390.13</td></tr></tfoot>
+</table></div>
+    <div class="tablewrap"><table class="t-compact" data-register="1"><caption>Water / Sewer &mdash; Bank of Charlotte County &middot; 07/01/2026 &ndash; 07/31/2026</caption>
+<thead><tr><th>Date</th><th>No.</th><th>Payee</th><th>Account</th><th>Memo</th><th class="num">Payment</th><th class="num">Deposit</th><th class="num">Balance</th></tr></thead><tbody>
+<tr class="dep"><td class="date">07/01/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$463.73</td><td class="num bal">$16,939.74</td></tr>
+<tr><td class="date">07/01/2026</td><td class="ref">3236</td><td>Ralph W Simpson III</td><td class="tiny">-split-</td><td class="tiny">Payroll 06/24/26</td><td class="num">$712.13</td><td class="num"></td><td class="num bal">$16,227.61</td></tr>
+<tr><td class="date">07/01/2026</td><td class="ref">3237</td><td>Brent Simpson</td><td class="tiny">-split-</td><td class="tiny">Payroll 06/24/26</td><td class="num">$536.98</td><td class="num"></td><td class="num bal">$15,690.63</td></tr>
+<tr><td class="date">07/01/2026</td><td class="ref">3238</td><td>Cameron M. Trust-Simpson</td><td class="tiny">-split-</td><td class="tiny">Payroll 06/24/26</td><td class="num">$571.16</td><td class="num"></td><td class="num bal">$15,119.47</td></tr>
+<tr><td class="date">07/01/2026</td><td class="ref">3239</td><td>Virginia Rural Water Assn.</td><td class="tiny">6300-08 &middot; Dues &amp; Subscriptions</td><td class="tiny">Annual dues</td><td class="num">$450.00</td><td class="num"></td><td class="num bal">$14,669.47</td></tr>
+<tr><td class="date">07/01/2026</td><td class="ref">3240</td><td>Fuel Freedom Card</td><td class="tiny">6100-00 &middot; Automobile</td><td class="tiny">Inv.# 6943</td><td class="num">$814.93</td><td class="num"></td><td class="num bal">$13,854.54</td></tr>
+<tr class="dep"><td class="date">07/02/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$544.41</td><td class="num bal">$14,398.95</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3241</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0034&hellip;</td><td class="num">$14.99</td><td class="num"></td><td class="num bal">$14,383.96</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3242</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0008&hellip;</td><td class="num">$7.70</td><td class="num"></td><td class="num bal">$14,376.26</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3243</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0075&hellip;</td><td class="num">$97.10</td><td class="num"></td><td class="num bal">$14,279.16</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3244</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0099&hellip;</td><td class="num">$145.63</td><td class="num"></td><td class="num bal">$14,133.53</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3245</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0095&hellip;</td><td class="num">$136.85</td><td class="num"></td><td class="num bal">$13,996.68</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3246</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0052&hellip;</td><td class="num">$337.15</td><td class="num"></td><td class="num bal">$13,659.53</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3247</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0097&hellip;</td><td class="num">$87.47</td><td class="num"></td><td class="num bal">$13,572.06</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3248</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0052&hellip;</td><td class="num">$881.84</td><td class="num"></td><td class="num bal">$12,690.22</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3249</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0097&hellip;</td><td class="num">$24.98</td><td class="num"></td><td class="num bal">$12,665.24</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3250</td><td>Planet Networks</td><td class="tiny">40019 &middot; Sewer &ndash; Internet</td><td class="tiny">ACC# SUB-22&hellip;</td><td class="num">$54.90</td><td class="num"></td><td class="num bal">$12,610.34</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3251</td><td>B&amp;B Consultants, Inc.</td><td class="tiny">6004-00 &middot; Professional</td><td class="tiny">Town of Drakes Branch</td><td class="num">$897.00</td><td class="num"></td><td class="num bal">$11,713.34</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3252</td><td>Falwell Corporation</td><td class="tiny">30033 &middot; Sewer Contract</td><td class="tiny">Acct. #40628</td><td class="num">$7,896.00</td><td class="num"></td><td class="num bal">$3,817.34</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3253</td><td>Country Home Repair</td><td class="tiny">6001-00 &middot; Contract Labor</td><td class="tiny">Inv 06182026</td><td class="num">$380.50</td><td class="num"></td><td class="num bal">$3,436.84</td></tr>
+<tr><td class="date">07/02/2026</td><td class="ref">3254</td><td>Drakes Farm &amp; Home</td><td class="tiny">-split-</td><td class="tiny">Statement 2606&hellip;</td><td class="num">$28.96</td><td class="num"></td><td class="num bal">$3,407.88</td></tr>
+<tr class="dep"><td class="date">07/03/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$379.98</td><td class="num bal">$3,787.86</td></tr>
+<tr class="dep"><td class="date">07/07/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$331.02</td><td class="num bal">$4,118.88</td></tr>
+<tr class="dep"><td class="date">07/08/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$3,982.44</td><td class="num bal">$8,101.32</td></tr>
+<tr class="dep"><td class="date">07/08/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$437.30</td><td class="num bal">$8,538.62</td></tr>
+<tr class="dep"><td class="date">07/10/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$356.16</td><td class="num bal">$8,894.78</td></tr>
+<tr><td class="date">07/10/2026</td><td class="ref">3255</td><td>Ralph W Simpson III</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/02/26</td><td class="num">$719.79</td><td class="num"></td><td class="num bal">$8,174.99</td></tr>
+<tr><td class="date">07/10/2026</td><td class="ref">3256</td><td>Brent Simpson</td><td class="tiny">-split-</td><td class="tiny">Payroll 06/24/26</td><td class="num">$630.87</td><td class="num"></td><td class="num bal">$7,544.12</td></tr>
+<tr><td class="date">07/10/2026</td><td class="ref">3257</td><td>Cameron M. Trust-Simpson</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/02/26</td><td class="num">$571.16</td><td class="num"></td><td class="num bal">$6,972.96</td></tr>
+<tr class="dep"><td class="date">07/13/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$518.67</td><td class="num bal">$7,491.63</td></tr>
+<tr class="dep"><td class="date">07/13/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$59.25</td><td class="num bal">$7,550.88</td></tr>
+<tr class="dep"><td class="date">07/14/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$208.29</td><td class="num bal">$7,759.17</td></tr>
+<tr class="dep"><td class="date">07/14/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">5200-01 &middot; Water Fees</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$11.30</td><td class="num bal">$7,770.47</td></tr>
+<tr class="dep"><td class="date">07/15/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$116.60</td><td class="num bal">$7,887.07</td></tr>
+<tr class="dep"><td class="date">07/16/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$321.05</td><td class="num bal">$8,208.12</td></tr>
+<tr><td class="date">07/16/2026</td><td class="ref">3258</td><td>Ralph W Simpson III</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/09/26</td><td class="num">$690.15</td><td class="num"></td><td class="num bal">$7,517.97</td></tr>
+<tr><td class="date">07/16/2026</td><td class="ref">3259</td><td>Brent Simpson</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/09/26</td><td class="num">$630.87</td><td class="num"></td><td class="num bal">$6,887.10</td></tr>
+<tr><td class="date">07/16/2026</td><td class="ref">3260</td><td>Cameron M. Trust-Simpson</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/09/26</td><td class="num">$571.16</td><td class="num"></td><td class="num bal">$6,315.94</td></tr>
+<tr><td class="date">07/16/2026</td><td class="ref">3261</td><td>B. Carroll Anderson</td><td class="tiny">6004-00 &middot; Professional</td><td class="tiny">Acct.#10342</td><td class="num">$400.00</td><td class="num"></td><td class="num bal">$5,915.94</td></tr>
+<tr><td class="date">07/16/2026</td><td class="ref">3262</td><td>USPS &ndash; Postmaster</td><td class="tiny">6300-07 &middot; Postage</td><td class="tiny">3 rolls postcard stamps</td><td class="num">$195.00</td><td class="num"></td><td class="num bal">$5,720.94</td></tr>
+<tr class="dep"><td class="date">07/17/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$248.00</td><td class="num bal">$5,968.94</td></tr>
+<tr class="dep"><td class="date">07/20/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$881.09</td><td class="num bal">$6,850.03</td></tr>
+<tr class="dep"><td class="date">07/21/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$164.93</td><td class="num bal">$7,014.96</td></tr>
+<tr><td class="date">07/23/2026</td><td class="ref">3263</td><td>Brent Simpson</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/16/26</td><td class="num">$631.90</td><td class="num"></td><td class="num bal">$6,383.06</td></tr>
+<tr><td class="date">07/23/2026</td><td class="ref">3264</td><td>Ralph W Simpson III</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/16/26</td><td class="num">$690.15</td><td class="num"></td><td class="num bal">$5,692.91</td></tr>
+<tr><td class="date">07/23/2026</td><td class="ref">3265</td><td>Cameron M. Trust-Simpson</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/16/26</td><td class="num">$572.19</td><td class="num"></td><td class="num bal">$5,120.72</td></tr>
+<tr class="dep"><td class="date">07/27/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$851.08</td><td class="num bal">$5,971.80</td></tr>
+<tr class="dep"><td class="date">07/29/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$330.21</td><td class="num bal">$6,302.01</td></tr>
+<tr class="dep"><td class="date">07/29/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$394.31</td><td class="num bal">$6,696.32</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3266</td><td>Ralph W Simpson III</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/23/26</td><td class="num">$690.15</td><td class="num"></td><td class="num bal">$6,006.17</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3267</td><td>Cameron M. Trust-Simpson</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/23/26</td><td class="num">$572.19</td><td class="num"></td><td class="num bal">$5,433.98</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3268</td><td>Brent Simpson</td><td class="tiny">-split-</td><td class="tiny">Payroll 07/23/26</td><td class="num">$415.44</td><td class="num"></td><td class="num bal">$5,018.54</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3269</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0012&hellip;</td><td class="num">$8.60</td><td class="num"></td><td class="num bal">$5,009.94</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3270</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0073&hellip;</td><td class="num">$9.01</td><td class="num"></td><td class="num bal">$5,000.93</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3271</td><td>Dominion Energy</td><td class="tiny">6200-00 &middot; Electric Service</td><td class="tiny">Account# 0008&hellip;</td><td class="num">$7.59</td><td class="num"></td><td class="num bal">$4,993.34</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3272</td><td>B&amp;B Consultants, Inc.</td><td class="tiny">6004-00 &middot; Professional</td><td class="tiny">Town of Drakes Branch</td><td class="num">$1,352.00</td><td class="num"></td><td class="num bal">$3,641.34</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3273</td><td>Taylor-Forbes Equipment</td><td class="tiny">60022 &middot; Water &ndash; Grass</td><td class="tiny">Customer TO&hellip;</td><td class="num">$437.94</td><td class="num"></td><td class="num bal">$3,203.40</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3274</td><td>Planet Networks</td><td class="tiny">40019 &middot; Sewer &ndash; Internet</td><td class="tiny">ACC# SUB-22&hellip;</td><td class="num">$54.90</td><td class="num"></td><td class="num bal">$3,148.50</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3275</td><td>White's Building Center</td><td class="tiny">6501-00 &middot; Maintenance</td><td class="tiny">Account# 1&hellip;</td><td class="num">$39.90</td><td class="num"></td><td class="num bal">$3,108.60</td></tr>
+<tr><td class="date">07/30/2026</td><td class="ref">3276</td><td>Virginia Department of Health</td><td class="tiny">6300-08 &middot; Dues &amp; Subscriptions</td><td class="tiny">Waterworks operator fee</td><td class="num">$189.75</td><td class="num"></td><td class="num bal">$2,918.85</td></tr>
+<tr class="dep"><td class="date">07/31/2026</td><td class="ref">&mdash;</td><td>Deposit</td><td class="tiny">-split-</td><td class="tiny">Deposit</td><td class="num"></td><td class="num">$657.23</td><td class="num bal">$3,576.08</td></tr>
+</tbody><tfoot><tr><td colspan="5">Totals for the period</td><td class="num">$24,156.98</td><td class="num">$11,257.05</td><td class="num">$3,576.08</td></tr></tfoot>
+</table></div>
+    <p class="tiny">Registers printed August 2, 2026 from the Town's accounting system. Account and memo
+    fields are shown as recorded; several are truncated in the source printout.</p>
+  </div>
+</section>
+
+
+<section id="reports">
+  <div class="sec-head">
+    <div class="rn">IX</div>
+    <h2>Committee Report Attachments<span class="sub">Written reports distributed with tonight's packet</span></h2>
+  </div>
+  <div class="sec-body">
+
+    <h3>Drakes Branch Police Department &mdash; July 2026</h3>
+    <div class="stats">
+      <div class="stat"><span class="lbl">Traffic summons</span><span class="val">22</span></div>
+      <div class="stat"><span class="lbl">Warnings issued</span><span class="val">7</span></div>
+      <div class="stat"><span class="lbl">Miles patrolled</span><span class="val">839</span></div>
+      <div class="stat"><span class="lbl">DCJS audit</span><span class="val" style="font-size:.95rem">Full compliance</span><span class="foot">July 14, 2026</span></div>
+    </div>
+
+    <h4>Traffic summons by speed</h4>
+    <div class="tablewrap"><table class="t-compact">
+      <caption>Summons issued &mdash; speed over posted zone limit</caption>
+      <thead><tr><th class="num">Count</th><th>Speed / zone limit</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="num">7</td><td class="ref">60 / 45</td><td></td></tr>
+        <tr><td class="num">4</td><td class="ref">62 / 45</td><td></td></tr>
+        <tr><td class="num">1</td><td class="ref">64 / 45</td><td></td></tr>
+        <tr><td class="num">1</td><td class="ref">65 / 45</td><td></td></tr>
+        <tr><td class="num">1</td><td class="ref">84 / 45</td><td></td></tr>
+        <tr><td class="num">1</td><td class="ref">71 / 45</td><td></td></tr>
+        <tr><td class="num">1</td><td class="ref">59 / 45</td><td></td></tr>
+        <tr><td class="num">1</td><td class="ref">58 / 45</td><td></td></tr>
+        <tr><td class="num">1</td><td class="ref">61 / 45</td><td></td></tr>
+        <tr><td class="num">1</td><td class="ref">63 / 45</td><td></td></tr>
+        <tr><td class="num">1</td><td class="ref">54 / 35</td><td></td></tr>
+        <tr><td class="num">1</td><td class="ref">&mdash;</td><td>Expired inspection</td></tr>
+        <tr><td class="num">1</td><td class="ref">&mdash;</td><td>Drinking while driving</td></tr>
+      </tbody>
+      <tfoot><tr><td class="num">22</td><td colspan="2">Total summons issued &middot; 7 warnings issued</td></tr></tfoot>
+    </table></div>
+
+    <h4>Other activity</h4>
+    <div class="tablewrap"><table class="t-compact">
+      <thead><tr><th>Date</th><th>Call</th><th>Disposition</th></tr></thead>
+      <tbody>
+        <tr><td class="date">&mdash;</td><td>Handicapped warning &mdash; Dollar General</td><td></td></tr>
+        <tr><td class="date">07/08/26</td><td>Rescue call &mdash; Anita's Caf&eacute;</td><td></td></tr>
+        <tr><td class="date">&mdash;</td><td>Isabella St. &mdash; deer hit</td><td></td></tr>
+        <tr><td class="date">07/09/26</td><td>Lucky Duck &mdash; female passed out in store</td><td>Went to Charlotte Court House for medical check up</td></tr>
+        <tr><td class="date">07/14/26</td><td>Audit from DCJS on Police Dept.</td><td>Passed with full compliance</td></tr>
+        <tr><td class="date">07/28/26</td><td>5441 Main St. &mdash; disturbance, alcohol related</td><td>Was advised to sleep it off</td></tr>
+        <tr><td class="date">07/31/26</td><td>Road check at Hwys 47 &amp; 59</td><td>Assisted by Sheriff's Office, VA State Police</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4>Grants &amp; departmental initiatives</h4>
+    <p><strong>July 27, 2026</strong> &mdash; Wrote and submitted a HEAT grant application for $16,000 for Flock cameras.</p>
+  </div>
+</section>
+
+
+<section id="cigarette">
+  <div class="sec-head">
+    <div class="rn">X&middot;C</div>
+    <h2>Draft Cigarette Tax Ordinance<span class="sub">Old business &middot; for discussion &mdash; not yet advertised or adopted</span></h2>
+  </div>
+  <div class="sec-body">
+    <div class="box gold">
+      <p class="kicker">Status</p>
+      <p>This is a working draft prepared at Council's July request for guidance on implementing a cigarette
+      tax. Bracketed items in <span class="redline">red</span> are blanks that must be filled before adoption.
+      Before this ordinance can be adopted, notice of a public hearing must be published in the
+      <em>Charlotte Gazette</em> and the hearing held. Adoption imposes a new tax and therefore requires an
+      affirmative vote of two-thirds of the members of Council under Virginia Code &sect;&nbsp;15.2-1427(G).</p>
+    </div>
+
+    <div class="legal">
+      <p style="text-align:center;font-weight:600;max-width:none">AN ORDINANCE TO AMEND THE TOWN CODE OF THE TOWN OF DRAKES BRANCH, VIRGINIA,
+      BY ADDING ARTICLE II, CIGARETTE TAX, TO CHAPTER 12, TAXATION</p>
+
+      <p>WHEREAS, Virginia Code &sect; 58.1-3830 authorizes any locality, including the Town of Drakes Branch,
+      to levy a tax upon the sale or use of cigarettes; and</p>
+      <p>WHEREAS, Virginia Code &sect; 58.1-3832 further authorizes the Town to adopt ordinance provisions for
+      the administration and enforcement of its cigarette tax, including the use of tax stamps, seizure of
+      untaxed cigarettes, and penalties for violations; and</p>
+      <p>WHEREAS, the Town of Drakes Branch currently has no local cigarette tax in effect; and</p>
+      <p>WHEREAS, the Town Council finds that the imposition of a local cigarette tax will generate revenue
+      to support town operations and capital needs; and</p>
+      <p>WHEREAS, notice of a public hearing on this ordinance was published in the Charlotte Gazette, the
+      legal organ of the Town, and a public hearing was held on <span class="redline">[HEARING DATE]</span>; and</p>
+      <p>WHEREAS, adoption of this ordinance imposes a new tax and therefore requires an affirmative vote of
+      two-thirds of the members of the Town Council pursuant to Virginia Code &sect; 15.2-1427(G);</p>
+      <p>NOW, THEREFORE, BE IT ORDAINED by the Town Council of the Town of Drakes Branch, Virginia, that
+      Chapter 12 of the Town Code is amended by adding Article II, Cigarette Tax, as follows:</p>
+
+      <h3 style="text-align:center">Article II. Cigarette Tax</h3>
+
+      <h4><span class="secno">Sec. 12-11.</span> Definitions.</h4>
+      <p>The following words, terms and phrases, when used in this article, shall have the meanings ascribed
+      to them in this section, except where the context clearly indicates a different meaning:</p>
+      <p><em>Agent</em> means every local dealer and every other person who shall be authorized by the town
+      treasurer to purchase and affix stamps to packages of cigarettes under the provisions of this article.</p>
+      <p><em>Dealer</em> means every manufacturer, jobber, wholesale dealer or other person who supplies a
+      seller with cigarettes.</p>
+      <p><em>Package</em> means every package, box, can or other container of any cigarettes to which the
+      Internal Revenue Stamp of the United States Government is required to be affixed by and under federal
+      statutes and regulations and in which retail sales of such cigarettes are normally made or intended to be made.</p>
+      <p><em>Sale</em> means every act or transaction, irrespective of the method or means employed, including
+      the use of vending machines and other mechanical devices, whereby title to any cigarettes shall be
+      transferred from the seller, as defined in this section, to any other person within the town.</p>
+      <p><em>Seller</em> means every person engaged in the business of selling cigarettes who transfers title
+      or in whose place of business title to any such cigarettes is transferred within the town for any
+      purpose other than resale.</p>
+      <p><em>Stamp</em> means the small gummed piece of paper or decalcomania to be sold by the town treasurer
+      and to be affixed by the agent to every package of cigarettes; it shall also denote any insignia or
+      symbol printed by a meter machine upon any such package under authorization of the town treasurer.</p>
+      <p><em>Treasurer</em> means the town treasurer and every person duly authorized by him or her to serve
+      as his or her representative.</p>
+
+      <h4><span class="secno">Sec. 12-12.</span> Levied; amount.</h4>
+      <p>There is hereby levied and imposed by the town, in addition to any other taxes which may be or have
+      been imposed, a tax to be paid and collected as provided in this article on each and every sale of
+      cigarettes made in the town. The tax is to be paid by the seller, local dealer or other agent by
+      affixing a stamp, or causing a stamp to be affixed to every package of cigarettes, in the kind and
+      manner required in this article and at the applicable rates as follows:</p>
+      <p>The rate of tax levied or imposed on cigarettes shall be an initial rate of fifteen cents ($0.15)
+      for each twenty (20) cigarettes or fractional part thereof. This rate shall become effective
+      <span class="redline">[EFFECTIVE DATE]</span> and shall remain effective through December 31 of that
+      year. Beginning January 1 of the following year, the rate shall increase by two and one-half cents
+      ($0.025) per pack of twenty (20) cigarettes on each January 1 thereafter, until reaching a final rate
+      of twenty-seven and one-half cents ($0.275) per pack of twenty (20) cigarettes, four years after the
+      initial effective date.</p>
+      <div class="box"><p><strong>Note:</strong> this schedule mirrors Keysville's ordinance and stays well under
+      the maximum rate of $0.02 per cigarette ($0.40 per pack of 20) permitted for Drakes Branch under
+      Va. Code &sect; 58.1-3830(C)(1).</p></div>
+
+    <div class="calc no-search noprint" id="cigcalc">
+      <div class="calc-head"><span>Revenue estimator &mdash; adjust the assumptions</span>
+        <button type="button" data-reset="1">Reset</button></div>
+      <div class="calc-body">
+        <fieldset>
+          <legend>Assumptions</legend>
+          <div class="field"><label for="cig-packs">Packs of 20 sold in Town per year</label>
+            <input id="cig-packs" data-k="packs" type="number" min="0" step="500" value="20000"></div>
+          <div class="field"><label for="cig-disc">Dealer stamp discount per pack</label>
+            <input id="cig-disc" data-k="disc" type="number" min="0" step="0.005" value="0.025"></div>
+          <div class="field"><label for="cig-admin">First-year administration cost</label>
+            <input id="cig-admin" data-k="admin" type="number" min="0" step="50" value="500"></div>
+        </fieldset>
+        <div class="out"></div>
+      </div>
+    </div>
+    <div class="box alert">
+      <p class="kicker">Two things to fix before this is advertised</p>
+      <p><strong>The rate schedule does not close.</strong> Sec. 12-12 starts at $0.15 and adds $0.025 every
+      January 1 until reaching $0.275 &ldquo;four years after the initial effective date.&rdquo; Four increases from
+      $0.15 lands on $0.25, not $0.275 &mdash; reaching $0.275 takes five. Council needs to decide which is
+      intended and correct one or the other before the hearing is advertised.</p>
+      <p><strong>The Town nets less than the posted rate.</strong> Sec. 12-13(b) requires a $0.025 per-stamp
+      discount to the dealer. At the initial $0.15 rate the Town keeps $0.125 per pack &mdash; about 17% less than
+      the headline number. The estimator above accounts for this.</p>
+    </div>
+
+      <h4><span class="secno">Sec. 12-13.</span> Preparation, sale, etc., of stamps; duties of treasurer generally.</h4>
+      <p>(a) The town treasurer shall acquire, keep and sell necessary stamps to local dealers and other agents,
+      the stamps to be of such denominations and quantities as may be necessary for the payment of the tax
+      imposed in this article. Any stamp or meter impression issued under this article shall be of the same
+      stamp technology as is used or required by the Commonwealth for the state cigarette tax stamp pursuant
+      to Va. Code &sect; 58.1-1000 et seq., as required by Va. Code &sect; 58.1-3832(2).</p>
+      <p>(b) In the sale of such stamps to a local dealer or other agent, the treasurer shall allow a discount
+      of two and one-half cents ($0.025) per stamp of the face value thereof to cover the cost which will be
+      incurred by such dealer or agent in affixing the stamps to packages of cigarettes.</p>
+      <p>(c) The town treasurer may, from time to time and as often as he or she deems advisable, provide for
+      the issuance and exclusive use of stamps of a new design and forbid the use of stamps of any other design.
+      The treasurer is empowered to make and carry into effect such reasonable rules and regulations relating
+      to the preparation, furnishing and sale of stamps as he or she may deem necessary. He or she is further
+      authorized and empowered to prescribe the method to be employed, the conditions to be observed, and any
+      other necessary requirements not contrary to this article in the use of meter machines for printing upon
+      packages of cigarettes an insignia to represent the payment of the tax and in lieu of stamps.</p>
+      <p>(d) Refunds and redemption of stamps shall be made as follows:</p>
+      <p style="margin-left:1.4rem">(1) Unused stamps that are returned to the treasurer and verified as intact
+      and undamaged shall be refunded at their full face value, without penalty or additional fee, as required
+      by Va. Code &sect; 58.1-3832(2).</p>
+      <p style="margin-left:1.4rem">(2) For stamps that have been damaged or destroyed such that the treasurer
+      cannot verify their return in original, intact condition, the treasurer shall not in any case refund more
+      than ninety (90) percent of the face value of such stamps.</p>
+      <p>(e) In addition to powers granted in subsections (a) through (d) of this section, the town treasurer is
+      further authorized and empowered to:</p>
+      <p style="margin-left:1.4rem">(1) Prescribe, adopt, promulgate and enforce rules and regulations relating
+      to the method and means to be used in the cancellation of stamps;</p>
+      <p style="margin-left:1.4rem">(2) Delegate his or her powers to agents or others, including the Mayor of
+      the Town of Drakes Branch;</p>
+      <p style="margin-left:1.4rem">(3) Act in any other matters pertaining to the administration and enforcement
+      of the provisions of this article.</p>
+
+      <h4><span class="secno">Sec. 12-14.</span> Inspection of records, premises, etc.</h4>
+      <p>The town treasurer, or his or her duly authorized agent, is empowered to examine books, records,
+      invoices and papers related to purchases, sales, etc., of cigarettes, and to examine all cigarettes in
+      and upon any premises where cigarettes are placed, sold, stored, offered for sale or displayed for sale
+      by a seller.</p>
+
+      <h4><span class="secno">Sec. 12-15.</span> Seizure and disposition of untaxed cigarettes, etc.</h4>
+      <p>(a) If the town treasurer or his or her agent discovers any cigarettes subject to the tax imposed under
+      this article, but upon which such tax has not been paid and upon which stamps have not been affixed or
+      evidence of payment is not shown thereon by printed markings of a meter machine in compliance with the
+      provisions of this article, then the treasurer or duly authorized agents or officers, any of them, may
+      seize and take possession forthwith of such cigarettes, which shall thereupon be deemed to be forfeited
+      to the town. Such cigarettes may, within a reasonable time thereafter, and after written notice is posted
+      at the front door of the town office at least five (5) days before the date given therein for sale, be
+      sold in the place designated in such notice.</p>
+      <p>(b) Any property, other than motor vehicles, used in the furtherance of any illegal evasion of the tax
+      may be seized, confiscated and disposed of as provided in subsection (a) of this section. No credit from
+      any sale or other disposition shall be allowed toward any tax or penalties owed.</p>
+      <p>(c) The seizure and sale of any property shall not be deemed to relieve any of the persons of any other
+      penalties provided in this article.</p>
+
+      <h4><span class="secno">Sec. 12-16.</span> Obligation of dealers and agents regarding stamps.</h4>
+      <p>(a) Every local dealer in cigarettes and every agent appointed under this section shall purchase
+      necessary stamps from the town treasurer to pay the tax imposed under this article and shall affix or
+      cause to be affixed a stamp of the monetary value provided by this article to each package of cigarettes
+      prior to delivering or furnishing such cigarettes to any seller who is not also an agent.</p>
+      <p>(b) Nothing contained in this section shall be deemed to preclude any dealer from authorizing and
+      employing any agent to purchase and affix such stamps on the dealer's behalf, or to have a stamp meter
+      machine used in lieu of stamps to effectuate the provisions of this article.</p>
+      <p>(c) Stamps or printed markings of a meter machine shall be placed upon each package of cigarettes in
+      such a manner as to be readily visible to the purchaser.</p>
+      <p>(d) It shall be the responsibility of every seller to determine that each package of cigarettes offered
+      for sale has a proper stamp affixed thereto in compliance with the provisions of this article.</p>
+      <p>(e) If inspection by the agents of the town discloses unstamped or improperly stamped packages of
+      cigarettes, the seller, when such cigarettes were obtained from a local dealer, shall immediately notify
+      such dealer, and upon such notification such dealer shall forthwith either affix to the unstamped or
+      improperly stamped package, container or item the proper amount of stamps or replace such package,
+      container or item with others to which stamps have been properly affixed. If a seller, who is not also an
+      agent, acquires or has in his or her possession unstamped or improperly stamped cigarettes, the seller
+      shall forthwith notify the treasurer of such fact. The treasurer shall thereupon affix or cause to be
+      affixed the proper stamps to such cigarettes. The cost of such stamps at face value shall be advanced by
+      such seller.</p>
+      <p>(f) The treasurer, by proper rules and regulations, may require every local dealer, agent or seller to
+      cancel stamps upon all packages of cigarettes in his or her possession.</p>
+      <p>(g) Every local dealer and seller shall maintain and keep for a period of at least two (2) years such
+      records of cigarettes received and sold by him or her as may be required by the treasurer; such records
+      shall be made available for examination in the town by the treasurer upon demand, and the means,
+      facilities and opportunities for making any such examination shall be made available at all reasonable
+      times.</p>
+
+      <h4><span class="secno">Sec. 12-17.</span> Presumptions based on quantity.</h4>
+      <p>Cigarettes found in quantities of more than six (6) cartons within the town shall be conclusively
+      presumed to be for sale therein and may be seized and confiscated if:</p>
+      <p style="margin-left:1.4rem">(1) They are in transit, and are not accompanied by a bill of lading or
+      other document indicating the true name and address of the consignor or seller and of the consignee or
+      purchaser, and the brands and quantity of cigarettes so transported, or they are in transit and
+      accompanied by a bill of lading or other document which is false or fraudulent, in whole or in part;</p>
+      <p style="margin-left:1.4rem">(2) They are in transit and are accompanied by a bill of lading or other
+      document indicating:</p>
+      <p style="margin-left:2.8rem">a. A consignee or purchaser in another state or the District of Columbia
+      who is not authorized by the law of such other jurisdiction to receive or possess such cigarettes on
+      which the taxes imposed by such other jurisdiction have not been paid, unless the tax of the state or
+      district of destination has been paid and the products bear the tax stamps of that state or district; or</p>
+      <p style="margin-left:2.8rem">b. A consignee or purchaser in the Commonwealth but outside the town who
+      does not possess a state sales and use tax certificate, a state retail cigarettes license and, where
+      applicable, both a business license and retail cigarettes license issued by the local jurisdiction of
+      destination; or</p>
+      <p style="margin-left:1.4rem">(3) They are not in transit and the tax has not been paid, nor have approved
+      arrangements for payment been made, provided that this subsection shall not apply to cigarettes in the
+      possession of distributors or public warehouses which have filed notice and appropriate proof with the
+      town that those cigarettes are temporarily within the town and will be sent to consignees or purchasers
+      outside the jurisdiction in the normal course of business.</p>
+
+      <h4><span class="secno">Sec. 12-18.</span> Presumption based upon stamps or markings.</h4>
+      <p>If any package of cigarettes is found in the possession of a seller without proper stamps or authorized
+      printed markings thereon, and the seller is unable to submit evidence establishing that he or she received
+      such packages, containers or items within the immediately preceding forty-eight (48) hours, and that he or
+      she has not offered the same for sale, then it shall be presumed that such packages, containers or items
+      are being kept in violation of the provisions of this article, and the seller shall be subject to the
+      pre-discount tax and a penalty in the amount of fifty (50) percent thereof, even though such seller is
+      also an agent.</p>
+
+      <h4><span class="secno">Sec. 12-19.</span> Disposition of revenue.</h4>
+      <p>Revenue derived from the tax imposed in this article shall be deposited by the town treasurer to the
+      credit of the general fund of the town. The revenue generated from the tax shall be utilized for the
+      specific purposes listed below:</p>
+      <p style="margin-left:1.4rem">(1) Costs related to implementation and administration of the cigarette tax,
+      including the purchase of tax stamps;</p>
+      <p style="margin-left:1.4rem">(2) <span class="redline">[ADDITIONAL PURPOSE &mdash; e.g., capital improvement projects]</span>;</p>
+      <p style="margin-left:1.4rem">(3) <span class="redline">[ADDITIONAL PURPOSE, if any]</span>.</p>
+      <p>Other than the listed purposes above, the Town Council may not utilize cigarette tax revenue for any
+      other purpose without a unanimous vote of the Council members. Such vote must be conducted for every
+      instance where cigarette tax revenue is utilized.</p>
+
+      <h4><span class="secno">Sec. 12-20.</span> Illegal acts.</h4>
+      <p>It shall be unlawful and a violation of this article for any dealer or other person liable for the tax to:</p>
+      <p style="margin-left:1.4rem">(1) Perform any act or fail to perform any act for the purpose of evading the
+      payment of any tax imposed by this article or any part thereof, or fail or refuse to perform any of the
+      duties imposed on him or her under the provisions of this article, or fail or refuse to obey any lawful
+      order which may be issued under this article;</p>
+      <p style="margin-left:1.4rem">(2) Falsely or fraudulently make, or cause to be made, any invoices or
+      reports, or falsely or fraudulently forge, alter or counterfeit any stamp, or procure or cause to be made,
+      forged, altered or counterfeited any such stamp, or knowingly and willfully alter, publish, pass or tender
+      as true any false, altered, forged or counterfeited stamp or stamps;</p>
+      <p style="margin-left:1.4rem">(3) Sell, offer for sale, or authorize or approve the sale of, any cigarettes
+      upon which the town stamp has not been affixed;</p>
+      <p style="margin-left:1.4rem">(4) Possess, store, use, authorize or approve the possession, storage or use
+      of any cigarettes in quantities of more than sixty (60) cigarettes upon which the town stamp has not been
+      affixed;</p>
+      <p style="margin-left:1.4rem">(5) Transport, or authorize or approve the transportation of, any cigarettes
+      in quantities of more than sixty (60) packages into or within the town upon which the town stamp has not
+      been affixed, if they are:</p>
+      <p style="margin-left:2.8rem">a. Not accompanied by a bill of lading or other document indicating the true
+      name and address of the consignor or seller and the consignee or purchaser and the brands and quantity of
+      cigarettes transported;</p>
+      <p style="margin-left:2.8rem">b. Accompanied by a bill of lading or other document which is false or
+      fraudulent in whole or part; or</p>
+      <p style="margin-left:2.8rem">c. Accompanied by a bill of lading or other document indicating:</p>
+      <p style="margin-left:4.2rem">1. A consignee or purchaser in another state or the District of Columbia who
+      is not authorized by the law of such other jurisdiction to receive or possess such tobacco products on
+      which the taxes imposed by such other jurisdiction have not been paid, unless the tax of the jurisdiction
+      of destination has been paid and such cigarettes bear the tax stamps of that jurisdiction; or</p>
+      <p style="margin-left:4.2rem">2. A consignee or purchaser in the Commonwealth but outside the taxing
+      jurisdiction who does not possess a state sales and use tax certificate, a state retail tobacco license,
+      and, where applicable, both a business license and a retail tobacco license issued by the local
+      jurisdiction of destination;</p>
+      <p style="margin-left:1.4rem">(6) Reuse or refill with cigarettes any package from which cigarettes have
+      been removed, for which the tax imposed has theretofore been paid; or</p>
+      <p style="margin-left:1.4rem">(7) Remove from any package any stamp with intent to use, or cause the package
+      to be used, after such package has already been used, or buy, sell, offer for sale or give away any used,
+      removed, altered or restored stamps to any person, or reuse any stamp which had theretofore been used as
+      evidence of the payment of any tax prescribed by this article, or sell or offer to sell any stamp provided
+      for in this article.</p>
+
+      <h4><span class="secno">Sec. 12-21.</span> Penalty.</h4>
+      <p>Any person violating any of the provisions of this article shall be guilty of a Class 1 misdemeanor.
+      Any fine and/or imprisonment pursuant to conviction of a Class 1 misdemeanor shall not relieve any such
+      person from the payment of any tax, penalty or interest imposed by this article.</p>
+
+      <h4><span class="secno">Sec. 12-22.</span> Each violation a separate offense.</h4>
+      <p>The sale of any quantity, or the use, possession, storage or transportation of more than sixty (60)
+      packages of cigarettes upon which the town stamp has not been affixed, shall constitute a separate
+      violation. Each continuing day of violation shall be deemed to constitute a separate offense.</p>
+
+      <h4><span class="secno">Sec. 12-23.</span> Adoption and enactment date.</h4>
+      <p>The foregoing ordinance was adopted by the Drakes Branch Town Council at a
+      <span class="redline">[regular/special]</span> meeting held on <span class="redline">[ADOPTION DATE]</span>,
+      following a public hearing held on <span class="redline">[HEARING DATE]</span>, by a recorded vote of
+      <span class="redline">[X&ndash;X]</span> (a two-thirds majority, as required by Va. Code &sect; 15.2-1427(G)).
+      The ordinance enactment date is <span class="redline">[EFFECTIVE DATE]</span>.</p>
+
+      <p style="margin-top:2rem"><strong>ATTEST:</strong></p>
+      <p><span class="fill" style="min-width:18rem"></span><br><span class="redline">[Town Clerk Name]</span>, Town Clerk</p>
+      <p><span class="fill" style="min-width:18rem"></span><br><span class="redline">[Mayor Name]</span>, Mayor</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="crc">
+  <div class="sec-head">
+    <div class="rn">&sect;</div>
+    <h2>Regional Reports<span class="sub">Commonwealth Regional Council &mdash; materials distributed to Council</span></h2>
+  </div>
+  <div class="sec-body">
+    <p>The Commonwealth Regional Council (CRC) is the planning district commission serving Amelia, Buckingham,
+    Charlotte, Cumberland, Lunenburg, Nottoway and Prince Edward counties. Drakes Branch is an active project
+    locality. The following items came out of the CRC's July 15, 2026 meeting.</p>
+
+    <h3>Drakes Branch Building Acquisition Project</h3>
+    <p class="kicker">Memorandum &middot; July 6, 2026 &middot; Lauren J. Pugh, Planning Director</p>
+    <p>The Town of Drakes Branch has been awarded a Hazard Mitigation Grant Program (HMGP) grant by FEMA through
+    VDEM to fund the acquisition and removal of nine (9) buildings in the Town's Central Business District.
+    These buildings are located within the floodplain and are subject to damage from flood events in the area.
+    The HMGP grant is being matched with a combination of funds from the State and local matching funds from the
+    Town. The CRC is assisting the Town with implementation of this project.</p>
+    <p><strong>Update:</strong> This budget revision has been approved by FEMA. CRC staff notified the Town of
+    this approval and discussed next steps for the project. The Town selected to proceed with the demolition of
+    the four buildings. CRC staff notified the selected contractor, WACO, of the award. CRC, Town, and WACO staff
+    attended a meeting for contract negotiation to discuss the project's next steps. The Town had a few
+    stipulations on requirements for the project. WACO has agreed and are working on compiling the documents.</p>
+    <p>CRC staff worked with VDEM to submit a year extension request on behalf of the Town. The Town has not
+    been notified of the approval of this extension.</p>
+
+    <div class="tablewrap"><table class="t-compact">
+      <caption>Status of the nine properties</caption>
+      <thead><tr><th>Bldg</th><th>Address</th><th>Ownership</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="ref">1</td><td>4790 Drakes Main Street</td><td>Privately owned</td><td>Owner has <strong>opted out</strong> &mdash; will not participate.</td></tr>
+        <tr><td class="ref">2</td><td>4800 Drakes Main Street</td><td>Town-owned &mdash; Old Town Hall</td><td>Appraisal, title search, lead and asbestos testing, TCLP testing, asbestos abatement completed.</td></tr>
+        <tr><td class="ref">3</td><td>4818 Drakes Main Street (connected to Bldg 2)</td><td>Town-owned &mdash; fire station</td><td>Appraisal, title search, lead and asbestos testing, TCLP testing, asbestos abatement completed.</td></tr>
+        <tr><td class="ref">4</td><td>4830 Drakes Main Street</td><td>Privately owned &mdash; purchased</td><td>Appraisal, title search, lead and asbestos testing, TCLP testing, asbestos abatement completed.</td></tr>
+        <tr><td class="ref">5</td><td>4860 Drakes Main Street</td><td>Privately owned (same owner as 6)</td><td>Appraisal, title search, lead and asbestos testing completed. <strong>Not purchased.</strong></td></tr>
+        <tr><td class="ref">6</td><td>Harold Street (connected to Bldg 5)</td><td>Privately owned (same owner as 5)</td><td>Appraisal, title search, lead and asbestos testing completed. <strong>Not purchased.</strong></td></tr>
+        <tr><td class="ref">7</td><td>4870 Drakes Main Street</td><td>Privately owned</td><td>Owner has <strong>opted out</strong> &mdash; will not participate.</td></tr>
+        <tr><td class="ref">8</td><td>4880 / 4884 Drakes Main Street</td><td>Privately owned</td><td>Appraisal, title search, lead and asbestos inspections completed. Property has tax liens; County referred it to Tax Authority Consulting Services (TACS) for a tax sale. TACS conducted a tax auction June 17, 2024 and the Town was outbid, so participation is uncertain.</td></tr>
+        <tr><td class="ref">9</td><td>4881 Drakes Main Street</td><td>Privately owned &mdash; purchased</td><td>Appraisal, title search, lead and asbestos inspection, TCLP testing, asbestos abatement completed.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Drakes Branch Comprehensive Plan &mdash; update</h3>
+    <p class="kicker">Memorandum &middot; July 6, 2026 &middot; Ethan Bowman, Environment &amp; Resilience Planner</p>
+    <ul>
+      <li>The most recent work session was held March 18. CRC staff presented drafts of the full eight-chapter
+        plan and the Future Land Use Map was reviewed. Staff received feedback from the Planning Commission and
+        the drafts were accepted with edits. <strong>No future work sessions are planned at this time.</strong></li>
+      <li>The Planning Commission and Town Council held their joint public hearing on <strong>June 24 at 7:00 p.m.
+        The plan was approved.</strong></li>
+    </ul>
+
+    <h3>Watershed Implementation Plan (WIP) III &mdash; monthly update</h3>
+    <p class="kicker">Memorandum &middot; July 6, 2026 &middot; Ethan Bowman</p>
+    <ul>
+      <li><strong>Regional BMP coordination.</strong> The CRC held a BMP Task Force meeting on May 29 to collect and
+        share information about BMPs with localities, bringing together localities, the Virginia Department of
+        Health, and SERCAP.</li>
+      <li><strong>Rain barrel workshops.</strong> The planned summer partnership with Lunenburg Middle School was
+        canceled due to insufficient enrollment. CRC is now coordinating with the school to provide programming
+        through the new Agriculture class during the first one to two months of the upcoming school year
+        (August&ndash;September). CRC is also coordinating with Central Virginia Regional Library branches to host
+        three workshop-style booths at upcoming Fall Fest events.</li>
+      <li><strong>Trees for Clean Water.</strong> The CRC met with the Mayor of Drakes Branch on January 22, 2026 to
+        discuss tree planting projects within the Town. Proposed projects include a tree buffer between the
+        Pavilion and Waste Convenience Center, and a small park space adjacent to the Town Hall / Fire Department
+        building. CRC is planning to pursue implementation during the <strong>Fall 2026 planting season</strong>.</li>
+    </ul>
+
+    <h3>Regional funding &amp; items of interest &mdash; July 2026</h3>
+    <div class="tablewrap"><table class="t-compact">
+      <caption>Upcoming funding opportunities</caption>
+      <thead><tr><th>Program</th><th>Opens</th><th>Due</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Rescue Squad Assistance Fund &mdash; Fall 2026</td><td class="date">Aug. 1, 2026</td><td class="date">Sept. 15, 2026</td><td>Competitive matching funds for EMS equipment, vehicles, training, technology, recruitment and retention.</td></tr>
+        <tr><td>Virginia Humanities Community Action Grants &mdash; Fall 2026</td><td class="date">Aug. 17, 2026</td><td class="date">Oct. 16, 2026</td><td>Public humanities in festivals, community events, and public gatherings; local history, storytelling, exhibits, educational programming.</td></tr>
+        <tr><td>Virginia Tourism Special Events &amp; Festivals</td><td class="date">Sept. 22, 2026</td><td class="date">Oct. 29, 2026</td><td>Up to $20,000. Marketing and eligible production costs for established festivals and special events. Matching funds required.</td></tr>
+      </tbody>
+    </table></div>
+    <p><strong>Finding Funding for the Future workshop &mdash; August 12, 2026.</strong> The CRC will host a
+    stakeholder workshop connecting local governments and community organizations with agencies that fund water
+    and wastewater infrastructure, stormwater management, resilience, community facilities, and other local
+    priorities. Attendees can ask questions and discuss potential projects directly with funding partners.</p>
+    <p><strong>Drakes Branch flood-mitigation project.</strong> The CRC reports the Town continues to advance its
+    FEMA-funded Building Acquisition Project. FEMA recently approved a budget revision allowing the project to
+    move into its next phase. The Town has selected a contractor to demolish four acquired buildings and the
+    contract has now been executed. The contractor is working through the remaining steps needed to begin
+    demolition. Once completed, the project will reduce flood risk while creating opportunities for downtown
+    revitalization and open space.</p>
+    <p class="tiny">The CRC provides free grant writing services for member localities and local 501(c)(3)
+    non-profits. Commonwealth Regional Council, 200 Heartland Rd, Keysville VA 23947 &middot; (434) 392-6104 &middot;
+    CommonwealthRC.org. Next CRC meeting: Wednesday, August 19, 2026, 8:30 a.m.</p>
+  </div>
+</section>
+
+</main></div>
+
+<footer class="pagefoot">
+  <div class="cols">
+    <div></div>
+    <div>
+      {priv}
+      <p><strong>Town of Drakes Branch</strong><br>
+      P.O. Box 191, Drakes Branch, VA 23937<br>
+      Municipal Building &mdash; 4801 Drakes Main Street<br>
+      Phone: (434) 568-3091 &middot; <a href="mailto:drakesbr@hovac.com">drakesbr@hovac.com</a><br>
+      <a href="http://www.towndrakesbranch.com">www.towndrakesbranch.com</a></p>
+      <p class="tiny">Mayor Deborah Kennedy &middot; Vice Mayor Peery Wells, Sr. &middot; Charles Errickson &middot;
+      Thomas Pettus &middot; Eugene Wells, Jr. &middot; Liz Davis &middot; James Gregory &middot;
+      Town Clerk Tammy Harmon &middot; Deputy Clerk Vickie Cliborne</p>
+      <p class="tiny">Persons requiring an accommodation to attend or participate in this meeting should contact
+      the Town Office at (434) 568-3091 at least three business days in advance so arrangements can be made.
+      Records referenced in this packet are available under the Virginia Freedom of Information Act; requests
+      may be directed to the Town Clerk.</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<button id="totop" class="noprint" aria-label="Back to top">&uarr;</button>
+<script>
+(function(){
+"use strict";
+var DOC = document.body.getAttribute("data-doc") || "db";
+var K = function(k){ return "dbpacket:" + DOC + ":" + k; };
+
+/* ---------- storage that never throws ---------- */
+var store = (function(){
+  try { var t="__p"; window.localStorage.setItem(t,"1"); window.localStorage.removeItem(t); return window.localStorage; }
+  catch(e){ var m={}; return { getItem:function(k){return k in m?m[k]:null;},
+    setItem:function(k,v){m[k]=String(v);}, removeItem:function(k){delete m[k];} }; }
+})();
+function load(k,d){ try{ var v=store.getItem(K(k)); return v==null?d:JSON.parse(v);}catch(e){return d;} }
+function save(k,v){ try{ store.setItem(K(k),JSON.stringify(v)); }catch(e){} }
+
+var money = function(n){ return "$" + (Math.round(n*100)/100).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}); };
+var money0 = function(n){ return "$" + Math.round(n).toLocaleString("en-US"); };
+
+/* ---------- collapsible sections + rail scrollspy ---------- */
+var sections = [].slice.call(document.querySelectorAll("main section"));
+var openState = load("open", {});
+sections.forEach(function(sec){
+  var head = sec.querySelector(".sec-head"); if(!head) return;
+  var b = document.createElement("button");
+  b.className = "sec-toggle"; b.type = "button";
+  b.setAttribute("aria-controls", sec.id);
+  head.appendChild(b);
+  function paint(){
+    var col = sec.classList.contains("collapsed");
+    b.textContent = col ? "Show" : "Hide";
+    b.setAttribute("aria-expanded", col ? "false" : "true");
+  }
+  if(openState[sec.id] === false) sec.classList.add("collapsed");
+  paint();
+  b.addEventListener("click", function(){
+    sec.classList.toggle("collapsed");
+    openState[sec.id] = !sec.classList.contains("collapsed");
+    save("open", openState); paint();
+  });
+});
+function setAll(collapse){
+  sections.forEach(function(s){
+    s.classList.toggle("collapsed", collapse);
+    openState[s.id] = !collapse;
+    var b = s.querySelector(".sec-toggle");
+    if(b){ b.textContent = collapse ? "Show" : "Hide"; b.setAttribute("aria-expanded", collapse?"false":"true"); }
+  });
+  save("open", openState);
+}
+var ea = document.getElementById("expandall"), ca = document.getElementById("collapseall");
+if(ea) ea.addEventListener("click", function(){ setAll(false); });
+if(ca) ca.addEventListener("click", function(){ setAll(true); });
+
+var railLinks = [].slice.call(document.querySelectorAll(".rail a"));
+if("IntersectionObserver" in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      railLinks.forEach(function(a){ a.classList.toggle("active", a.getAttribute("href") === "#"+en.target.id); });
+    });
+  }, { rootMargin: "-80px 0px -70% 0px", threshold: 0 });
+  sections.forEach(function(s){ if(s.id) io.observe(s); });
+}
+railLinks.forEach(function(a){
+  a.addEventListener("click", function(){
+    var t = document.querySelector(a.getAttribute("href"));
+    if(t && t.classList.contains("collapsed")){
+      t.classList.remove("collapsed"); openState[t.id]=true; save("open",openState);
+      var b=t.querySelector(".sec-toggle"); if(b){b.textContent="Hide";b.setAttribute("aria-expanded","true");}
+    }
+    if(history.replaceState) history.replaceState(null,"",a.getAttribute("href"));
+  });
+});
+
+/* ---------- reading progress + back to top ---------- */
+var bar = document.getElementById("readbar"), top = document.getElementById("totop");
+function onScroll(){
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  var p = h > 0 ? (window.pageYOffset / h) * 100 : 0;
+  if(bar) bar.style.width = p + "%";
+  if(top) top.classList.toggle("show", window.pageYOffset > 700);
+}
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+if(top) top.addEventListener("click", function(){ window.scrollTo({top:0,behavior:"smooth"}); });
+
+/* ---------- search ---------- */
+var q = document.getElementById("q"), qwrap = document.getElementById("searchwrap"),
+    qclear = document.getElementById("qclear"), hc = document.getElementById("hitcount");
+var nores = document.createElement("p");
+nores.className = "noresults"; nores.textContent = "No matches in this packet.";
+var mainEl = document.querySelector("main"); if(mainEl) mainEl.appendChild(nores);
+var SKIP = {SCRIPT:1,STYLE:1,MARK:1,TEXTAREA:1,INPUT:1,SELECT:1,OPTION:1,BUTTON:1};
+
+function clearMarks(root){
+  var marks = root.querySelectorAll("mark.hit");
+  for(var i=0;i<marks.length;i++){
+    var m = marks[i];
+    m.parentNode.replaceChild(document.createTextNode(m.textContent), m);
+  }
+  if(marks.length) root.normalize();
+}
+function markIn(node, term, c){
+  if(node.nodeType === 3){
+    var t = node.nodeValue, low = t.toLowerCase(), i = low.indexOf(term);
+    if(i < 0) return;
+    var frag = document.createDocumentFragment(), last = 0;
+    while(i >= 0){
+      if(i > last) frag.appendChild(document.createTextNode(t.slice(last, i)));
+      var mk = document.createElement("mark"); mk.className = "hit";
+      mk.textContent = t.slice(i, i + term.length);
+      frag.appendChild(mk); c.n++;
+      last = i + term.length; i = low.indexOf(term, last);
+    }
+    if(last < t.length) frag.appendChild(document.createTextNode(t.slice(last)));
+    node.parentNode.replaceChild(frag, node);
+  } else if(node.nodeType === 1 && !SKIP[node.tagName] && !node.classList.contains("no-search")){
+    var kids = [].slice.call(node.childNodes);
+    for(var j=0;j<kids.length;j++) markIn(kids[j], term, c);
+  }
+}
+var searchT;
+function runSearch(){
+  var term = (q.value || "").trim().toLowerCase();
+  sections.forEach(function(s){ clearMarks(s); s.classList.remove("hidden-by-search"); });
+  qwrap.classList.toggle("has", !!term);
+  if(term.length < 2){
+    hc.classList.remove("show"); nores.classList.remove("show");
+    document.body.classList.remove("searching"); return;
+  }
+  document.body.classList.add("searching");
+  var total = 0, shown = 0;
+  sections.forEach(function(s){
+    var c = {n:0};
+    markIn(s, term, c);
+    if(c.n === 0){ s.classList.add("hidden-by-search"); }
+    else { shown++; total += c.n;
+      if(s.classList.contains("collapsed")){
+        s.classList.remove("collapsed");
+        var b = s.querySelector(".sec-toggle"); if(b){ b.textContent="Hide"; b.setAttribute("aria-expanded","true"); }
+      }
+    }
+  });
+  hc.textContent = total + (total === 1 ? " match" : " matches") + " in " + shown + (shown === 1 ? " section" : " sections");
+  hc.classList.add("show");
+  nores.classList.toggle("show", total === 0);
+}
+if(q){
+  q.addEventListener("input", function(){ clearTimeout(searchT); searchT = setTimeout(runSearch, 160); });
+  qclear.addEventListener("click", function(){ q.value = ""; runSearch(); q.focus(); });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "/" && document.activeElement !== q &&
+       ["INPUT","TEXTAREA","SELECT"].indexOf(document.activeElement.tagName) < 0){
+      e.preventDefault(); q.focus(); q.select();
+    }
+    if(e.key === "Escape" && document.activeElement === q){ q.value = ""; runSearch(); q.blur(); }
+  });
+}
+
+/* ---------- print: open everything first ---------- */
+var pb = document.getElementById("printbtn");
+function preparePrint(){
+  sections.forEach(function(s){ s.classList.remove("hidden-by-search"); });
+}
+if(pb) pb.addEventListener("click", function(){ preparePrint(); window.print(); });
+window.addEventListener("beforeprint", preparePrint);
+
+/* ---------- register tables: filter, sort, live totals ---------- */
+function num(s){ var v = parseFloat(String(s).replace(/[^0-9.\-]/g, "")); return isNaN(v) ? 0 : v; }
+function dnum(s){ var m = /(\d{2})\/(\d{2})\/(\d{4})/.exec(s); return m ? (+m[3])*10000 + (+m[1])*100 + (+m[2]) : 0; }
+
+[].slice.call(document.querySelectorAll("table[data-register]")).forEach(function(tbl){
+  var wrap = tbl.closest(".tablewrap");
+  var rows = [].slice.call(tbl.tBodies[0].rows);
+  rows.forEach(function(r,i){ r.dataset.i = i; });
+  var foot = tbl.tFoot ? tbl.tFoot.rows[0].cells : null;
+
+  var tools = document.createElement("div");
+  tools.className = "tbltools no-search noprint";
+  tools.innerHTML =
+    '<input type="search" placeholder="Filter payee, account, memo, check no." aria-label="Filter register">' +
+    '<button type="button" data-f="pay">Payments only</button>' +
+    '<button type="button" data-f="dep">Deposits only</button>' +
+    '<button type="button" data-f="reset">Reset</button>' +
+    '<span class="count"></span>';
+  wrap.parentNode.insertBefore(tools, wrap);
+
+  var input = tools.querySelector("input"), count = tools.querySelector(".count");
+  var mode = "all";
+
+  function apply(){
+    var term = (input.value || "").trim().toLowerCase();
+    var vis = 0, p = 0, d = 0, lastBal = "";
+    rows.forEach(function(r){
+      var payTxt = r.cells[5].textContent.trim(), depTxt = r.cells[6].textContent.trim();
+      var ok = true;
+      if(term && r.textContent.toLowerCase().indexOf(term) < 0) ok = false;
+      if(ok && mode === "pay" && !payTxt) ok = false;
+      if(ok && mode === "dep" && !depTxt) ok = false;
+      r.classList.toggle("filtered", !ok);
+      if(ok){ vis++; p += num(payTxt); d += num(depTxt); lastBal = r.cells[7].textContent.trim(); }
+    });
+    if(foot){
+      foot[0].textContent = (vis === rows.length)
+        ? "Totals for the period \u2014 " + rows.length + " entries"
+        : "Showing " + vis + " of " + rows.length + " entries";
+      foot[1].textContent = p ? money(p) : "";
+      foot[2].textContent = d ? money(d) : "";
+      foot[3].textContent = (vis === rows.length) ? lastBal : (vis ? "ending " + lastBal : "");
+    }
+    count.textContent = vis + " of " + rows.length;
+  }
+  input.addEventListener("input", apply);
+  tools.addEventListener("click", function(e){
+    var b = e.target.closest("button[data-f]"); if(!b) return;
+    var f = b.dataset.f;
+    if(f === "reset"){ input.value = ""; mode = "all"; }
+    else { mode = (mode === f) ? "all" : f; }
+    [].slice.call(tools.querySelectorAll("button[data-f]")).forEach(function(x){
+      x.classList.toggle("on", x.dataset.f === mode && mode !== "all");
+    });
+    apply();
+  });
+
+  var TYPE = { 0:"date", 1:"text", 2:"text", 3:"text", 4:"text", 5:"num", 6:"num", 7:"num" };
+  var heads = [].slice.call(tbl.tHead.rows[0].cells);
+  heads.forEach(function(th, ci){
+    if(!(ci in TYPE)) return;
+    th.classList.add("sortable"); th.tabIndex = 0; th.setAttribute("role","button");
+    function sort(){
+      var dir = th.classList.contains("asc") ? "desc" : (th.classList.contains("desc") ? "none" : "asc");
+      heads.forEach(function(h){ h.classList.remove("asc","desc"); });
+      var body = tbl.tBodies[0];
+      var sorted = rows.slice();
+      if(dir === "none"){ sorted.sort(function(a,b){ return a.dataset.i - b.dataset.i; }); }
+      else {
+        th.classList.add(dir);
+        var sign = dir === "asc" ? 1 : -1;
+        sorted.sort(function(a,b){
+          var x = a.cells[ci].textContent.trim(), y = b.cells[ci].textContent.trim(), r;
+          if(TYPE[ci] === "num") r = num(x) - num(y);
+          else if(TYPE[ci] === "date") r = dnum(x) - dnum(y);
+          else r = x.localeCompare(y);
+          return r * sign || (a.dataset.i - b.dataset.i);
+        });
+      }
+      sorted.forEach(function(r){ body.appendChild(r); });
+    }
+    th.addEventListener("click", sort);
+    th.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); sort(); } });
+  });
+  apply();
+});
+
+/* ---------- calculators ---------- */
+function calcSetup(id, defaults, render){
+  var root = document.getElementById(id); if(!root) return;
+  var saved = load("calc:" + id, {});
+  var inputs = {};
+  Object.keys(defaults).forEach(function(k){
+    var el = root.querySelector('[data-k="' + k + '"]'); if(!el) return;
+    inputs[k] = el;
+    el.value = (k in saved) ? saved[k] : defaults[k];
+    el.addEventListener("input", update);
+  });
+  function values(){
+    var v = {};
+    Object.keys(inputs).forEach(function(k){
+      var n = parseFloat(inputs[k].value);
+      v[k] = isNaN(n) ? 0 : n;
+    });
+    return v;
+  }
+  function update(){
+    var v = values(); render(root, v);
+    var s = {}; Object.keys(inputs).forEach(function(k){ s[k] = inputs[k].value; });
+    save("calc:" + id, s);
+  }
+  var rst = root.querySelector("[data-reset]");
+  if(rst) rst.addEventListener("click", function(){
+    Object.keys(inputs).forEach(function(k){ inputs[k].value = defaults[k]; });
+    update();
+  });
+  update();
+}
+function row(label, val, cls){
+  return '<div class="row' + (cls === "total" ? " total" : "") + '"><span>' + label +
+         '</span><span class="v' + (cls === "neg" ? " neg" : "") + '">' + val + "</span></div>";
+}
+
+/* cigarette tax revenue estimator */
+calcSetup("cigcalc", { packs: 20000, disc: 0.025, admin: 500 }, function(root, v){
+  var rates = [0.15, 0.175, 0.20, 0.225, 0.25, 0.275];
+  var out = root.querySelector(".out"), html = "", total = 0;
+  rates.forEach(function(r, i){
+    var net = Math.max(0, r - v.disc) * v.packs - (i === 0 ? v.admin : v.admin * 0.6);
+    total += net;
+    html += row("Year " + (i + 1) + " &middot; $" + r.toFixed(3) + " per pack", money0(net));
+  });
+  html += row("Six-year total, net to the Town", money0(total), "total");
+  html += '<p class="note">Gross tax less the $' + v.disc.toFixed(3) +
+    ' per-stamp dealer discount required by Sec. 12-13(b), less administration cost. ' +
+    'Pack volume is an assumption \u2014 change it above. The Town has no sales data yet, so treat these as ' +
+    'order-of-magnitude figures for discussion only.</p>';
+  out.innerHTML = html;
+});
+
+/* QuickBooks ROI */
+calcSetup("qbcalc",
+  { rate: 20, hpay: 5, hrec: 5, y1: 4313.40, annual: 4600, desktop: 1100, refund: 825 },
+  function(root, v){
+    var labor = (v.hpay + v.hrec) * v.rate * 12;
+    var hours = (v.hpay + v.hrec) * 12;
+    var net1 = v.y1 - v.refund - labor;
+    var netOn = v.annual - v.desktop - labor;
+    var perHour = hours > 0 ? netOn / hours : 0;
+    root.querySelector(".out").innerHTML =
+      row("Clerk hours returned each year", hours.toLocaleString("en-US") + " hrs") +
+      row("Labor recovered each year", money(labor)) +
+      row("Year one, after desktop refund", money(net1), net1 < 0 ? "neg" : "") +
+      row("Ongoing net cost per year", money(netOn), "total") +
+      '<p class="note">' + (netOn <= 0
+        ? "At these assumptions the subscription pays for itself outright."
+        : "Works out to " + money(perHour) + " per hour of clerk time bought back \u2014 " +
+          (perHour < v.rate ? "less" : "more") + " than the " + money(v.rate) + " the Town pays for that hour now.") +
+      " Excludes any IRS penalties avoided and the longer-term staffing projection.</p>";
+  });
+})();
+</script>
+
+
+</body>
+</html>
