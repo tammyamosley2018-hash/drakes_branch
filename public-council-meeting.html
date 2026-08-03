@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Town of Drakes Branch - Council Meeting August 3, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --town-blue: #2E5F7F;
+            --light-blue: #E8F1F5;
+            --accent-blue: #4A8BBE;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --border-color: #ddd;
+            --success-color: #28a745;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--town-blue) 0%, var(--accent-blue) 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .seal {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 11px;
+            color: var(--town-blue);
+            text-align: center;
+            padding: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        .meeting-details {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            color: var(--town-blue);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: var(--light-blue);
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+            font-weight: 600;
+            color: var(--town-blue);
+        }
+
+        .accordion-header:hover {
+            background: #d4e5f0;
+        }
+
+        .accordion-header.active {
+            background: var(--town-blue);
+            color: white;
+        }
+
+        .toggle-icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            font-size: 18px;
+        }
+
+        .accordion-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .agenda-list {
+            list-style: none;
+        }
+
+        .agenda-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .agenda-list li:last-child {
+            border-bottom: none;
+        }
+
+        .agenda-letter {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 10px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .sub-item {
+            margin-left: 40px;
+            padding: 8px 0;
+            color: var(--text-light);
+        }
+
+        .info-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--accent-blue);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: var(--town-blue);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        table th {
+            background: var(--town-blue);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        table tr:nth-child(even) {
+            background: var(--light-blue);
+        }
+
+        .currency {
+            font-weight: 600;
+            color: var(--town-blue);
+        }
+
+        .footer {
+            background: var(--town-blue);
+            color: white;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            table th, table td {
+                padding: 8px;
+            }
+
+            .accordion-header {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="seal">
+                Drakes Branch
+            </div>
+            <h1>Town Council Meeting</h1>
+            <div class="meeting-details">
+                <p><strong>Monday, August 3, 2026</strong> | 7:00 PM</p>
+                <p>Municipal Building | 4801 Drakes Main Street, Drakes Branch, VA</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- AGENDA SECTION -->
+            <div class="section">
+                <h2 class="section-title">📋 Meeting Agenda</h2>
+
+                <ul class="agenda-list">
+                    <li><span class="agenda-letter">I</span> <strong>Open Meeting</strong></li>
+                    <li><span class="agenda-letter">II</span> <strong>Roll Call</strong></li>
+                    <li><span class="agenda-letter">III</span> <strong>Invocation</strong></li>
+                    <li><span class="agenda-letter">IV</span> <strong>Pledge of Allegiance</strong></li>
+                    <li>
+                        <span class="agenda-letter">V</span> <strong>Minutes of July Regular Meeting & June Public Hearing Minutes</strong>
+                    </li>
+                    <li><span class="agenda-letter">VI</span> <strong>Account Balances</strong></li>
+                    <li><span class="agenda-letter">VII</span> <strong>Bills to be Paid/Bills Paid</strong></li>
+                    <li><span class="agenda-letter">VIII</span> <strong>Speakers to Address Council</strong> - David West</li>
+                    <li>
+                        <span class="agenda-letter">IX</span> <strong>Committee Reports</strong>
+                        <ul class="agenda-list" style="margin-top: 10px;">
+                            <li class="sub-item">A. Finance - D. Kennedy & E. Wells, Jr.</li>
+                            <li class="sub-item">B. Water/Sewer - P. Wells, Sr. & T. Pettus</li>
+                            <li class="sub-item">C. Streets - C. Errickson & Liz Davis</li>
+                            <li class="sub-item">D. Museum - D. Kennedy</li>
+                            <li class="sub-item">E. Buildings & Grounds - J. Gregory & E. Wells, Jr.</li>
+                            <li class="sub-item">F. Personnel - P. Wells, Sr. & C. Errickson</li>
+                            <li class="sub-item">G. Grants - L. Davis & D. Kennedy</li>
+                            <li class="sub-item">H. Event Committee - J. Gregory & L. Davis</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="agenda-letter">X</span> <strong>Old Business</strong>
+                        <ul class="agenda-list" style="margin-top: 10px;">
+                            <li class="sub-item">A. Acoustic panels for meeting room</li>
+                            <li class="sub-item">B. Chair rails/Painting meeting room</li>
+                            <li class="sub-item">C. Cigarette tax</li>
+                            <li class="sub-item">D. Repairs to pavilion</li>
+                            <li class="sub-item">E. Water rate audit</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="agenda-letter">XI</span> <strong>New Business</strong>
+                        <ul class="agenda-list" style="margin-top: 10px;">
+                            <li class="sub-item">A. Room Rental Requests: None</li>
+                            <li class="sub-item">B. Repairs needed to White Street</li>
+                            <li class="sub-item">C. New window blind for clerks office</li>
+                            <li class="sub-item">D. Add Tammy to Bank of Charlotte Accounts</li>
+                        </ul>
+                    </li>
+                    <li><span class="agenda-letter">XII</span> <strong>Any Other Business</strong></li>
+                    <li><span class="agenda-letter">XIII</span> <strong>Closed Session</strong> (Personnel matters per Virginia Code § 2.2-3711)</li>
+                    <li><span class="agenda-letter">XIV</span> <strong>Return to Open Session</strong></li>
+                    <li><span class="agenda-letter">XV</span> <strong>Adjourn</strong></li>
+                </ul>
+            </div>
+
+            <!-- FINANCIAL SUMMARY SECTION -->
+            <div class="section">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        💰 Account Balances Summary
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="info-box">
+                            <p>Account balances as of the July 2026 meeting</p>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Account</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Security Deposit Escrow</td>
+                                    <td class="currency">$4,270.29</td>
+                                </tr>
+                                <tr>
+                                    <td>Water/Sewer</td>
+                                    <td class="currency">$12,217.96</td>
+                                </tr>
+                                <tr>
+                                    <td>General Fund</td>
+                                    <td class="currency">$183,700.95</td>
+                                </tr>
+                                <tr>
+                                    <td>LGIP Account</td>
+                                    <td class="currency">$313,312.64</td>
+                                </tr>
+                                <tr>
+                                    <td>LGIP-EM Account</td>
+                                    <td class="currency">$208,249.92</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMMITTEE REPORTS SECTION -->
+            <div class="section">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        📊 Committee Reports Highlights
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="info-box">
+                            <strong>Finance:</strong> No report submitted
+                        </div>
+                        <div class="info-box">
+                            <strong>Streets:</strong> Addressing grass not being maintained at Dollar General. Clerk to issue ordinance violation notice.
+                        </div>
+                        <div class="info-box">
+                            <strong>Water/Sewer:</strong> Back-up at pump station being addressed. Electrician scheduled to check power issue.
+                        </div>
+                        <div class="info-box">
+                            <strong>Buildings & Grounds:</strong> Need to determine if Ladies Club will continue; if so, lease needed. Chair rail installation bid received from Chris Cook ($669). Discussion tabled pending painting quote.
+                        </div>
+                        <div class="info-box">
+                            <strong>Personnel:</strong> To be discussed in closed session.
+                        </div>
+                        <div class="info-box">
+                            <strong>Events:</strong> 100-mile yard sale held in extreme heat but had good attendance. Mayor asked councilman to prepare for Fall Festival.
+                        </div>
+                        <div class="info-box">
+                            <strong>Grants:</strong> SLFRF grant completed December 25, 2025 and closed as of June 2026. Awaiting WACO to provide FEMA project amendments.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POLICE REPORT SECTION -->
+            <div class="section">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        🚓 Police Department July Report
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Traffic Summons Issued</td>
+                                    <td><strong>22</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Warnings Issued</td>
+                                    <td><strong>7</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Patrolled Miles</td>
+                                    <td><strong>839 miles</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4 style="margin-top: 20px; margin-bottom: 10px;">Notable Activities</h4>
+                        <ul style="margin-left: 20px;">
+                            <li>Handicapped warning at Dollar General</li>
+                            <li>Rescue call at Anita's Café</li>
+                            <li>Disturbance on Main Street (alcohol-related)</li>
+                            <li>Road check at Highways 47 & 59</li>
+                            <li>Heat grant application submitted for $16,000 in flock cameras</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACTION ITEMS SECTION -->
+            <div class="section">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        ✓ Motions Approved (July Meeting)
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <ul style="margin-left: 20px;">
+                            <li>Accept June Regular Council Meeting and Joint Public Hearing minutes</li>
+                            <li>Accept and approve all account balances and bills paid/to be paid</li>
+                            <li>Approve purchase of new trimmer for town maintenance</li>
+                            <li>Accept new office hours: Monday, Wednesday, Friday 8:30 AM - 3:30 PM</li>
+                            <li>Approve tractor sale and bid for new one</li>
+                            <li>Approve sound reduction panel bid request</li>
+                            <li>Hire T. Harmon under contract to help update office manuals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UPCOMING ITEMS SECTION -->
+            <div class="section">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        📅 Items for August Meeting
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="info-box">
+                            <strong>Cigarette Tax Discussion:</strong> Council has requested guidance on implementing a cigarette tax for the town.
+                        </div>
+                        <div class="info-box">
+                            <strong>Town Lake Lease:</strong> Discussion of Town Lake lease terms and renewal.
+                        </div>
+                        <div class="info-box">
+                            <strong>Acoustic Panels:</strong> Continued discussion with bid from Zach McKinney Technology ($8,235).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p><strong>Town of Drakes Branch</strong></p>
+            <p>P.O. Box 191 | Drakes Branch, VA 23937 | Phone: (434) 568-3091</p>
+            <p>📧 <a href="mailto:drakebr@hovac.com">drakebr@hovac.com</a> | 🌐 <a href="http://www.towndrakesbranch.com" target="_blank">www.towndrakesbranch.com</a></p>
+            <p style="margin-top: 15px; opacity: 0.8;">Public Meeting Information - Read Only | Updated August 2026</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
